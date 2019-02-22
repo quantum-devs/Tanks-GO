@@ -60,6 +60,8 @@
 		964849DA221DEAEC00266B34 /* youlose.png in Resources */ = {isa = PBXBuildFile; fileRef = 964849D6221DEAEC00266B34 /* youlose.png */; };
 		964849DB221DEAEC00266B34 /* youlose.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 964849D7221DEAEC00266B34 /* youlose.mtl */; };
 		964849DC221DEAEC00266B34 /* youlose.m in Sources */ = {isa = PBXBuildFile; fileRef = 964849D8221DEAEC00266B34 /* youlose.m */; };
+		964849E0221E335500266B34 /* Director.m in Sources */ = {isa = PBXBuildFile; fileRef = 964849DF221E335500266B34 /* Director.m */; };
+		964849E3221F6D1000266B34 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 964849E2221F6D1000266B34 /* GameOver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +142,10 @@
 		964849D6221DEAEC00266B34 /* youlose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youlose.png; sourceTree = "<group>"; };
 		964849D7221DEAEC00266B34 /* youlose.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = youlose.mtl; sourceTree = "<group>"; };
 		964849D8221DEAEC00266B34 /* youlose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = youlose.m; sourceTree = "<group>"; };
+		964849DE221E335500266B34 /* Director.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
+		964849DF221E335500266B34 /* Director.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Director.m; sourceTree = "<group>"; };
+		964849E1221F6D1000266B34 /* GameOver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
+		964849E2221F6D1000266B34 /* GameOver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,7 @@
 		9610FD95220E5D3E00A7360E /* Tanks Go */ = {
 			isa = PBXGroup;
 			children = (
+				964849DD221E332100266B34 /* Director */,
 				9648499B221DE87F00266B34 /* Sounds */,
 				96484978221DE23C00266B34 /* Scenes */,
 				9610FDAF220E5DE900A7360E /* Nodes */,
@@ -269,6 +276,8 @@
 				9634F172221BDC09008CE6CA /* TestScene.m */,
 				96484979221DE2AF00266B34 /* GameScene.h */,
 				9648497A221DE2AF00266B34 /* GameScene.m */,
+				964849E1221F6D1000266B34 /* GameOver.h */,
+				964849E2221F6D1000266B34 /* GameOver.m */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -398,6 +407,15 @@
 			path = "New Group4";
 			sourceTree = "<group>";
 		};
+		964849DD221E332100266B34 /* Director */ = {
+			isa = PBXGroup;
+			children = (
+				964849DE221E335500266B34 /* Director.h */,
+				964849DF221E335500266B34 /* Director.m */,
+			);
+			path = Director;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,6 +514,7 @@
 				9634F1602214EB38008CE6CA /* Cube.m in Sources */,
 				9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */,
 				9648497B221DE2AF00266B34 /* GameScene.m in Sources */,
+				964849E3221F6D1000266B34 /* GameOver.m in Sources */,
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
 				964849DC221DEAEC00266B34 /* youlose.m in Sources */,
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
@@ -510,6 +529,7 @@
 				964849A8221DEA5800266B34 /* youwin.m in Sources */,
 				96484995221DE78300266B34 /* RWTPaddle.m in Sources */,
 				96484996221DE78300266B34 /* RWTBrick.m in Sources */,
+				964849E0221E335500266B34 /* Director.m in Sources */,
 				96484999221DE78300266B34 /* RWTBall.m in Sources */,
 				964849D3221DEADE00266B34 /* paddle.m in Sources */,
 				9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */,

@@ -107,10 +107,30 @@
     }
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+}
+
 - (void)updateWithDelta:(NSTimeInterval)dt {
     for (Node *child in self.children) {
         [child updateWithDelta:dt];
     }
+}
+
+- (CGRect) boundingBoxWithModelViewMatrix:(GLKMatrix4)parentModelViewMatrix {
+    GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
+    GLKVector4 lowerLeft = GLKVector4Make(-self.width/2, -self.height/2, 0, 1);
+    lowerLeft = GLKMatrix4MultiplyVector4(modelViewMatrix, lowerLeft);
+    GLKVector4 upperRight = GLKVector4Make(self.width/2, self.height/2, 0, 1);
+    upperRight = GLKMatrix4MultiplyVector4(modelViewMatrix, upperRight);
+    CGRect boundingBox = CGRectMake(lowerLeft.x, lowerLeft.y, upperRight.x - lowerLeft.x, upperRight.y - lowerLeft.y);
+    return boundingBox;
 }
 
 @end
