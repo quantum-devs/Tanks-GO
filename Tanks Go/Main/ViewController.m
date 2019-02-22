@@ -10,6 +10,8 @@
 #import "Vertex.h"
 #import "BaseEffect.h"
 #import "GameScene.h"
+#import "GameOver.h"
+#import "Director.h"
 
 @interface ViewController ()
 
@@ -21,10 +23,16 @@
 }
 
 - (void) setupScene{
+    
+    [Director sharedInstance].view = self.view;
+    [[Director sharedInstance] playBackgroundMusic:@"bulletstorm_bg_v1.mp3"];
+    
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
                                         fragmentShader:@"SimpleFragment.glsl"];
     _scene = [[GameScene alloc] initWithShader:_shader];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
+    
+    [Director sharedInstance].scene = _scene;
 }
 
 - (void)viewDidLoad {
@@ -47,11 +55,21 @@
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
     GLKMatrix4 viewMatrix = GLKMatrix4Identity;
-    [_scene renderWithParentModelViewMatrix:viewMatrix];
+    [[Director sharedInstance].scene renderWithParentModelViewMatrix:viewMatrix];
 }
 
 - (void)update {
-    [_scene updateWithDelta:self.timeSinceLastUpdate];
+    [[Director sharedInstance].scene updateWithDelta:self.timeSinceLastUpdate];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[Director sharedInstance].scene touchesBegan:touches withEvent:event];
+}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[Director sharedInstance].scene touchesMoved:touches withEvent:event];
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[Director sharedInstance].scene touchesEnded:touches withEvent:event];
 }
 
 
