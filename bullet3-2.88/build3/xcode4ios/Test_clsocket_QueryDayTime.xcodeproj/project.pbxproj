@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78132C1A04D012FE221B4F63 /* QueryDayTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EBE07644BA57E56623A7743 /* QueryDayTime.cpp */; };
+		0FF95DAC5CB245947F224485 /* libclsocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB0602203CE6C0F0B0C6A41 /* libclsocket.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42B87234467556CE70A44F40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 646A792C6D8C3F2E67301C68 /* clsocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C384322758C6F9C7D1A3D2A;
+			remoteInfo = "libclsocket_xcode4_x64_release.a";
+		};
+		10D869177AFC4C5916E05BB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 646A792C6D8C3F2E67301C68 /* clsocket.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BA028F90B3D7064403F25F2;
+			remoteInfo = "libclsocket_xcode4_x64_release.a";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1EBE07644BA57E56623A7743 /* QueryDayTime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "QueryDayTime.cpp"; path = "../../test/clsocket/QueryDayTime.cpp"; sourceTree = "<group>"; };
+		53B26A214D362DA06651636A /* Test_clsocket_QueryDayTime_xcode4_x64_release */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "Test_clsocket_QueryDayTime_xcode4_x64_release"; path = "Test_clsocket_QueryDayTime_xcode4_x64_release"; sourceTree = BUILT_PRODUCTS_DIR; };
+		646A792C6D8C3F2E67301C68 /* clsocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "clsocket.xcodeproj"; path = "clsocket.xcodeproj"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		359E516F5BBF7FDA692A7172 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF95DAC5CB245947F224485 /* libclsocket.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CB00394733B415613C3254B /* Test_clsocket_QueryDayTime */ = {
+			isa = PBXGroup;
+			children = (
+				04A6474706F16513562F350E /* test */,
+				24FB6DB87461144161317C2E /* Products */,
+				319128EB04815A396D8208C3 /* Projects */,
+			);
+			name = "Test_clsocket_QueryDayTime";
+			sourceTree = "<group>";
+		};
+		04A6474706F16513562F350E /* test */ = {
+			isa = PBXGroup;
+			children = (
+				5A9A3DD642D963E77FA95E0C /* clsocket */,
+			);
+			name = "test";
+			sourceTree = "<group>";
+		};
+		5A9A3DD642D963E77FA95E0C /* clsocket */ = {
+			isa = PBXGroup;
+			children = (
+				1EBE07644BA57E56623A7743 /* QueryDayTime.cpp */,
+			);
+			name = "clsocket";
+			sourceTree = "<group>";
+		};
+		24FB6DB87461144161317C2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53B26A214D362DA06651636A /* Test_clsocket_QueryDayTime_xcode4_x64_release */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		319128EB04815A396D8208C3 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				646A792C6D8C3F2E67301C68 /* clsocket.xcodeproj */,
+			);
+			name = "Projects";
+			sourceTree = "<group>";
+		};
+		1A6D1BB5113B3BBA4B231C5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FB0602203CE6C0F0B0C6A41 /* libclsocket.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A57184501F179A156E96D68 /* Test_clsocket_QueryDayTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79F21D5C215641AF7E9B1F4E /* Build configuration list for PBXNativeTarget "Test_clsocket_QueryDayTime" */;
+			buildPhases = (
+				66CB24C84E2C386576C17C2E /* Resources */,
+				369B7A355D6F5B86565E3772 /* Sources */,
+				359E516F5BBF7FDA692A7172 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03F17A7E12BA2E5010FD5E2D /* PBXTargetDependency */,
+			);
+			name = "Test_clsocket_QueryDayTime";
+			productInstallPath = "$(HOME)/bin";
+			productName = "Test_clsocket_QueryDayTime";
+			productReference = 53B26A214D362DA06651636A /* Test_clsocket_QueryDayTime_xcode4_x64_release */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Test_clsocket_QueryDayTime" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 1CB00394733B415613C3254B /* Test_clsocket_QueryDayTime */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1A6D1BB5113B3BBA4B231C5D /* Products */;
+					ProjectRef = 646A792C6D8C3F2E67301C68 /* clsocket.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				6A57184501F179A156E96D68 /* Test_clsocket_QueryDayTime_xcode4_x64_release */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1FB0602203CE6C0F0B0C6A41 /* libclsocket.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libclsocket.a";
+			remoteRef = 42B87234467556CE70A44F40 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66CB24C84E2C386576C17C2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		369B7A355D6F5B86565E3772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78132C1A04D012FE221B4F63 /* QueryDayTime.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin PBXTargetDependency section */
+		03F17A7E12BA2E5010FD5E2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libclsocket.a";
+			targetProxy = 10D869177AFC4C5916E05BB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		16405BA152875D18120C6A0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "Test_clsocket_QueryDayTime_xcode4_x64_release";
+			};
+			name = "Release";
+		};
+		1DC46E7F7A544C583A77128B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "Test_clsocket_QueryDayTime_xcode4_x64_debug";
+			};
+			name = "Debug";
+		};
+		492E069C1CF8017B587865B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DARWIN",
+					"BT_ENABLE_ENET",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../examples/ThirdPartyLibs/clsocket/src",
+				);
+				OBJROOT = "obj/x64/Release/Test_clsocket_QueryDayTime";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		7C9A1DFA485B5866464A44F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+					"_DARWIN",
+					"BT_ENABLE_ENET",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../examples/ThirdPartyLibs/clsocket/src",
+				);
+				OBJROOT = "obj/x64/Debug/Test_clsocket_QueryDayTime";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79F21D5C215641AF7E9B1F4E /* Build configuration list for PBXNativeTarget "Test_clsocket_QueryDayTime_xcode4_x64_release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16405BA152875D18120C6A0A /* Release */,
+				1DC46E7F7A544C583A77128B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Test_clsocket_QueryDayTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				492E069C1CF8017B587865B4 /* Release */,
+				7C9A1DFA485B5866464A44F8 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

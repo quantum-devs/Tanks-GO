@@ -1,0 +1,1010 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		552F262E315641BF78E12A0E /* InProcessExampleBrowser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E9F34F14AFC230001132AC0 /* InProcessExampleBrowser.cpp */; };
+		41BE3B2321497BB678EC796C /* MinitaurSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151D276C5A012D7B183574B5 /* MinitaurSetup.cpp */; };
+		408971A7216852117AAB0592 /* RobotSimulatorMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154226A6107F419F399927B0 /* RobotSimulatorMain.cpp */; };
+		043152B8610F5E9140F729C1 /* b3RobotSimulatorClientAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FA049D40F240C0728436B96 /* b3RobotSimulatorClientAPI.cpp */; };
+		473F0A3E042405ED2B0704CA /* PhysicsClientTCP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC497E7DB31AAE407638E1 /* PhysicsClientTCP.cpp */; };
+		1B4D7A0E5D0F272F0FD444F2 /* PhysicsClientTCP_C_API.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78C21C0F26E400555A0479DB /* PhysicsClientTCP_C_API.cpp */; };
+		77AA4FD600AB01A44E1D1301 /* PhysicsClientUDP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37F0038F26B93E70516411DD /* PhysicsClientUDP.cpp */; };
+		67C76E7E2962796A23D46B4C /* PhysicsClientUDP_C_API.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B16701922545B1369502AA1 /* PhysicsClientUDP_C_API.cpp */; };
+		519C6D8635334FFA6162296E /* PhysicsServerExample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B47685D522477DB5CFF6DAE /* PhysicsServerExample.cpp */; };
+		047353A23F023C9F125D3AF7 /* PhysicsServerExampleBullet2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06A56166119B15D211E00D25 /* PhysicsServerExampleBullet2.cpp */; };
+		46D145E576833066024B16AB /* SharedMemoryInProcessPhysicsC_API.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CC05BE0672C23102E266A56 /* SharedMemoryInProcessPhysicsC_API.cpp */; };
+		52BB0791513A55854845696C /* gl.c in Sources */ = {isa = PBXBuildFile; fileRef = 191148582D4917AC29D96697 /* gl.c */; };
+		0B7B3FA907436C7877EC2EA5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640101591C0653EA57A92968 /* OpenGL.framework */; };
+		19D730D172F076E82C3B0E86 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770437327070690B743E3D7C /* Cocoa.framework */; };
+		02A332A661AF3FB04E8B3DEA /* libBulletRobotics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25985E0B532558554BA434EC /* libBulletRobotics.a */; };
+		293C4DEE52B8658E689E1396 /* libBulletExampleBrowserLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12330461277F118B6FD30B61 /* libBulletExampleBrowserLib.a */; };
+		39B32E250DDA7E0908072C40 /* libgwen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33957B33580D7C460A1A5025 /* libgwen.a */; };
+		18E700DD56C7290521483F9D /* libOpenGL_Window.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 424A333F6D5653E317517D92 /* libOpenGL_Window.a */; };
+		379E0BEB21447B8C38341390 /* libBulletFileLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC353100095507D69210909 /* libBulletFileLoader.a */; };
+		3E12411B119820EA0C5C2281 /* libBulletWorldImporter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46632C63E036E451115748 /* libBulletWorldImporter.a */; };
+		5F9D53FC79A360820C4D30C2 /* libBulletSoftBody.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D197B810AF316804223084C /* libBulletSoftBody.a */; };
+		45E9503D775D046253E57228 /* libBulletInverseDynamicsUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 645732E36B4B494013035D1D /* libBulletInverseDynamicsUtils.a */; };
+		592D25BA5F3112B355B4359D /* libBulletInverseDynamics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF55EFF52460DE4171C3CB0 /* libBulletInverseDynamics.a */; };
+		61FB424B55615EE132A06252 /* libBulletDynamics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 792D045D32FA3C8A37FB46EE /* libBulletDynamics.a */; };
+		74587433629D429350701D2D /* libBulletCollision.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 481977B874BB532817062AE4 /* libBulletCollision.a */; };
+		1B6720A555987A3605D868B0 /* libLinearMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDD58AD008558346B8047CB /* libLinearMath.a */; };
+		473F106619AB3E21242B2DFF /* libenet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ACB3B440BF93162205D6B97 /* libenet.a */; };
+		4167546533EF2B8353DE1B06 /* libclsocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6A55CC5B823C4517333F35 /* libclsocket.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45E75F9C33776B6744EA77EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30AB3010027E56051030767B /* BulletRobotics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1AAB5E034B933E0C1147082D;
+			remoteInfo = "libBulletRobotics_xcode4_x64_release.a";
+		};
+		143C2A5214F578C901605A61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30AB3010027E56051030767B /* BulletRobotics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 614C7F540351510F6D3E0A0D;
+			remoteInfo = "libBulletRobotics_xcode4_x64_release.a";
+		};
+		78B745522C6A7048363C3F06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5535310A28F774273D7D6E72 /* BulletExampleBrowserLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55452B4E4EB161492F49060E;
+			remoteInfo = "libBulletExampleBrowserLib_xcode4_x64_release.a";
+		};
+		3EC93DEC7F9F34330C6A2B86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5535310A28F774273D7D6E72 /* BulletExampleBrowserLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06DC12AE166F665A4F32616B;
+			remoteInfo = "libBulletExampleBrowserLib_xcode4_x64_release.a";
+		};
+		5AE8597E0675165F60626A60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A54499765F01E7D23757DB7 /* gwen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 20D84C815CBE7370762734A1;
+			remoteInfo = "libgwen_xcode4_x64_release.a";
+		};
+		57633B7C59752C0176B663C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A54499765F01E7D23757DB7 /* gwen.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F167E830A93400921961D84;
+			remoteInfo = "libgwen_xcode4_x64_release.a";
+		};
+		70B9404E002B41E52A4D296C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27435A58025277F06CA57201 /* OpenGL_Window.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 20603384251C62B10B876383;
+			remoteInfo = "libOpenGL_Window_xcode4_x64_release.a";
+		};
+		190D329B147131966F805FD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27435A58025277F06CA57201 /* OpenGL_Window.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 43C57ACA17D8171858AE2697;
+			remoteInfo = "libOpenGL_Window_xcode4_x64_release.a";
+		};
+		3FB2781F457A60D8312D3F40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E3E3701564A4A716E216B01 /* BulletFileLoader.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3E4956470BF06C3532787928;
+			remoteInfo = "libBulletFileLoader_xcode4_x64_release.a";
+		};
+		1CA27A99580A0549164B4FB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E3E3701564A4A716E216B01 /* BulletFileLoader.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 379D34BA2BD26AB27EC15009;
+			remoteInfo = "libBulletFileLoader_xcode4_x64_release.a";
+		};
+		701B16B56CED61430C237D51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0349523B285B23B626B95917 /* BulletWorldImporter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04BE76894DFA7FE348A50784;
+			remoteInfo = "libBulletWorldImporter_xcode4_x64_release.a";
+		};
+		011F519A5982173475412F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0349523B285B23B626B95917 /* BulletWorldImporter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CA030E65445173E0773415C;
+			remoteInfo = "libBulletWorldImporter_xcode4_x64_release.a";
+		};
+		3A2F14B642C74C8E069078FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B2305FF451E3CF70B066F25 /* BulletSoftBody.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 661379F707F1753E46212DFB;
+			remoteInfo = "libBulletSoftBody_xcode4_x64_release.a";
+		};
+		16826B71006D0BAF194C7012 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B2305FF451E3CF70B066F25 /* BulletSoftBody.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E2C560448CB1D1E26B55EB2;
+			remoteInfo = "libBulletSoftBody_xcode4_x64_release.a";
+		};
+		504C3AFD4CD802045ACF5936 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 338C2FC276E80146521F7584 /* BulletInverseDynamicsUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5E67430905D045C001316E39;
+			remoteInfo = "libBulletInverseDynamicsUtils_xcode4_x64_release.a";
+		};
+		1F67508B090C0D487FD66488 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 338C2FC276E80146521F7584 /* BulletInverseDynamicsUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 660B7BA732DD011F4AC6334D;
+			remoteInfo = "libBulletInverseDynamicsUtils_xcode4_x64_release.a";
+		};
+		009F077F4A79744D71B81BA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26973B3B487670A254F209F0 /* BulletInverseDynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7FA9652C2BD153F7114036F3;
+			remoteInfo = "libBulletInverseDynamics_xcode4_x64_release.a";
+		};
+		71B532083E53591A431A1701 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26973B3B487670A254F209F0 /* BulletInverseDynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C942F9B7E613B3A627C3B7A;
+			remoteInfo = "libBulletInverseDynamics_xcode4_x64_release.a";
+		};
+		52D144D6516E26DD0F3C3555 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0756324572A227291CC63BE9 /* BulletDynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A0E3C045C4F5CCF486B6AA0;
+			remoteInfo = "libBulletDynamics_xcode4_x64_release.a";
+		};
+		5F771C42658B3A6D7BE17489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0756324572A227291CC63BE9 /* BulletDynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 48F958AB5B5143C33A3C533E;
+			remoteInfo = "libBulletDynamics_xcode4_x64_release.a";
+		};
+		403A51E733524CB04EF74BE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AC4653C7A9E51567E530689 /* BulletCollision.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 407020FC3935021F75595F1B;
+			remoteInfo = "libBulletCollision_xcode4_x64_release.a";
+		};
+		4D9B7F0B6C8C67DB778E3182 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AC4653C7A9E51567E530689 /* BulletCollision.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78BB76CB47986FFD7E0066F6;
+			remoteInfo = "libBulletCollision_xcode4_x64_release.a";
+		};
+		1F7167E26524403F081B4D35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22C8193E44CF26ED3E1235BF /* LinearMath.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2FA178492039263C672563B7;
+			remoteInfo = "libLinearMath_xcode4_x64_release.a";
+		};
+		67A03B800CB218DA45E802F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22C8193E44CF26ED3E1235BF /* LinearMath.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EC87E11102A4DAC15912341;
+			remoteInfo = "libLinearMath_xcode4_x64_release.a";
+		};
+		2F583EB623F550626310326A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D775DE5BB61D8B398B5C80 /* enet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7BD77C7A54BB01221F336DBA;
+			remoteInfo = "libenet_xcode4_x64_release.a";
+		};
+		662C57C43BE8241579C462AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D775DE5BB61D8B398B5C80 /* enet.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B777CEA6D367600143D43F3;
+			remoteInfo = "libenet_xcode4_x64_release.a";
+		};
+		6BBA1BA3136C3C4B1C6968BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41992D7B735247892F5D40B4 /* clsocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C384322758C6F9C7D1A3D2A;
+			remoteInfo = "libclsocket_xcode4_x64_release.a";
+		};
+		66A629B61963668543050B59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41992D7B735247892F5D40B4 /* clsocket.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BA028F90B3D7064403F25F2;
+			remoteInfo = "libclsocket_xcode4_x64_release.a";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5E9F34F14AFC230001132AC0 /* InProcessExampleBrowser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "InProcessExampleBrowser.cpp"; path = "../../examples/ExampleBrowser/InProcessExampleBrowser.cpp"; sourceTree = "<group>"; };
+		151D276C5A012D7B183574B5 /* MinitaurSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MinitaurSetup.cpp"; path = "../../examples/RobotSimulator/MinitaurSetup.cpp"; sourceTree = "<group>"; };
+		46F0691438710B7630BC28E9 /* MinitaurSetup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MinitaurSetup.h"; path = "../../examples/RobotSimulator/MinitaurSetup.h"; sourceTree = "<group>"; };
+		154226A6107F419F399927B0 /* RobotSimulatorMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "RobotSimulatorMain.cpp"; path = "../../examples/RobotSimulator/RobotSimulatorMain.cpp"; sourceTree = "<group>"; };
+		3FA049D40F240C0728436B96 /* b3RobotSimulatorClientAPI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "b3RobotSimulatorClientAPI.cpp"; path = "../../examples/RobotSimulator/b3RobotSimulatorClientAPI.cpp"; sourceTree = "<group>"; };
+		4A6145D2191771E854492F71 /* b3RobotSimulatorClientAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "b3RobotSimulatorClientAPI.h"; path = "../../examples/RobotSimulator/b3RobotSimulatorClientAPI.h"; sourceTree = "<group>"; };
+		4ACC497E7DB31AAE407638E1 /* PhysicsClientTCP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PhysicsClientTCP.cpp"; path = "../../examples/SharedMemory/PhysicsClientTCP.cpp"; sourceTree = "<group>"; };
+		1D1628167A637B1B4EF62266 /* PhysicsClientTCP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PhysicsClientTCP.h"; path = "../../examples/SharedMemory/PhysicsClientTCP.h"; sourceTree = "<group>"; };
+		78C21C0F26E400555A0479DB /* PhysicsClientTCP_C_API.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PhysicsClientTCP_C_API.cpp"; path = "../../examples/SharedMemory/PhysicsClientTCP_C_API.cpp"; sourceTree = "<group>"; };
+		115B1AAC203F0A35499A2A37 /* PhysicsClientTCP_C_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PhysicsClientTCP_C_API.h"; path = "../../examples/SharedMemory/PhysicsClientTCP_C_API.h"; sourceTree = "<group>"; };
+		37F0038F26B93E70516411DD /* PhysicsClientUDP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PhysicsClientUDP.cpp"; path = "../../examples/SharedMemory/PhysicsClientUDP.cpp"; sourceTree = "<group>"; };
+		5960668340964D83017752C3 /* PhysicsClientUDP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PhysicsClientUDP.h"; path = "../../examples/SharedMemory/PhysicsClientUDP.h"; sourceTree = "<group>"; };
+		2B16701922545B1369502AA1 /* PhysicsClientUDP_C_API.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PhysicsClientUDP_C_API.cpp"; path = "../../examples/SharedMemory/PhysicsClientUDP_C_API.cpp"; sourceTree = "<group>"; };
+		642556691C0D31452E4B463D /* PhysicsClientUDP_C_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PhysicsClientUDP_C_API.h"; path = "../../examples/SharedMemory/PhysicsClientUDP_C_API.h"; sourceTree = "<group>"; };
+		0B47685D522477DB5CFF6DAE /* PhysicsServerExample.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PhysicsServerExample.cpp"; path = "../../examples/SharedMemory/PhysicsServerExample.cpp"; sourceTree = "<group>"; };
+		06A56166119B15D211E00D25 /* PhysicsServerExampleBullet2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PhysicsServerExampleBullet2.cpp"; path = "../../examples/SharedMemory/PhysicsServerExampleBullet2.cpp"; sourceTree = "<group>"; };
+		4CC05BE0672C23102E266A56 /* SharedMemoryInProcessPhysicsC_API.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SharedMemoryInProcessPhysicsC_API.cpp"; path = "../../examples/SharedMemory/SharedMemoryInProcessPhysicsC_API.cpp"; sourceTree = "<group>"; };
+		191148582D4917AC29D96697 /* gl.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = "gl.c"; path = "../../examples/ThirdPartyLibs/glad/gl.c"; sourceTree = "<group>"; };
+		640101591C0653EA57A92968 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "OpenGL.framework"; path = "/System/Library/Frameworks/OpenGL.framework"; sourceTree = "<absolute>"; };
+		770437327070690B743E3D7C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cocoa.framework"; path = "/System/Library/Frameworks/Cocoa.framework"; sourceTree = "<absolute>"; };
+		6C481197756E489E3B8355AF /* App_RobotSimulator_xcode4_x64_release */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "App_RobotSimulator_xcode4_x64_release"; path = "App_RobotSimulator_xcode4_x64_release"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30AB3010027E56051030767B /* BulletRobotics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletRobotics.xcodeproj"; path = "BulletRobotics.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		5535310A28F774273D7D6E72 /* BulletExampleBrowserLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletExampleBrowserLib.xcodeproj"; path = "BulletExampleBrowserLib.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		6A54499765F01E7D23757DB7 /* gwen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "gwen.xcodeproj"; path = "gwen.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		27435A58025277F06CA57201 /* OpenGL_Window.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "OpenGL_Window.xcodeproj"; path = "OpenGL_Window.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		6E3E3701564A4A716E216B01 /* BulletFileLoader.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletFileLoader.xcodeproj"; path = "BulletFileLoader.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		0349523B285B23B626B95917 /* BulletWorldImporter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletWorldImporter.xcodeproj"; path = "BulletWorldImporter.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		6B2305FF451E3CF70B066F25 /* BulletSoftBody.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletSoftBody.xcodeproj"; path = "BulletSoftBody.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		338C2FC276E80146521F7584 /* BulletInverseDynamicsUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletInverseDynamicsUtils.xcodeproj"; path = "BulletInverseDynamicsUtils.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		26973B3B487670A254F209F0 /* BulletInverseDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletInverseDynamics.xcodeproj"; path = "BulletInverseDynamics.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		0756324572A227291CC63BE9 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletDynamics.xcodeproj"; path = "BulletDynamics.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		7AC4653C7A9E51567E530689 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "BulletCollision.xcodeproj"; path = "BulletCollision.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		22C8193E44CF26ED3E1235BF /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "LinearMath.xcodeproj"; path = "LinearMath.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		04D775DE5BB61D8B398B5C80 /* enet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "enet.xcodeproj"; path = "enet.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		41992D7B735247892F5D40B4 /* clsocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "clsocket.xcodeproj"; path = "clsocket.xcodeproj"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E5D69C70FB944914BF83484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7B3FA907436C7877EC2EA5 /* OpenGL.framework in Frameworks */,
+				19D730D172F076E82C3B0E86 /* Cocoa.framework in Frameworks */,
+				02A332A661AF3FB04E8B3DEA /* libBulletRobotics.a in Frameworks */,
+				293C4DEE52B8658E689E1396 /* libBulletExampleBrowserLib.a in Frameworks */,
+				39B32E250DDA7E0908072C40 /* libgwen.a in Frameworks */,
+				18E700DD56C7290521483F9D /* libOpenGL_Window.a in Frameworks */,
+				379E0BEB21447B8C38341390 /* libBulletFileLoader.a in Frameworks */,
+				3E12411B119820EA0C5C2281 /* libBulletWorldImporter.a in Frameworks */,
+				5F9D53FC79A360820C4D30C2 /* libBulletSoftBody.a in Frameworks */,
+				45E9503D775D046253E57228 /* libBulletInverseDynamicsUtils.a in Frameworks */,
+				592D25BA5F3112B355B4359D /* libBulletInverseDynamics.a in Frameworks */,
+				61FB424B55615EE132A06252 /* libBulletDynamics.a in Frameworks */,
+				74587433629D429350701D2D /* libBulletCollision.a in Frameworks */,
+				1B6720A555987A3605D868B0 /* libLinearMath.a in Frameworks */,
+				473F106619AB3E21242B2DFF /* libenet.a in Frameworks */,
+				4167546533EF2B8353DE1B06 /* libclsocket.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49651BD7462D74F4562E273A /* App_RobotSimulator */ = {
+			isa = PBXGroup;
+			children = (
+				0BBE6E7163227F465A133060 /* examples */,
+				603C3DA87F4B41CE56A439EA /* Frameworks */,
+				03D414827EA60378723C45F2 /* Products */,
+				517D0E5E4A2B035354621230 /* Projects */,
+			);
+			name = "App_RobotSimulator";
+			sourceTree = "<group>";
+		};
+		0BBE6E7163227F465A133060 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				6F6D5D5E0331410021B10EFC /* ExampleBrowser */,
+				183B76D27EF25537292F747C /* RobotSimulator */,
+				493D4B0421537E85660B1B9C /* SharedMemory */,
+				5D253F1A5E91370075BC4998 /* ThirdPartyLibs */,
+			);
+			name = "examples";
+			sourceTree = "<group>";
+		};
+		6F6D5D5E0331410021B10EFC /* ExampleBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				5E9F34F14AFC230001132AC0 /* InProcessExampleBrowser.cpp */,
+			);
+			name = "ExampleBrowser";
+			sourceTree = "<group>";
+		};
+		183B76D27EF25537292F747C /* RobotSimulator */ = {
+			isa = PBXGroup;
+			children = (
+				151D276C5A012D7B183574B5 /* MinitaurSetup.cpp */,
+				46F0691438710B7630BC28E9 /* MinitaurSetup.h */,
+				154226A6107F419F399927B0 /* RobotSimulatorMain.cpp */,
+				3FA049D40F240C0728436B96 /* b3RobotSimulatorClientAPI.cpp */,
+				4A6145D2191771E854492F71 /* b3RobotSimulatorClientAPI.h */,
+			);
+			name = "RobotSimulator";
+			sourceTree = "<group>";
+		};
+		493D4B0421537E85660B1B9C /* SharedMemory */ = {
+			isa = PBXGroup;
+			children = (
+				4ACC497E7DB31AAE407638E1 /* PhysicsClientTCP.cpp */,
+				1D1628167A637B1B4EF62266 /* PhysicsClientTCP.h */,
+				78C21C0F26E400555A0479DB /* PhysicsClientTCP_C_API.cpp */,
+				115B1AAC203F0A35499A2A37 /* PhysicsClientTCP_C_API.h */,
+				37F0038F26B93E70516411DD /* PhysicsClientUDP.cpp */,
+				5960668340964D83017752C3 /* PhysicsClientUDP.h */,
+				2B16701922545B1369502AA1 /* PhysicsClientUDP_C_API.cpp */,
+				642556691C0D31452E4B463D /* PhysicsClientUDP_C_API.h */,
+				0B47685D522477DB5CFF6DAE /* PhysicsServerExample.cpp */,
+				06A56166119B15D211E00D25 /* PhysicsServerExampleBullet2.cpp */,
+				4CC05BE0672C23102E266A56 /* SharedMemoryInProcessPhysicsC_API.cpp */,
+			);
+			name = "SharedMemory";
+			sourceTree = "<group>";
+		};
+		5D253F1A5E91370075BC4998 /* ThirdPartyLibs */ = {
+			isa = PBXGroup;
+			children = (
+				2D23615273915A545A064E2F /* glad */,
+			);
+			name = "ThirdPartyLibs";
+			sourceTree = "<group>";
+		};
+		2D23615273915A545A064E2F /* glad */ = {
+			isa = PBXGroup;
+			children = (
+				191148582D4917AC29D96697 /* gl.c */,
+			);
+			name = "glad";
+			sourceTree = "<group>";
+		};
+		603C3DA87F4B41CE56A439EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				640101591C0653EA57A92968 /* OpenGL.framework */,
+				770437327070690B743E3D7C /* Cocoa.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		03D414827EA60378723C45F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C481197756E489E3B8355AF /* App_RobotSimulator_xcode4_x64_release */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		517D0E5E4A2B035354621230 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				30AB3010027E56051030767B /* BulletRobotics.xcodeproj */,
+				5535310A28F774273D7D6E72 /* BulletExampleBrowserLib.xcodeproj */,
+				6A54499765F01E7D23757DB7 /* gwen.xcodeproj */,
+				27435A58025277F06CA57201 /* OpenGL_Window.xcodeproj */,
+				6E3E3701564A4A716E216B01 /* BulletFileLoader.xcodeproj */,
+				0349523B285B23B626B95917 /* BulletWorldImporter.xcodeproj */,
+				6B2305FF451E3CF70B066F25 /* BulletSoftBody.xcodeproj */,
+				338C2FC276E80146521F7584 /* BulletInverseDynamicsUtils.xcodeproj */,
+				26973B3B487670A254F209F0 /* BulletInverseDynamics.xcodeproj */,
+				0756324572A227291CC63BE9 /* BulletDynamics.xcodeproj */,
+				7AC4653C7A9E51567E530689 /* BulletCollision.xcodeproj */,
+				22C8193E44CF26ED3E1235BF /* LinearMath.xcodeproj */,
+				04D775DE5BB61D8B398B5C80 /* enet.xcodeproj */,
+				41992D7B735247892F5D40B4 /* clsocket.xcodeproj */,
+			);
+			name = "Projects";
+			sourceTree = "<group>";
+		};
+		32D97CF3415B70190ADE0C5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25985E0B532558554BA434EC /* libBulletRobotics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A3D51EA66FD043817F179F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12330461277F118B6FD30B61 /* libBulletExampleBrowserLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65D4438155865A41077B4FBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33957B33580D7C460A1A5025 /* libgwen.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58164C900B07399A307D0825 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				424A333F6D5653E317517D92 /* libOpenGL_Window.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14733F45065D45847930521C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DC353100095507D69210909 /* libBulletFileLoader.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73B240356FB7626F034D68A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A46632C63E036E451115748 /* libBulletWorldImporter.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11801815198D298D26CF691A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D197B810AF316804223084C /* libBulletSoftBody.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		441E376570D01D2D7BE23A07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				645732E36B4B494013035D1D /* libBulletInverseDynamicsUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28C8146E72E278B939F52555 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1DF55EFF52460DE4171C3CB0 /* libBulletInverseDynamics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C6E00AF1636373474822F1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				792D045D32FA3C8A37FB46EE /* libBulletDynamics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60FB191C259E2A730FD930CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				481977B874BB532817062AE4 /* libBulletCollision.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E0B469B7BF8157F4946275E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FDD58AD008558346B8047CB /* libLinearMath.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3CB73DD1160541225EEA77A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7ACB3B440BF93162205D6B97 /* libenet.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07557B2540560CE3155668EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E6A55CC5B823C4517333F35 /* libclsocket.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		604632E23A9524622A0D7947 /* App_RobotSimulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E64076459E60E5720661D6C /* Build configuration list for PBXNativeTarget "App_RobotSimulator" */;
+			buildPhases = (
+				46A904FD1FA67FDF21015037 /* Resources */,
+				4D90470D3214792720237A4A /* Sources */,
+				3E5D69C70FB944914BF83484 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25247C306280430C060B3EDE /* PBXTargetDependency */,
+				06211D50797531EE0CBB5714 /* PBXTargetDependency */,
+				12A06DFF04CF50CC1FED1C3A /* PBXTargetDependency */,
+				2742165564A1116C50FC6523 /* PBXTargetDependency */,
+				2BF6442B2436052D4DF53AA8 /* PBXTargetDependency */,
+				6AA87A685D88148134644343 /* PBXTargetDependency */,
+				4DD7019D797976FF799B6C8D /* PBXTargetDependency */,
+				59981552526C71DE4FF62F59 /* PBXTargetDependency */,
+				76D00BE64D310C344E480E10 /* PBXTargetDependency */,
+				0E9850C07A9F024E796C272C /* PBXTargetDependency */,
+				013551AB44006EBF59820A53 /* PBXTargetDependency */,
+				548F29FD2B672EF030CF7637 /* PBXTargetDependency */,
+				68200FB35C8959D132106F94 /* PBXTargetDependency */,
+				2AF567D15926665E492120B1 /* PBXTargetDependency */,
+			);
+			name = "App_RobotSimulator";
+			productInstallPath = "$(HOME)/bin";
+			productName = "App_RobotSimulator";
+			productReference = 6C481197756E489E3B8355AF /* App_RobotSimulator_xcode4_x64_release */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "App_RobotSimulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 49651BD7462D74F4562E273A /* App_RobotSimulator */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 32D97CF3415B70190ADE0C5B /* Products */;
+					ProjectRef = 30AB3010027E56051030767B /* BulletRobotics.xcodeproj */;
+				},
+				{
+					ProductGroup = 1A3D51EA66FD043817F179F7 /* Products */;
+					ProjectRef = 5535310A28F774273D7D6E72 /* BulletExampleBrowserLib.xcodeproj */;
+				},
+				{
+					ProductGroup = 65D4438155865A41077B4FBE /* Products */;
+					ProjectRef = 6A54499765F01E7D23757DB7 /* gwen.xcodeproj */;
+				},
+				{
+					ProductGroup = 58164C900B07399A307D0825 /* Products */;
+					ProjectRef = 27435A58025277F06CA57201 /* OpenGL_Window.xcodeproj */;
+				},
+				{
+					ProductGroup = 14733F45065D45847930521C /* Products */;
+					ProjectRef = 6E3E3701564A4A716E216B01 /* BulletFileLoader.xcodeproj */;
+				},
+				{
+					ProductGroup = 73B240356FB7626F034D68A8 /* Products */;
+					ProjectRef = 0349523B285B23B626B95917 /* BulletWorldImporter.xcodeproj */;
+				},
+				{
+					ProductGroup = 11801815198D298D26CF691A /* Products */;
+					ProjectRef = 6B2305FF451E3CF70B066F25 /* BulletSoftBody.xcodeproj */;
+				},
+				{
+					ProductGroup = 441E376570D01D2D7BE23A07 /* Products */;
+					ProjectRef = 338C2FC276E80146521F7584 /* BulletInverseDynamicsUtils.xcodeproj */;
+				},
+				{
+					ProductGroup = 28C8146E72E278B939F52555 /* Products */;
+					ProjectRef = 26973B3B487670A254F209F0 /* BulletInverseDynamics.xcodeproj */;
+				},
+				{
+					ProductGroup = 4C6E00AF1636373474822F1B /* Products */;
+					ProjectRef = 0756324572A227291CC63BE9 /* BulletDynamics.xcodeproj */;
+				},
+				{
+					ProductGroup = 60FB191C259E2A730FD930CE /* Products */;
+					ProjectRef = 7AC4653C7A9E51567E530689 /* BulletCollision.xcodeproj */;
+				},
+				{
+					ProductGroup = 5E0B469B7BF8157F4946275E /* Products */;
+					ProjectRef = 22C8193E44CF26ED3E1235BF /* LinearMath.xcodeproj */;
+				},
+				{
+					ProductGroup = 3CB73DD1160541225EEA77A5 /* Products */;
+					ProjectRef = 04D775DE5BB61D8B398B5C80 /* enet.xcodeproj */;
+				},
+				{
+					ProductGroup = 07557B2540560CE3155668EE /* Products */;
+					ProjectRef = 41992D7B735247892F5D40B4 /* clsocket.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				604632E23A9524622A0D7947 /* App_RobotSimulator_xcode4_x64_release */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		25985E0B532558554BA434EC /* libBulletRobotics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletRobotics.a";
+			remoteRef = 45E75F9C33776B6744EA77EB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		12330461277F118B6FD30B61 /* libBulletExampleBrowserLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletExampleBrowserLib.a";
+			remoteRef = 78B745522C6A7048363C3F06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33957B33580D7C460A1A5025 /* libgwen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libgwen.a";
+			remoteRef = 5AE8597E0675165F60626A60 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		424A333F6D5653E317517D92 /* libOpenGL_Window.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libOpenGL_Window.a";
+			remoteRef = 70B9404E002B41E52A4D296C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4DC353100095507D69210909 /* libBulletFileLoader.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletFileLoader.a";
+			remoteRef = 3FB2781F457A60D8312D3F40 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A46632C63E036E451115748 /* libBulletWorldImporter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletWorldImporter.a";
+			remoteRef = 701B16B56CED61430C237D51 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D197B810AF316804223084C /* libBulletSoftBody.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletSoftBody.a";
+			remoteRef = 3A2F14B642C74C8E069078FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		645732E36B4B494013035D1D /* libBulletInverseDynamicsUtils.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletInverseDynamicsUtils.a";
+			remoteRef = 504C3AFD4CD802045ACF5936 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1DF55EFF52460DE4171C3CB0 /* libBulletInverseDynamics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletInverseDynamics.a";
+			remoteRef = 009F077F4A79744D71B81BA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		792D045D32FA3C8A37FB46EE /* libBulletDynamics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletDynamics.a";
+			remoteRef = 52D144D6516E26DD0F3C3555 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		481977B874BB532817062AE4 /* libBulletCollision.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libBulletCollision.a";
+			remoteRef = 403A51E733524CB04EF74BE9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3FDD58AD008558346B8047CB /* libLinearMath.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libLinearMath.a";
+			remoteRef = 1F7167E26524403F081B4D35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ACB3B440BF93162205D6B97 /* libenet.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libenet.a";
+			remoteRef = 2F583EB623F550626310326A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1E6A55CC5B823C4517333F35 /* libclsocket.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../bin/libclsocket.a";
+			remoteRef = 6BBA1BA3136C3C4B1C6968BF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46A904FD1FA67FDF21015037 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D90470D3214792720237A4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552F262E315641BF78E12A0E /* InProcessExampleBrowser.cpp in Sources */,
+				41BE3B2321497BB678EC796C /* MinitaurSetup.cpp in Sources */,
+				408971A7216852117AAB0592 /* RobotSimulatorMain.cpp in Sources */,
+				043152B8610F5E9140F729C1 /* b3RobotSimulatorClientAPI.cpp in Sources */,
+				473F0A3E042405ED2B0704CA /* PhysicsClientTCP.cpp in Sources */,
+				1B4D7A0E5D0F272F0FD444F2 /* PhysicsClientTCP_C_API.cpp in Sources */,
+				77AA4FD600AB01A44E1D1301 /* PhysicsClientUDP.cpp in Sources */,
+				67C76E7E2962796A23D46B4C /* PhysicsClientUDP_C_API.cpp in Sources */,
+				519C6D8635334FFA6162296E /* PhysicsServerExample.cpp in Sources */,
+				047353A23F023C9F125D3AF7 /* PhysicsServerExampleBullet2.cpp in Sources */,
+				46D145E576833066024B16AB /* SharedMemoryInProcessPhysicsC_API.cpp in Sources */,
+				52BB0791513A55854845696C /* gl.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin PBXTargetDependency section */
+		25247C306280430C060B3EDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletRobotics.a";
+			targetProxy = 143C2A5214F578C901605A61 /* PBXContainerItemProxy */;
+		};
+		06211D50797531EE0CBB5714 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletExampleBrowserLib.a";
+			targetProxy = 3EC93DEC7F9F34330C6A2B86 /* PBXContainerItemProxy */;
+		};
+		12A06DFF04CF50CC1FED1C3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libgwen.a";
+			targetProxy = 57633B7C59752C0176B663C6 /* PBXContainerItemProxy */;
+		};
+		2742165564A1116C50FC6523 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libOpenGL_Window.a";
+			targetProxy = 190D329B147131966F805FD7 /* PBXContainerItemProxy */;
+		};
+		2BF6442B2436052D4DF53AA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletFileLoader.a";
+			targetProxy = 1CA27A99580A0549164B4FB5 /* PBXContainerItemProxy */;
+		};
+		6AA87A685D88148134644343 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletWorldImporter.a";
+			targetProxy = 011F519A5982173475412F43 /* PBXContainerItemProxy */;
+		};
+		4DD7019D797976FF799B6C8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletSoftBody.a";
+			targetProxy = 16826B71006D0BAF194C7012 /* PBXContainerItemProxy */;
+		};
+		59981552526C71DE4FF62F59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletInverseDynamicsUtils.a";
+			targetProxy = 1F67508B090C0D487FD66488 /* PBXContainerItemProxy */;
+		};
+		76D00BE64D310C344E480E10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletInverseDynamics.a";
+			targetProxy = 71B532083E53591A431A1701 /* PBXContainerItemProxy */;
+		};
+		0E9850C07A9F024E796C272C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletDynamics.a";
+			targetProxy = 5F771C42658B3A6D7BE17489 /* PBXContainerItemProxy */;
+		};
+		013551AB44006EBF59820A53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libBulletCollision.a";
+			targetProxy = 4D9B7F0B6C8C67DB778E3182 /* PBXContainerItemProxy */;
+		};
+		548F29FD2B672EF030CF7637 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libLinearMath.a";
+			targetProxy = 67A03B800CB218DA45E802F3 /* PBXContainerItemProxy */;
+		};
+		68200FB35C8959D132106F94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libenet.a";
+			targetProxy = 662C57C43BE8241579C462AF /* PBXContainerItemProxy */;
+		};
+		2AF567D15926665E492120B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libclsocket.a";
+			targetProxy = 66A629B61963668543050B59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		63747F501BC1563757740CDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "App_RobotSimulator_xcode4_x64_release";
+			};
+			name = "Release";
+		};
+		2B3C2248610A000D596A4480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "App_RobotSimulator_xcode4_x64_debug";
+			};
+			name = "Debug";
+		};
+		643212BE79813BF617C50851 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"B3_USE_ROBOTSIM_GUI",
+					"PHYSICS_IN_PROCESS_EXAMPLE_BROWSER",
+					"BT_ENABLE_ENET",
+					"_DARWIN",
+					"BT_ENABLE_CLSOCKET",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../src",
+					"../../examples",
+					"../../examples/ThirdPartyLibs",
+					"../../examples/ThirdPartyLibs/glad",
+					"../../examples/RobotSimulator",
+					"../../examples/SharedMemory",
+					"../../examples/ThirdPartyLibs/enet/include",
+					"../../examples/ThirdPartyLibs/clsocket/src",
+				);
+				OBJROOT = "obj/x64/Release/App_RobotSimulator";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				OTHER_LDFLAGS = (
+					"-lBullet3Common",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		689B2D6568460950203A755B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+					"B3_USE_ROBOTSIM_GUI",
+					"PHYSICS_IN_PROCESS_EXAMPLE_BROWSER",
+					"BT_ENABLE_ENET",
+					"_DARWIN",
+					"BT_ENABLE_CLSOCKET",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../src",
+					"../../examples",
+					"../../examples/ThirdPartyLibs",
+					"../../examples/ThirdPartyLibs/glad",
+					"../../examples/RobotSimulator",
+					"../../examples/SharedMemory",
+					"../../examples/ThirdPartyLibs/enet/include",
+					"../../examples/ThirdPartyLibs/clsocket/src",
+				);
+				OBJROOT = "obj/x64/Debug/App_RobotSimulator";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				OTHER_LDFLAGS = (
+					"-lBullet3Common",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E64076459E60E5720661D6C /* Build configuration list for PBXNativeTarget "App_RobotSimulator_xcode4_x64_release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63747F501BC1563757740CDE /* Release */,
+				2B3C2248610A000D596A4480 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "App_RobotSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				643212BE79813BF617C50851 /* Release */,
+				689B2D6568460950203A755B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
