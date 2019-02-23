@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-@import AVFoundation;
+#import <AVFoundation/AVFoundation.h>
 
 @class Node;
 

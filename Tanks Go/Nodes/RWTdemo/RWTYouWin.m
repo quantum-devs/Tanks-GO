@@ -20,7 +20,7 @@
   return self;
 }
 
-- (void)updateWithDelta:(NSTimeInterval)aDelta {
+- (void)updateWithDelta:(GLfloat)aDelta {
   
   // If there is no delta value then don't bother updating
   if (aDelta == 0) return;

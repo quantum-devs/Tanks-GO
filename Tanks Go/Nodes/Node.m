@@ -65,6 +65,17 @@
     return self;
 }
 
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess {
+    if ((self = [self initWithName:name shader:shader vertices:vertices vertexCount:vertexCount])) {
+        [self loadTexture:textureName];
+        self.specularColor = specularColor;
+        self.diffuseColor = diffuseColor;
+        self.shininess = shininess;
+        
+    }
+    return self;
+}
+
 - (GLKMatrix4)modelMatrix {
     GLKMatrix4 modelMatrix = GLKMatrix4Identity;
     modelMatrix = GLKMatrix4Translate(modelMatrix, self.position.x, self.position.y, self.position.z);
@@ -117,7 +128,7 @@
     
 }
 
-- (void)updateWithDelta:(NSTimeInterval)dt {
+- (void)updateWithDelta:(GLfloat)dt {
     for (Node *child in self.children) {
         [child updateWithDelta:dt];
     }

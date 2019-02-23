@@ -74,7 +74,7 @@ const Vertex vertices[] = {
     return self;
 }
 
-- (void)updateWithDelta:(NSTimeInterval)dt {
+- (void)updateWithDelta:(GLfloat)dt {
     //self.rotationZ += M_PI * dt;
     self.rotationY += M_PI/8 * dt;
 }

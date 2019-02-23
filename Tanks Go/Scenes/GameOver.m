@@ -36,7 +36,7 @@
     return self;
 }
 
-- (void)updateWithDelta:(NSTimeInterval)dt {
+- (void)updateWithDelta:(GLfloat)dt {
     [super updateWithDelta:dt];
     _timeSinceStart += dt;
     if (_timeSinceStart > 5) {

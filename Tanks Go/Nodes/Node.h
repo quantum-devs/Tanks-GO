@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Vertex.h"
+#import <GLKit/GLKit.h>
 
 @class BaseEffect;
-@import GLKit;
 
 @interface Node : NSObject
 
@@ -22,14 +22,18 @@
 @property (nonatomic) float scale;
 @property (nonatomic) GLKTextureInfo* texture;
 @property (assign) GLKVector4 matColour;
+@property (nonatomic, assign) GLKVector4 specularColor;
+@property (nonatomic, assign) GLKVector4 diffuseColor;
+@property (nonatomic, assign) float shininess;
 @property (assign) float width;
 @property (assign) float height;
 
 @property (nonatomic, strong) NSMutableArray *children;
 
 - (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount;
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess;
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix;
-- (void)updateWithDelta:(NSTimeInterval)dt;
+- (void)updateWithDelta:(GLfloat)dt;
 - (void)loadTexture:(NSString *)fileName;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
