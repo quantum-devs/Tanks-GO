@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AA85A3E27A9764C2C612044 /* ActiveSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15C20CA278B424075AFB3010 /* ActiveSocket.cpp */; };
+		48CC4DA5319943A45BC427F5 /* PassiveSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 142C55F97EDB07BD26A20BBB /* PassiveSocket.cpp */; };
+		2F6269157A47020E23095C9F /* SimpleSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 667E7DE81DA83F05628C5FA8 /* SimpleSocket.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15C20CA278B424075AFB3010 /* ActiveSocket.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ActiveSocket.cpp"; path = "../../examples/ThirdPartyLibs/clsocket/src/ActiveSocket.cpp"; sourceTree = "<group>"; };
+		081738016DA7148D480151CF /* ActiveSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ActiveSocket.h"; path = "../../examples/ThirdPartyLibs/clsocket/src/ActiveSocket.h"; sourceTree = "<group>"; };
+		10BB215029B94527443F0FC9 /* Host.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Host.h"; path = "../../examples/ThirdPartyLibs/clsocket/src/Host.h"; sourceTree = "<group>"; };
+		142C55F97EDB07BD26A20BBB /* PassiveSocket.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PassiveSocket.cpp"; path = "../../examples/ThirdPartyLibs/clsocket/src/PassiveSocket.cpp"; sourceTree = "<group>"; };
+		61695A8D67957E9172F35789 /* PassiveSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PassiveSocket.h"; path = "../../examples/ThirdPartyLibs/clsocket/src/PassiveSocket.h"; sourceTree = "<group>"; };
+		667E7DE81DA83F05628C5FA8 /* SimpleSocket.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SimpleSocket.cpp"; path = "../../examples/ThirdPartyLibs/clsocket/src/SimpleSocket.cpp"; sourceTree = "<group>"; };
+		58E35E697F616E07158D1929 /* SimpleSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SimpleSocket.h"; path = "../../examples/ThirdPartyLibs/clsocket/src/SimpleSocket.h"; sourceTree = "<group>"; };
+		038C7C407B94650B482E7FF3 /* StatTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "StatTimer.h"; path = "../../examples/ThirdPartyLibs/clsocket/src/StatTimer.h"; sourceTree = "<group>"; };
+		0C384322758C6F9C7D1A3D2A /* libclsocket_xcode4_x64_release.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libclsocket_xcode4_x64_release.a"; path = "libclsocket_xcode4_x64_release.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CAC5F3D559E215C4DBF40C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43317F5F36112DD92F36227B /* clsocket */ = {
+			isa = PBXGroup;
+			children = (
+				655B4E9F663075D30AAE30DA /* examples */,
+				6371422C7B180CBC29F47557 /* Products */,
+			);
+			name = "clsocket";
+			sourceTree = "<group>";
+		};
+		655B4E9F663075D30AAE30DA /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				3F8C3A514DF85B3E457C652B /* ThirdPartyLibs */,
+			);
+			name = "examples";
+			sourceTree = "<group>";
+		};
+		3F8C3A514DF85B3E457C652B /* ThirdPartyLibs */ = {
+			isa = PBXGroup;
+			children = (
+				794A71E9337F0EEE48CE0908 /* clsocket */,
+			);
+			name = "ThirdPartyLibs";
+			sourceTree = "<group>";
+		};
+		794A71E9337F0EEE48CE0908 /* clsocket */ = {
+			isa = PBXGroup;
+			children = (
+				074843600783470A79F14BA8 /* src */,
+			);
+			name = "clsocket";
+			sourceTree = "<group>";
+		};
+		074843600783470A79F14BA8 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				15C20CA278B424075AFB3010 /* ActiveSocket.cpp */,
+				081738016DA7148D480151CF /* ActiveSocket.h */,
+				10BB215029B94527443F0FC9 /* Host.h */,
+				142C55F97EDB07BD26A20BBB /* PassiveSocket.cpp */,
+				61695A8D67957E9172F35789 /* PassiveSocket.h */,
+				667E7DE81DA83F05628C5FA8 /* SimpleSocket.cpp */,
+				58E35E697F616E07158D1929 /* SimpleSocket.h */,
+				038C7C407B94650B482E7FF3 /* StatTimer.h */,
+			);
+			name = "src";
+			sourceTree = "<group>";
+		};
+		6371422C7B180CBC29F47557 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C384322758C6F9C7D1A3D2A /* libclsocket_xcode4_x64_release.a */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BA028F90B3D7064403F25F2 /* clsocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60BA659344F346A64FE21818 /* Build configuration list for PBXNativeTarget "clsocket" */;
+			buildPhases = (
+				720618CC269C08E44C0D6AAD /* Resources */,
+				2C4365DF4423663260CE007D /* Sources */,
+				3CAC5F3D559E215C4DBF40C3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "clsocket";
+			productName = "clsocket";
+			productReference = 0C384322758C6F9C7D1A3D2A /* libclsocket_xcode4_x64_release.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "clsocket" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 43317F5F36112DD92F36227B /* clsocket */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BA028F90B3D7064403F25F2 /* libclsocket_xcode4_x64_release.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		720618CC269C08E44C0D6AAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C4365DF4423663260CE007D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AA85A3E27A9764C2C612044 /* ActiveSocket.cpp in Sources */,
+				48CC4DA5319943A45BC427F5 /* PassiveSocket.cpp in Sources */,
+				2F6269157A47020E23095C9F /* SimpleSocket.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38F02EA3784A627F06580F66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "clsocket_xcode4_x64_release";
+			};
+			name = "Release";
+		};
+		798136240A95607805033623 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "clsocket_xcode4_x64_debug";
+			};
+			name = "Debug";
+		};
+		28F176500165286D1C952BE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"HAS_SOCKLEN_T",
+					"_DARWIN",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../examples/ThirdPartyLibs/clsocket",
+					"../../examples/ThirdPartyLibs/clsocket/include",
+					"../../examples/ThirdPartyLibs/clsocket/src",
+				);
+				OBJROOT = "obj/x64/Release/clsocket";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		69805BEE1632404D17D54BA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+					"HAS_SOCKLEN_T",
+					"_DARWIN",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../examples/ThirdPartyLibs/clsocket",
+					"../../examples/ThirdPartyLibs/clsocket/include",
+					"../../examples/ThirdPartyLibs/clsocket/src",
+				);
+				OBJROOT = "obj/x64/Debug/clsocket";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60BA659344F346A64FE21818 /* Build configuration list for PBXNativeTarget "libclsocket_xcode4_x64_release.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F02EA3784A627F06580F66 /* Release */,
+				798136240A95607805033623 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "clsocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28F176500165286D1C952BE5 /* Release */,
+				69805BEE1632404D17D54BA8 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
