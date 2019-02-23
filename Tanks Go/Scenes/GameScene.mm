@@ -21,14 +21,14 @@
 @implementation GameScene {
     CGSize _gameArea;
     float _sceneOffset;
-    RWTPaddle *_paddle;
-    RWTBall *_ball;
-    RWTBorder *_border;
-    RWTBrick *_brick;
-    NSMutableArray *_bricks;
+    //RWTPaddle *_paddle;
+    //RWTBall *_ball;
+    //RWTBorder *_border;
+    //RWTBrick *_brick;
+    //NSMutableArray *_bricks;
     CGPoint _prevTouchLocation;
-    float _ballVelocityX;
-    float _ballVelocityY;
+    //float _ballVelocityX;
+    //float _ballVelocityY;
     
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
@@ -51,6 +51,7 @@
         _sceneOffset = _gameArea.height/2/tanf(GLKMathDegreesToRadians(85/2));
         self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset);
         
+        /*
         //Create paddle and add to scene
         _paddle = [[RWTPaddle alloc] initWithShader:shader];
         _paddle.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .05, 0);
@@ -91,6 +92,7 @@
                 _world->addRigidBody(_brick.body);
             }
         }
+         */
     }
     return self;
 }
@@ -129,15 +131,15 @@
     touchLocation = [self touchLocationToGameArea:touchLocation];
     CGPoint diff = CGPointMake(touchLocation.x - _prevTouchLocation.x, touchLocation.y - _prevTouchLocation.y);
     _prevTouchLocation = touchLocation;
-    float  newX = _paddle.position.x + diff.x;
-    newX = MIN(MAX(newX, _paddle.width/2), _gameArea.width - _paddle.width/2);
-    _paddle.position = GLKVector3Make(newX, _paddle.position.y, _paddle.position.z);
+    //float  newX = _paddle.position.x + diff.x;
+    //newX = MIN(MAX(newX, _paddle.width/2), _gameArea.width - _paddle.width/2);
+    //_paddle.position = GLKVector3Make(newX, _paddle.position.y, _paddle.position.z);
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
 }
-
+/*
 - (GLKVector4)color:(float)x {
     float r = 0.0f;
     float g = 0.0f;
@@ -169,17 +171,17 @@
         b = x;
     }
     return GLKVector4Make(r, g, b, 1);
-}
+} */
 
 - (void)updateWithDelta:(GLfloat)dt {
     [super updateWithDelta:dt];
     _world->stepSimulation(dt);
     
+    /*
     if (_ball.position.y < 0) {
         [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:NO];
         return;
     }
-    /*
     int numManifolds = _world->getDispatcher()->getNumManifolds();
     for (int i = 0; i < numManifolds; i++){
         btPersistentManifold *contactManifold = _world->getDispatcher()->getManifoldByIndexInternal(i);
@@ -203,16 +205,16 @@
                 [self destroyBrickAndCheckVictory:pnB];
             }
         }
-    }*/
+    }
     
     btVector3 currentVelocityDirection = _ball.body->getLinearVelocity();
     btScalar currentVelocity = currentVelocityDirection.length();
     if (currentVelocity < _desiredVelocity) {
         currentVelocityDirection *= _desiredVelocity/currentVelocity;
         _ball.body->setLinearVelocity(currentVelocityDirection);
-    }
+    }*/
 }
-
+/*
 - (void)destroyBrickAndCheckVictory:(PNode*)brick {
     [self.children removeObject:brick];
     [_bricks removeObject:brick];
@@ -222,7 +224,7 @@
     if (_bricks.count == 0) {
         [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:YES];
     }
-}
+}*/
 
 - (void)dealloc {
     delete _world;
