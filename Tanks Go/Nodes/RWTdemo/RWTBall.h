@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Razeware LLC. All rights reserved.
 //
 
-#import "Node.h"
+#import "PNode.h"
 
-@interface RWTBall : Node
+@interface RWTBall : PNode
 
 - (instancetype)initWithShader:(BaseEffect *)shader;
 

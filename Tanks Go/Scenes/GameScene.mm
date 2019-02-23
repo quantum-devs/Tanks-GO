@@ -13,9 +13,10 @@
 #import "RWTBorder.h"
 #import "RWTBrick.h"
 #import "Director.h"
+#include "btBulletDynamicsCommon.h"
 
-static const int BRICKS_PER_COL = 8;
-static const int BRICKS_PER_ROW = 9;
+#define BRICKS_PER_COL 8
+#define BRICKS_PER_ROW 9
 
 @implementation GameScene {
     CGSize _gameArea;
@@ -28,11 +29,22 @@ static const int BRICKS_PER_ROW = 9;
     CGPoint _prevTouchLocation;
     float _ballVelocityX;
     float _ballVelocityY;
+    
+    //Bullet3 Physics variables
+    btBroadphaseInterface *_broadphase;
+    btDefaultCollisionConfiguration *_collisionConfiguration;
+    btCollisionDispatcher *_dispatcher;
+    btSequentialImpulseConstraintSolver *_solver;
+    btDiscreteDynamicsWorld *_world;
+    
+    btScalar _desiredVelocity;
 }
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
     
     if ((self = [super  initWithName:"GameScene" shader:shader vertices:nil vertexCount:0])) {
+        
+        [self initPhysics];
         
         //Create the initial camera position
         _gameArea = CGSizeMake(27, 48);
@@ -44,19 +56,22 @@ static const int BRICKS_PER_ROW = 9;
         _paddle.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .05, 0);
         _paddle.matColour = GLKVector4Make(1, 0, 0, 1);
         [self.children addObject:_paddle];
+        _world->addRigidBody(_paddle.body);
         
         //Create ball and add to scene
         _ball = [[RWTBall alloc] initWithShader:shader];
         _ball.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .1, 0);
         _ball.matColour = GLKVector4Make(.5, 1, .5, 1);
-        _ballVelocityX = 10;
-        _ballVelocityY = 10;
         [self.children addObject:_ball];
+        _world->addRigidBody(_ball.body);
+        _ball.body->setLinearVelocity(btVector3(15, 15, 0));
+        _desiredVelocity = _ball.body->getLinearVelocity().length();
         
         //Add a border to the center of the screen
         _border = [[RWTBorder alloc] initWithShader:shader];
         _border.position = GLKVector3Make(_gameArea.width/2, _gameArea.height/2, 0);
         [self.children addObject:_border];
+        _world->addRigidBody(_border.body);
         
         GLKVector4 colours[BRICKS_PER_ROW];
         for (int i = 0; i < BRICKS_PER_ROW; i++){
@@ -64,19 +79,34 @@ static const int BRICKS_PER_ROW = 9;
         }
         
         _bricks = [NSMutableArray arrayWithCapacity:72];
-        for (int i = 0; i < BRICKS_PER_COL; i++){
-            for (int j = 0; j < BRICKS_PER_ROW; j++){
+        for (int j = 0; j < BRICKS_PER_COL; j++){
+            for (int i = 0; i < BRICKS_PER_ROW; i++){
                 RWTBrick *_brick = [[RWTBrick alloc] initWithShader:shader];
                 float margin = _gameArea.width * .1;
                 float startY = _gameArea.height * .5;
-                _brick.position = GLKVector3Make(margin + (margin * j), startY + (margin * i), 0);
+                _brick.position = GLKVector3Make(margin + (margin * i), startY + (margin * j), 0);
                 _brick.matColour = colours[i];
                 [self.children addObject:_brick];
                 [_bricks addObject:_brick];
+                _world->addRigidBody(_brick.body);
             }
         }
     }
     return self;
+}
+
+- (void)initPhysics {
+    
+    _broadphase = new btDbvtBroadphase();
+    
+    _collisionConfiguration = new btDefaultCollisionConfiguration();
+    _dispatcher = new btCollisionDispatcher(_collisionConfiguration);
+    
+    _solver  = new btSequentialImpulseConstraintSolver();
+    
+    _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase, _solver, _collisionConfiguration);
+    
+    _world->setGravity(btVector3(0, 0, 0));
 }
 
 - (CGPoint) touchLocationToGameArea:(CGPoint)touchLocation {
@@ -94,7 +124,6 @@ static const int BRICKS_PER_ROW = 9;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"TEST");
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [touch locationInView:[Director sharedInstance].view];
     touchLocation = [self touchLocationToGameArea:touchLocation];
@@ -142,63 +171,65 @@ static const int BRICKS_PER_ROW = 9;
     return GLKVector4Make(r, g, b, 1);
 }
 
-- (void)updateWithDelta:(NSTimeInterval)dt {
+- (void)updateWithDelta:(GLfloat)dt {
     [super updateWithDelta:dt];
+    _world->stepSimulation(dt);
     
-    float newX = _ball.position.x + _ballVelocityX * dt;
-    float newY = _ball.position.y + _ballVelocityY * dt;
-    
-    BOOL bounced = NO;
-    if (newX < 0) {
-        newX = 0;
-        _ballVelocityX = -_ballVelocityX;
-        bounced = YES;
-    }
-    if (newY < 0) {
-        newY = 0;
-        _ballVelocityY = -_ballVelocityY;
-        bounced = YES;
+    if (_ball.position.y < 0) {
         [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:NO];
+        return;
     }
-    if (newX > 27) {
-        newX = 27;
-        _ballVelocityX = -_ballVelocityX;
-        bounced = YES;
-    }
-    if (newY > 48) {
-        newY = 48;
-        _ballVelocityY = -_ballVelocityY;
-        bounced = YES;
-    }
-    if (bounced) {
-        [[Director sharedInstance] playPopEffect];
-    }
-    _ball.position = GLKVector3Make(newX, newY, _ball.position.z);
-    
-    CGRect ballRect = [_ball boundingBoxWithModelViewMatrix:GLKMatrix4Identity];
-    CGRect paddleRect = [_paddle boundingBoxWithModelViewMatrix:GLKMatrix4Identity];
-    
-    if (CGRectIntersectsRect(ballRect, paddleRect)) {
-        _ballVelocityY = -_ballVelocityY;
-        [[Director sharedInstance] playPopEffect];
-    }
-    RWTBrick *brickToDestroy = nil;
-    for (RWTBrick *brick in _bricks) {
-        CGRect bricksRect = [brick boundingBoxWithModelViewMatrix:GLKMatrix4Identity];
-        if (CGRectIntersectsRect(bricksRect, ballRect)) {
-            brickToDestroy = brick;
+    /*
+    int numManifolds = _world->getDispatcher()->getNumManifolds();
+    for (int i = 0; i < numManifolds; i++){
+        btPersistentManifold *contactManifold = _world->getDispatcher()->getManifoldByIndexInternal(i);
+        
+        int numContacts = contactManifold->getNumContacts();
+        NSLog(@"%d", numContacts);
+        if (numContacts > 0) {
             [[Director sharedInstance] playPopEffect];
-            break;
+            
+            const btCollisionObject *obA = contactManifold->getBody0();
+            const btCollisionObject *obB = contactManifold->getBody1();
+            
+            PNode *pnA = (__bridge PNode*)obA->getUserPointer();
+            PNode *pnB = (__bridge PNode*)obB->getUserPointer();
+            
+            if (pnA.tag == kBrickTag) {
+                [self destroyBrickAndCheckVictory:pnA];
+            }
+            
+            if (pnB.tag == kBrickTag) {
+                [self destroyBrickAndCheckVictory:pnB];
+            }
         }
+    }*/
+    
+    btVector3 currentVelocityDirection = _ball.body->getLinearVelocity();
+    btScalar currentVelocity = currentVelocityDirection.length();
+    if (currentVelocity < _desiredVelocity) {
+        currentVelocityDirection *= _desiredVelocity/currentVelocity;
+        _ball.body->setLinearVelocity(currentVelocityDirection);
     }
-    if (brickToDestroy) {
-        [self.children removeObject:brickToDestroy];
-        [_bricks removeObject:brickToDestroy];
-        _ballVelocityY = -_ballVelocityY;
-    }
-    if (_bricks.count == 0){
+}
+
+- (void)destroyBrickAndCheckVictory:(PNode*)brick {
+    [self.children removeObject:brick];
+    [_bricks removeObject:brick];
+    
+    _world->removeRigidBody(brick.body);
+    
+    if (_bricks.count == 0) {
         [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:YES];
     }
+}
+
+- (void)dealloc {
+    delete _world;
+    delete _solver;
+    delete _collisionConfiguration;
+    delete _dispatcher;
+    delete _broadphase;
 }
 
 @end

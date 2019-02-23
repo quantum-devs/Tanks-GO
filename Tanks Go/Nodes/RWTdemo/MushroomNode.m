@@ -23,7 +23,7 @@
     return self;
 }
 
-- (void)updateWithDelta:(NSTimeInterval)dt{
+- (void)updateWithDelta:(GLfloat)dt{
     self.rotationZ += M_PI * dt;
 }
 

@@ -2,9 +2,9 @@
 
 #import "Vertex.h"
 
-const GLKVector4 Ball_Sphere_ball_ambient;
-const GLKVector4 Ball_Sphere_ball_diffuse;
-const GLKVector4 Ball_Sphere_ball_specular;
-const float Ball_Sphere_ball_shininess;
-const Vertex Ball_Sphere_ball_Vertices[420];
+extern const GLKVector4 Ball_Sphere_ball_ambient;
+extern const GLKVector4 Ball_Sphere_ball_diffuse;
+extern const GLKVector4 Ball_Sphere_ball_specular;
+extern const float Ball_Sphere_ball_shininess;
+extern const Vertex Ball_Sphere_ball_Vertices[420];
 
