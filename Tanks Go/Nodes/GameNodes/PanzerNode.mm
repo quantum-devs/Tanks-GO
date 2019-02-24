@@ -11,6 +11,7 @@
 @implementation PanzerNode
 
 - (id)initWithShader:(BaseEffect *)shader {
+
     if ((self = [super initWithName:"Panzer"
                                mass:1.0f
                              convex:YES
@@ -22,8 +23,12 @@
                      specularColour:Panzer_Cube_001_Panzer_specular
                       diffuseColour:Panzer_Cube_001_Panzer_diffuse
                           shininess:Panzer_Cube_001_Panzer_shininess])) {
+        
     }
     return self;
 }
+
+
+
 
 @end
