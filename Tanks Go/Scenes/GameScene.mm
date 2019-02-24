@@ -67,7 +67,7 @@
         _desiredVelocity = _ball.body->getLinearVelocity().length();
         */
          
-        /*
+        
         //Create paddle and add to scene
         _floor = [[FloorNode alloc] initWithShader:shader];
         _floor.position = GLKVector3Make(_gameArea.width/2, -5, 0);
@@ -80,9 +80,9 @@
         _panzer.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * 0.05, 0);
         _panzer.matColour = GLKVector4Make(1, 1, 1, 1);
         [self.children addObject:_panzer];
-        _panzer.rotationX = M_PI_2;
+        //_panzer.rotationX = M_PI_2;
         _world->addRigidBody(_panzer.body);
-        */
+        
         
         /*
         //Create paddle and add to scene
