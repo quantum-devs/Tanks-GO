@@ -13,6 +13,8 @@
 #import "RWTBorder.h"
 #import "RWTBrick.h"
 #import "Director.h"
+#import "PanzerNode.h"
+#import "FloorNode.h"
 #include "btBulletDynamicsCommon.h"
 
 #define BRICKS_PER_COL 8
@@ -21,14 +23,19 @@
 @implementation GameScene {
     CGSize _gameArea;
     float _sceneOffset;
+
     //RWTPaddle *_paddle;
     RWTBall *_ball;
     //RWTBorder *_border;
     //RWTBrick *_brick;
     //NSMutableArray *_bricks;
+    
     CGPoint _prevTouchLocation;
-    //float _ballVelocityX;
-    //float _ballVelocityY;
+    float _ballVelocityX;
+    float _ballVelocityY;
+    FloorNode *_floor;
+    PanzerNode *_panzer;
+    
     
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
@@ -49,7 +56,7 @@
         //Create the initial camera position
         _gameArea = CGSizeMake(27, 48);
         _sceneOffset = _gameArea.height/2/tanf(GLKMathDegreesToRadians(85/2));
-        self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset);
+        self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset - 10);
         
         /*
         _ball = [[RWTBall alloc] initWithShader:shader];
@@ -60,6 +67,23 @@
         _desiredVelocity = _ball.body->getLinearVelocity().length();
         */
          
+        
+        //Create paddle and add to scene
+        _floor = [[FloorNode alloc] initWithShader:shader];
+        _floor.position = GLKVector3Make(_gameArea.width/2, -5, 0);
+        _floor.matColour = GLKVector4Make(1, 1, 1, 1);
+        [self.children addObject:_floor];
+        _world->addRigidBody(_floor.body);
+        
+        //Create paddle and add to scene
+        _panzer = [[PanzerNode alloc] initWithShader:shader];
+        _panzer.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * 0.05, 0);
+        _panzer.matColour = GLKVector4Make(1, 1, 1, 1);
+        [self.children addObject:_panzer];
+        //_panzer.rotationX = M_PI_2;
+        _world->addRigidBody(_panzer.body);
+        
+        
         /*
         //Create paddle and add to scene
         _paddle = [[RWTPaddle alloc] initWithShader:shader];
@@ -92,7 +116,7 @@
                 _world->addRigidBody(_brick.body);
             }
         }
-         */
+        */
     }
     return self;
 }
@@ -131,14 +155,18 @@
     touchLocation = [self touchLocationToGameArea:touchLocation];
     CGPoint diff = CGPointMake(touchLocation.x - _prevTouchLocation.x, touchLocation.y - _prevTouchLocation.y);
     _prevTouchLocation = touchLocation;
-    //float  newX = _paddle.position.x + diff.x;
-    //newX = MIN(MAX(newX, _paddle.width/2), _gameArea.width - _paddle.width/2);
-    //_paddle.position = GLKVector3Make(newX, _paddle.position.y, _paddle.position.z);
+    
+    /*
+    float  newX = _paddle.position.x + diff.x;
+    newX = MIN(MAX(newX, _paddle.width/2), _gameArea.width - _paddle.width/2);
+    _paddle.position = GLKVector3Make(newX, _paddle.position.y, _paddle.position.z);
+     */
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
 }
+
 
 - (void)launchBallWithVelocity:(float)X velocityY:(float)Y atAngle:(float)angle {
     _ball = [[RWTBall alloc] initWithShader:self.shader];
@@ -182,17 +210,18 @@
         b = x;
     }
     return GLKVector4Make(r, g, b, 1);
-} */
+}
+*/
 
 - (void)updateWithDelta:(GLfloat)dt {
     [super updateWithDelta:dt];
     _world->stepSimulation(dt);
-    
     /*
     if (_ball.position.y < 0) {
         [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:NO];
         return;
     }
+    
     int numManifolds = _world->getDispatcher()->getNumManifolds();
     for (int i = 0; i < numManifolds; i++){
         btPersistentManifold *contactManifold = _world->getDispatcher()->getManifoldByIndexInternal(i);
@@ -217,14 +246,17 @@
             }
         }
     }
+     
     
     btVector3 currentVelocityDirection = _ball.body->getLinearVelocity();
     btScalar currentVelocity = currentVelocityDirection.length();
     if (currentVelocity < _desiredVelocity) {
         currentVelocityDirection *= _desiredVelocity/currentVelocity;
         _ball.body->setLinearVelocity(currentVelocityDirection);
-    }*/
+    }
+     */
 }
+
 /*
 - (void)destroyBrickAndCheckVictory:(PNode*)brick {
     [self.children removeObject:brick];
@@ -235,7 +267,8 @@
     if (_bricks.count == 0) {
         [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:YES];
     }
-}*/
+}
+*/
 
 - (void)dealloc {
     delete _world;

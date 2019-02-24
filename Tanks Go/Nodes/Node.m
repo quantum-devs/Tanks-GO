@@ -32,6 +32,8 @@
         self.width = 1.0;
         self.height = 1.0;
         self.scale = 1.0;
+        self.width = 1.0;
+        self.height = 1.0;
         self.children = [NSMutableArray array];
         self.matColour = GLKVector4Make(1, 1, 1, 1);
         
@@ -73,7 +75,6 @@
         self.specularColor = specularColor;
         self.diffuseColor = diffuseColor;
         self.shininess = shininess;
-        
     }
     return self;
 }

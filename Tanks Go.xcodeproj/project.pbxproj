@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296F5FD02220D3A700A02532 /* Panzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FCD2220D3A700A02532 /* Panzer.m */; };
+		296F5FD12220D3A700A02532 /* Panzer.png in Resources */ = {isa = PBXBuildFile; fileRef = 296F5FCF2220D3A700A02532 /* Panzer.png */; };
+		296F5FD52220D3B600A02532 /* Floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 296F5FD22220D3B600A02532 /* Floor.png */; };
+		296F5FD62220D3B600A02532 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FD42220D3B600A02532 /* Floor.m */; };
+		296F5FDA2220D3F900A02532 /* FloorNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FD92220D3F900A02532 /* FloorNode.mm */; };
+		296F5FE02220D42D00A02532 /* PanzerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FDF2220D42D00A02532 /* PanzerNode.mm */; };
+		296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FE222210C6100A02532 /* MainMenuViewController.m */; };
 		9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD97220E5D3E00A7360E /* AppDelegate.m */; };
 		9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD9A220E5D3E00A7360E /* ViewController.m */; };
 		9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9610FD9C220E5D3E00A7360E /* Main.storyboard */; };
@@ -111,6 +118,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		296F5FCD2220D3A700A02532 /* Panzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Panzer.m; path = ../../../../Desktop/TanksGO/Panzer/Panzer.m; sourceTree = "<group>"; };
+		296F5FCE2220D3A700A02532 /* Panzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Panzer.h; path = ../../../../Desktop/TanksGO/Panzer/Panzer.h; sourceTree = "<group>"; };
+		296F5FCF2220D3A700A02532 /* Panzer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Panzer.png; path = ../../../../Desktop/TanksGO/Panzer/Panzer.png; sourceTree = "<group>"; };
+		296F5FD22220D3B600A02532 /* Floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Floor.png; path = ../../../../Desktop/TanksGO/Floor/Floor.png; sourceTree = "<group>"; };
+		296F5FD32220D3B600A02532 /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Floor.h; path = ../../../../Desktop/TanksGO/Floor/Floor.h; sourceTree = "<group>"; };
+		296F5FD42220D3B600A02532 /* Floor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Floor.m; path = ../../../../Desktop/TanksGO/Floor/Floor.m; sourceTree = "<group>"; };
+		296F5FD82220D3F900A02532 /* FloorNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloorNode.h; sourceTree = "<group>"; };
+		296F5FD92220D3F900A02532 /* FloorNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FloorNode.mm; sourceTree = "<group>"; };
+		296F5FDE2220D42D00A02532 /* PanzerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanzerNode.h; sourceTree = "<group>"; };
+		296F5FDF2220D42D00A02532 /* PanzerNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PanzerNode.mm; sourceTree = "<group>"; };
+		296F5FE122210C6100A02532 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		296F5FE222210C6100A02532 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		9610FD93220E5D3E00A7360E /* Tanks Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tanks Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9610FD96220E5D3E00A7360E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9610FD97220E5D3E00A7360E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -214,6 +233,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		296F5FCB2220D34400A02532 /* Panzer */ = {
+			isa = PBXGroup;
+			children = (
+				296F5FCE2220D3A700A02532 /* Panzer.h */,
+				296F5FCD2220D3A700A02532 /* Panzer.m */,
+				296F5FCF2220D3A700A02532 /* Panzer.png */,
+			);
+			path = Panzer;
+			sourceTree = "<group>";
+		};
+		296F5FCC2220D35300A02532 /* Floor */ = {
+			isa = PBXGroup;
+			children = (
+				296F5FD32220D3B600A02532 /* Floor.h */,
+				296F5FD42220D3B600A02532 /* Floor.m */,
+				296F5FD22220D3B600A02532 /* Floor.png */,
+			);
+			path = Floor;
+			sourceTree = "<group>";
+		};
+		296F5FD72220D3D300A02532 /* GameNodes */ = {
+			isa = PBXGroup;
+			children = (
+				296F5FD82220D3F900A02532 /* FloorNode.h */,
+				296F5FD92220D3F900A02532 /* FloorNode.mm */,
+				296F5FDE2220D42D00A02532 /* PanzerNode.h */,
+				296F5FDF2220D42D00A02532 /* PanzerNode.mm */,
+			);
+			path = GameNodes;
+			sourceTree = "<group>";
+		};
 		9610FD8A220E5D3D00A7360E = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +300,8 @@
 				9610FDA1220E5D3E00A7360E /* LaunchScreen.storyboard */,
 				9610FDA4220E5D3E00A7360E /* Info.plist */,
 				9610FDA5220E5D3E00A7360E /* main.m */,
+				296F5FE122210C6100A02532 /* MainMenuViewController.h */,
+				296F5FE222210C6100A02532 /* MainMenuViewController.m */,
 			);
 			path = "Tanks Go";
 			sourceTree = "<group>";
@@ -280,6 +332,8 @@
 		9610FDAE220E5DD200A7360E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				296F5FCC2220D35300A02532 /* Floor */,
+				296F5FCB2220D34400A02532 /* Panzer */,
 				964849A0221DE8DB00266B34 /* RWTModels */,
 			);
 			path = Models;
@@ -288,6 +342,7 @@
 		9610FDAF220E5DE900A7360E /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				296F5FD72220D3D300A02532 /* GameNodes */,
 				9648499A221DE79500266B34 /* RWTdemo */,
 				9634F1582213EB10008CE6CA /* Node.h */,
 				9634F1592213EB10008CE6CA /* Node.m */,
@@ -613,6 +668,7 @@
 				964849D0221DEADE00266B34 /* paddle.obj in Resources */,
 				9610FDA3220E5D3E00A7360E /* LaunchScreen.storyboard in Resources */,
 				964849B7221DEAB900266B34 /* ball.png in Resources */,
+				296F5FD12220D3A700A02532 /* Panzer.png in Resources */,
 				9634F16E221BC898008CE6CA /* mushroom.png in Resources */,
 				9610FDA0220E5D3E00A7360E /* Assets.xcassets in Resources */,
 				964849C8221DEAD200266B34 /* brick.mtl in Resources */,
@@ -622,6 +678,7 @@
 				964849DB221DEAEC00266B34 /* youlose.mtl in Resources */,
 				9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */,
 				964849AA221DEA5800266B34 /* youwin.mtl in Resources */,
+				296F5FD52220D3B600A02532 /* Floor.png in Resources */,
 				9610FDCA220F9EEE00A7360E /* SimpleVertex.glsl in Resources */,
 				9648499F221DE88B00266B34 /* pop.wav in Resources */,
 				964849C9221DEAD200266B34 /* brick.png in Resources */,
@@ -646,11 +703,14 @@
 				9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */,
 				9648497B221DE2AF00266B34 /* GameScene.mm in Sources */,
 				964849E3221F6D1000266B34 /* GameOver.m in Sources */,
+				296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */,
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
 				964849DC221DEAEC00266B34 /* youlose.m in Sources */,
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
+				296F5FD02220D3A700A02532 /* Panzer.m in Sources */,
 				96484997221DE78300266B34 /* RWTBorder.mm in Sources */,
 				96484994221DE78300266B34 /* RWTYouWin.m in Sources */,
+				296F5FDA2220D3F900A02532 /* FloorNode.mm in Sources */,
 				9634F15A2213EB10008CE6CA /* Node.m in Sources */,
 				9610FDCE220FA41900A7360E /* BaseEffect.m in Sources */,
 				964849C7221DEAD200266B34 /* brick.m in Sources */,
@@ -662,8 +722,10 @@
 				96484996221DE78300266B34 /* RWTBrick.mm in Sources */,
 				964849E0221E335500266B34 /* Director.m in Sources */,
 				96484999221DE78300266B34 /* RWTBall.mm in Sources */,
+				296F5FD62220D3B600A02532 /* Floor.m in Sources */,
 				964849D3221DEADE00266B34 /* paddle.m in Sources */,
 				9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */,
+				296F5FE02220D42D00A02532 /* PanzerNode.mm in Sources */,
 				96484998221DE78300266B34 /* RWTYouLose.m in Sources */,
 				96484CE9221FED0900266B34 /* PNode.mm in Sources */,
 				9634F173221BDC09008CE6CA /* TestScene.m in Sources */,
@@ -823,7 +885,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A2SBKB36F6;
+				DEVELOPMENT_TEAM = XP8JJ27LQX;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "Tanks Go/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -840,7 +902,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A2SBKB36F6;
+				DEVELOPMENT_TEAM = XP8JJ27LQX;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "Tanks Go/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
