@@ -13,7 +13,6 @@
 #import "RWTBorder.h"
 #import "RWTBrick.h"
 #import "Director.h"
-#import "PanzerNode.h"
 #import "FloorNode.h"
 #import "TankerNode.h"
 #include "btBulletDynamicsCommon.h"
@@ -35,7 +34,6 @@
     float _ballVelocityX;
     float _ballVelocityY;
     FloorNode *_floor;
-    PanzerNode *_panzer;
     TankerNode *_tanker;
     
     
@@ -77,15 +75,6 @@
         [self.children addObject:_floor];
         _world->addRigidBody(_floor.body);
         
-        /*
-        //Create paddle and add to scene
-        _panzer = [[PanzerNode alloc] initWithShader:shader];
-        _panzer.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * 0.05, 2);
-        _panzer.matColour = GLKVector4Make(1, 1, 1, 1);
-        [self.children addObject:_panzer];
-        //_panzer.rotationX = M_PI_2;
-        _world->addRigidBody(_panzer.body);
-        */
          
         //Create paddle and add to scene
         _tanker = [[TankerNode alloc] initWithShader:shader];
