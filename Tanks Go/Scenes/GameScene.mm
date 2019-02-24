@@ -22,7 +22,7 @@
     CGSize _gameArea;
     float _sceneOffset;
     //RWTPaddle *_paddle;
-    //RWTBall *_ball;
+    RWTBall *_ball;
     //RWTBorder *_border;
     //RWTBrick *_brick;
     //NSMutableArray *_bricks;
@@ -52,21 +52,21 @@
         self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset);
         
         /*
+        _ball = [[RWTBall alloc] initWithShader:shader];
+        _ball.position = GLKVector3Make(_gameArea.width/2, _gameArea.height / 2, 0);
+        _ball.matColour = GLKVector4Make(1, 1, 1, 1);
+        [self.children addObject:_ball];
+        _world->addRigidBody(_ball.body);
+        _desiredVelocity = _ball.body->getLinearVelocity().length();
+        */
+         
+        /*
         //Create paddle and add to scene
         _paddle = [[RWTPaddle alloc] initWithShader:shader];
         _paddle.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .05, 0);
         _paddle.matColour = GLKVector4Make(1, 0, 0, 1);
         [self.children addObject:_paddle];
         _world->addRigidBody(_paddle.body);
-        
-        //Create ball and add to scene
-        _ball = [[RWTBall alloc] initWithShader:shader];
-        _ball.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .1, 0);
-        _ball.matColour = GLKVector4Make(.5, 1, .5, 1);
-        [self.children addObject:_ball];
-        _world->addRigidBody(_ball.body);
-        _ball.body->setLinearVelocity(btVector3(15, 15, 0));
-        _desiredVelocity = _ball.body->getLinearVelocity().length();
         
         //Add a border to the center of the screen
         _border = [[RWTBorder alloc] initWithShader:shader];
@@ -108,7 +108,7 @@
     
     _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase, _solver, _collisionConfiguration);
     
-    _world->setGravity(btVector3(0, 0, 0));
+    _world->setGravity(btVector3(0, -9.81, 0));
 }
 
 - (CGPoint) touchLocationToGameArea:(CGPoint)touchLocation {
@@ -139,6 +139,17 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
 }
+
+- (void)launchBallWithVelocity:(float)X velocityY:(float)Y atAngle:(float)angle {
+    _ball = [[RWTBall alloc] initWithShader:self.shader];
+    _ball.position = GLKVector3Make(_gameArea.width/2, _gameArea.height / 2, 0);
+    _ball.matColour = GLKVector4Make(1, 1, 1, 1);
+    [self.children addObject:_ball];
+    _world->addRigidBody(_ball.body);
+    NSLog(@"%f and %f", X/4, Y/4);
+    _ball.body->setLinearVelocity(btVector3(X/4, Y/4, 0));
+}
+
 /*
 - (GLKVector4)color:(float)x {
     float r = 0.0f;
@@ -185,7 +196,7 @@
     int numManifolds = _world->getDispatcher()->getNumManifolds();
     for (int i = 0; i < numManifolds; i++){
         btPersistentManifold *contactManifold = _world->getDispatcher()->getManifoldByIndexInternal(i);
-        
+     
         int numContacts = contactManifold->getNumContacts();
         NSLog(@"%d", numContacts);
         if (numContacts > 0) {
