@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		296F5FD02220D3A700A02532 /* Panzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FCD2220D3A700A02532 /* Panzer.m */; };
-		296F5FD12220D3A700A02532 /* Panzer.png in Resources */ = {isa = PBXBuildFile; fileRef = 296F5FCF2220D3A700A02532 /* Panzer.png */; };
-		296F5FD52220D3B600A02532 /* Floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 296F5FD22220D3B600A02532 /* Floor.png */; };
-		296F5FD62220D3B600A02532 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FD42220D3B600A02532 /* Floor.m */; };
 		296F5FDA2220D3F900A02532 /* FloorNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FD92220D3F900A02532 /* FloorNode.mm */; };
 		296F5FE02220D42D00A02532 /* PanzerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FDF2220D42D00A02532 /* PanzerNode.mm */; };
 		296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FE222210C6100A02532 /* MainMenuViewController.m */; };
+		29EA51112222239A000B2218 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EA510F22222399000B2218 /* Floor.m */; };
+		29EA51122222239A000B2218 /* Floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EA51102222239A000B2218 /* Floor.png */; };
+		29EA5116222223A2000B2218 /* Panzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EA5114222223A1000B2218 /* Panzer.m */; };
+		29EA5117222223A2000B2218 /* Panzer.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EA5115222223A1000B2218 /* Panzer.png */; };
 		9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD97220E5D3E00A7360E /* AppDelegate.m */; };
 		9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD9A220E5D3E00A7360E /* ViewController.m */; };
 		9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9610FD9C220E5D3E00A7360E /* Main.storyboard */; };
@@ -118,18 +118,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		296F5FCD2220D3A700A02532 /* Panzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Panzer.m; path = ../../../../Desktop/TanksGO/Panzer/Panzer.m; sourceTree = "<group>"; };
-		296F5FCE2220D3A700A02532 /* Panzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Panzer.h; path = ../../../../Desktop/TanksGO/Panzer/Panzer.h; sourceTree = "<group>"; };
-		296F5FCF2220D3A700A02532 /* Panzer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Panzer.png; path = ../../../../Desktop/TanksGO/Panzer/Panzer.png; sourceTree = "<group>"; };
-		296F5FD22220D3B600A02532 /* Floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Floor.png; path = ../../../../Desktop/TanksGO/Floor/Floor.png; sourceTree = "<group>"; };
-		296F5FD32220D3B600A02532 /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Floor.h; path = ../../../../Desktop/TanksGO/Floor/Floor.h; sourceTree = "<group>"; };
-		296F5FD42220D3B600A02532 /* Floor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Floor.m; path = ../../../../Desktop/TanksGO/Floor/Floor.m; sourceTree = "<group>"; };
 		296F5FD82220D3F900A02532 /* FloorNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloorNode.h; sourceTree = "<group>"; };
 		296F5FD92220D3F900A02532 /* FloorNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FloorNode.mm; sourceTree = "<group>"; };
 		296F5FDE2220D42D00A02532 /* PanzerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanzerNode.h; sourceTree = "<group>"; };
 		296F5FDF2220D42D00A02532 /* PanzerNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PanzerNode.mm; sourceTree = "<group>"; };
 		296F5FE122210C6100A02532 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		296F5FE222210C6100A02532 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		29EA510E22222399000B2218 /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Floor.h; sourceTree = "<group>"; };
+		29EA510F22222399000B2218 /* Floor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Floor.m; sourceTree = "<group>"; };
+		29EA51102222239A000B2218 /* Floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Floor.png; sourceTree = "<group>"; };
+		29EA5113222223A1000B2218 /* Panzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panzer.h; sourceTree = "<group>"; };
+		29EA5114222223A1000B2218 /* Panzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Panzer.m; sourceTree = "<group>"; };
+		29EA5115222223A1000B2218 /* Panzer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Panzer.png; sourceTree = "<group>"; };
 		9610FD93220E5D3E00A7360E /* Tanks Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tanks Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9610FD96220E5D3E00A7360E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9610FD97220E5D3E00A7360E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -236,9 +236,9 @@
 		296F5FCB2220D34400A02532 /* Panzer */ = {
 			isa = PBXGroup;
 			children = (
-				296F5FCE2220D3A700A02532 /* Panzer.h */,
-				296F5FCD2220D3A700A02532 /* Panzer.m */,
-				296F5FCF2220D3A700A02532 /* Panzer.png */,
+				29EA5113222223A1000B2218 /* Panzer.h */,
+				29EA5114222223A1000B2218 /* Panzer.m */,
+				29EA5115222223A1000B2218 /* Panzer.png */,
 			);
 			path = Panzer;
 			sourceTree = "<group>";
@@ -246,9 +246,9 @@
 		296F5FCC2220D35300A02532 /* Floor */ = {
 			isa = PBXGroup;
 			children = (
-				296F5FD32220D3B600A02532 /* Floor.h */,
-				296F5FD42220D3B600A02532 /* Floor.m */,
-				296F5FD22220D3B600A02532 /* Floor.png */,
+				29EA510E22222399000B2218 /* Floor.h */,
+				29EA510F22222399000B2218 /* Floor.m */,
+				29EA51102222239A000B2218 /* Floor.png */,
 			);
 			path = Floor;
 			sourceTree = "<group>";
@@ -668,7 +668,6 @@
 				964849D0221DEADE00266B34 /* paddle.obj in Resources */,
 				9610FDA3220E5D3E00A7360E /* LaunchScreen.storyboard in Resources */,
 				964849B7221DEAB900266B34 /* ball.png in Resources */,
-				296F5FD12220D3A700A02532 /* Panzer.png in Resources */,
 				9634F16E221BC898008CE6CA /* mushroom.png in Resources */,
 				9610FDA0220E5D3E00A7360E /* Assets.xcassets in Resources */,
 				964849C8221DEAD200266B34 /* brick.mtl in Resources */,
@@ -678,7 +677,7 @@
 				964849DB221DEAEC00266B34 /* youlose.mtl in Resources */,
 				9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */,
 				964849AA221DEA5800266B34 /* youwin.mtl in Resources */,
-				296F5FD52220D3B600A02532 /* Floor.png in Resources */,
+				29EA51122222239A000B2218 /* Floor.png in Resources */,
 				9610FDCA220F9EEE00A7360E /* SimpleVertex.glsl in Resources */,
 				9648499F221DE88B00266B34 /* pop.wav in Resources */,
 				964849C9221DEAD200266B34 /* brick.png in Resources */,
@@ -689,6 +688,7 @@
 				9634F1652215052C008CE6CA /* dungeon_01.png in Resources */,
 				964849BF221DEAC600266B34 /* border.png in Resources */,
 				964849C0221DEAC600266B34 /* border.obj in Resources */,
+				29EA5117222223A2000B2218 /* Panzer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +699,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EA51112222239A000B2218 /* Floor.m in Sources */,
 				9634F1602214EB38008CE6CA /* Cube.m in Sources */,
 				9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */,
 				9648497B221DE2AF00266B34 /* GameScene.mm in Sources */,
@@ -707,7 +708,6 @@
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
 				964849DC221DEAEC00266B34 /* youlose.m in Sources */,
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
-				296F5FD02220D3A700A02532 /* Panzer.m in Sources */,
 				96484997221DE78300266B34 /* RWTBorder.mm in Sources */,
 				96484994221DE78300266B34 /* RWTYouWin.m in Sources */,
 				296F5FDA2220D3F900A02532 /* FloorNode.mm in Sources */,
@@ -718,11 +718,11 @@
 				964849B8221DEAB900266B34 /* ball.m in Sources */,
 				964849BE221DEAC600266B34 /* border.m in Sources */,
 				964849A8221DEA5800266B34 /* youwin.m in Sources */,
+				29EA5116222223A2000B2218 /* Panzer.m in Sources */,
 				96484995221DE78300266B34 /* RWTPaddle.mm in Sources */,
 				96484996221DE78300266B34 /* RWTBrick.mm in Sources */,
 				964849E0221E335500266B34 /* Director.m in Sources */,
 				96484999221DE78300266B34 /* RWTBall.mm in Sources */,
-				296F5FD62220D3B600A02532 /* Floor.m in Sources */,
 				964849D3221DEADE00266B34 /* paddle.m in Sources */,
 				9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */,
 				296F5FE02220D42D00A02532 /* PanzerNode.mm in Sources */,
