@@ -56,7 +56,7 @@
             
             mesh->addTriangle(bv1, bv2, bv3);
         }
-        _shape = new btBvhTriangleMeshShape(mesh, false);
+        _shape = new btBvhTriangleMeshShape(mesh, true);
     }
 }
 
@@ -77,8 +77,8 @@
     
     btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, motionState, _shape, bodyInertia);
     
-    bodyCI.m_restitution = 1.0f;
-    bodyCI.m_friction = .5f;
+    bodyCI.m_restitution = 0.0f;
+    bodyCI.m_friction = 1.0f;
     
     _body = new btRigidBody(bodyCI);
     
@@ -133,7 +133,6 @@
 
 -(float)rotationX {
     if (_body) {
-        
         btMatrix3x3 rotMatrix = btMatrix3x3(_body->getWorldTransform().getRotation());
         float z,y,x;
         rotMatrix.getEulerZYX(z,y,x);

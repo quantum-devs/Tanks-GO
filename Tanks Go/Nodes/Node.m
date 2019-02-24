@@ -30,6 +30,8 @@
         self.rotationY = 0;
         self.rotationZ = 0;
         self.scale = 1.0;
+        self.width = 1.0;
+        self.height = 1.0;
         self.children = [NSMutableArray array];
         self.matColour = GLKVector4Make(1, 1, 1, 1);
         
@@ -71,7 +73,6 @@
         self.specularColor = specularColor;
         self.diffuseColor = diffuseColor;
         self.shininess = shininess;
-        
     }
     return self;
 }
@@ -82,7 +83,7 @@
     modelMatrix = GLKMatrix4Rotate(modelMatrix, self.rotationX, 1, 0, 0);
     modelMatrix = GLKMatrix4Rotate(modelMatrix, self.rotationY, 0, 1, 0);
     modelMatrix = GLKMatrix4Rotate(modelMatrix, self.rotationZ, 0, 0, 1);
-    modelMatrix = GLKMatrix4Scale(modelMatrix, self.scale, self.scale, self.scale);
+    modelMatrix = GLKMatrix4Scale(modelMatrix, self.width, self.height, self.scale);
     return modelMatrix;
 }
 

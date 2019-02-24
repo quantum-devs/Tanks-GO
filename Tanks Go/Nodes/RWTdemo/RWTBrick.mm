@@ -29,4 +29,17 @@
     return self;
 }
 
+- (void)updateWithDelta:(GLfloat)aDelta {
+    
+    // If there is no delta value then don't bother updating
+    if (aDelta == 0) return;
+    
+    // Increase the amount of rotation
+    self.rotationY += M_PI_4 * aDelta;
+    self.rotationZ+= M_PI_4 * aDelta;
+    
+    [super updateWithDelta:aDelta];
+    
+}
+
 @end
