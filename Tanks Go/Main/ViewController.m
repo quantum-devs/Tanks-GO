@@ -20,6 +20,11 @@
 @implementation ViewController {
     BaseEffect *_shader;
     GameScene *_scene;
+    __weak IBOutlet UISlider *_launchVelocitySlider;
+    __weak IBOutlet UISlider *_launchAngleSlider;
+    __weak IBOutlet UITextView *_launchVelocityLabel;
+    __weak IBOutlet UITextView *_launchAngleLabel;
+    __weak IBOutlet UIButton *_launchBtn;
 }
 
 - (void) setupScene{
@@ -37,6 +42,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_launchVelocityLabel setText:[NSString stringWithFormat:@"%3.2f", [_launchVelocitySlider value]]];
+    [_launchAngleLabel setText:[NSString stringWithFormat:@"%3.2f", [_launchAngleSlider value]]];
+    [_launchVelocitySlider setThumbImage:[UIImage imageNamed:@"thumb_image.png"] forState:UIControlStateNormal];
+    [_launchVelocitySlider setThumbImage:[UIImage imageNamed:@"thumb_image.png"] forState:UIControlStateHighlighted];
+    [_launchAngleSlider setThumbImage:[UIImage imageNamed:@"thumb_image.png"] forState:UIControlStateNormal];
+    [_launchAngleSlider setThumbImage:[UIImage imageNamed:@"thumb_image.png"] forState:UIControlStateHighlighted];
+    
     GLKView *view = (GLKView *)self.view;
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     view.drawableDepthFormat = GLKViewDrawableDepthFormat16;
@@ -72,5 +84,20 @@
     [[Director sharedInstance].scene touchesEnded:touches withEvent:event];
 }
 
+- (IBAction)launchBtn:(id)sender {
+    float angle = GLKMathDegreesToRadians([_launchAngleSlider value]);
+    float velocity = [_launchVelocitySlider value];
+    float x = cosf(angle) * velocity;
+    float y = sinf(angle) * velocity;
+    [_scene launchBallWithVelocity:x velocityY:y atAngle:angle];
+}
+
+- (IBAction)launchVelocitySliderChanged:(id)sender {
+    [_launchVelocityLabel setText:[NSString stringWithFormat:@"%3.2f", [_launchVelocitySlider value]]];
+}
+
+- (IBAction)launchAngleSliderChanged:(id)sender {
+    [_launchAngleLabel setText:[NSString stringWithFormat:@"%3.2f", [_launchAngleSlider value]]];
+}
 
 @end

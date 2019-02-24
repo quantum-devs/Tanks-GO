@@ -29,6 +29,8 @@
         self.rotationX = 0;
         self.rotationY = 0;
         self.rotationZ = 0;
+        self.width = 1.0;
+        self.height = 1.0;
         self.scale = 1.0;
         self.width = 1.0;
         self.height = 1.0;

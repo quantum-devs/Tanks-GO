@@ -69,6 +69,7 @@
 		96484D052220C56100266B34 /* libBulletCollision_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96484CF82220C52400266B34 /* libBulletCollision_xcode4_x64_debug.a */; };
 		96484D062220C56100266B34 /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96484CF22220C52300266B34 /* libBulletDynamics_xcode4_x64_debug.a */; };
 		96484D072220C56100266B34 /* libLinearMath_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96484CFE2220C52400266B34 /* libLinearMath_xcode4_x64_debug.a */; };
+		96484D142221144C00266B34 /* thumb_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 96484D132221144C00266B34 /* thumb_image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,7 @@
 		96484CED2220C52200266B34 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "bullet3-2.88/build3/xcode4ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
 		96484CF32220C52300266B34 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "bullet3-2.88/build3/xcode4ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
 		96484CF92220C52400266B34 /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "bullet3-2.88/build3/xcode4ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
+		96484D132221144C00266B34 /* thumb_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 		9610FD95220E5D3E00A7360E /* Tanks Go */ = {
 			isa = PBXGroup;
 			children = (
+				96484D0B2221078400266B34 /* Images */,
 				964849DD221E332100266B34 /* Director */,
 				9648499B221DE87F00266B34 /* Sounds */,
 				96484978221DE23C00266B34 /* Scenes */,
@@ -549,6 +552,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		96484D0B2221078400266B34 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				96484D132221144C00266B34 /* thumb_image.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -661,6 +672,7 @@
 				9634F16E221BC898008CE6CA /* mushroom.png in Resources */,
 				9610FDA0220E5D3E00A7360E /* Assets.xcassets in Resources */,
 				964849C8221DEAD200266B34 /* brick.mtl in Resources */,
+				96484D142221144C00266B34 /* thumb_image.png in Resources */,
 				964849B6221DEAB900266B34 /* ball.obj in Resources */,
 				964849D9221DEAEC00266B34 /* youlose.obj in Resources */,
 				964849DB221DEAEC00266B34 /* youlose.mtl in Resources */,
