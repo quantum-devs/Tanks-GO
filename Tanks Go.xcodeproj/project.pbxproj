@@ -256,18 +256,6 @@
 			path = GameNodes;
 			sourceTree = "<group>";
 		};
-		29EA1306222271A300131DA9 /* Tanker */ = {
-			isa = PBXGroup;
-			children = (
-				29EA13102222738600131DA9 /* camo1.jpg */,
-				29EA1309222271B100131DA9 /* camo.jpg */,
-				29EA1307222271B100131DA9 /* Tanker.h */,
-				29EA1308222271B100131DA9 /* Tanker.m */,
-			);
-			name = Tanker;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		9610FD8A220E5D3D00A7360E = {
 			isa = PBXGroup;
 			children = (
@@ -336,7 +324,7 @@
 		9610FDAE220E5DD200A7360E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				29EA1306222271A300131DA9 /* Tanker */,
+				96191CB82222769100D946BB /* Tanker */,
 				296F5FCC2220D35300A02532 /* Floor */,
 				964849A0221DE8DB00266B34 /* RWTModels */,
 			);
@@ -365,6 +353,17 @@
 				9610FDBE220F92F600A7360E /* OpenGLES.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96191CB82222769100D946BB /* Tanker */ = {
+			isa = PBXGroup;
+			children = (
+				29EA13102222738600131DA9 /* camo1.jpg */,
+				29EA1309222271B100131DA9 /* camo.jpg */,
+				29EA1307222271B100131DA9 /* Tanker.h */,
+				29EA1308222271B100131DA9 /* Tanker.m */,
+			);
+			path = Tanker;
 			sourceTree = "<group>";
 		};
 		9634F16F221BC964008CE6CA /* mushroom */ = {
@@ -890,12 +889,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XP8JJ27LQX;
+				DEVELOPMENT_TEAM = A2SBKB36F6;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "Tanks Go/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go2";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/bullet3-2.88/src";
@@ -907,12 +906,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XP8JJ27LQX;
+				DEVELOPMENT_TEAM = A2SBKB36F6;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "Tanks Go/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go2";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/bullet3-2.88/src";

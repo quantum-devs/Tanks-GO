@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithShader:(BaseEffect *)shader;
 - (void)launchBallWithVelocity:(float)X velocityY:(float)Y atAngle:(float)angle;
+- (BOOL)isBallActive;
 
 @end
 
