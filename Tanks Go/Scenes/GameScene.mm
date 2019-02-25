@@ -23,19 +23,16 @@
 @implementation GameScene {
     CGSize _gameArea;
     float _sceneOffset;
-
-    //RWTPaddle *_paddle;
-    RWTBall *_ball;
-    //RWTBorder *_border;
-    //RWTBrick *_brick;
-    //NSMutableArray *_bricks;
     
+    BOOL _playerOneTurn;
+    
+    RWTBall *_ball;
     CGPoint _prevTouchLocation;
     float _ballVelocityX;
     float _ballVelocityY;
     FloorNode *_floor;
     TankerNode *_tanker;
-    
+    NSMutableArray *_tanks;
     
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
@@ -53,78 +50,37 @@
         
         [self initPhysics];
         
+        _playerOneTurn = YES;
+        
         //Create the initial camera position
         _gameArea = CGSizeMake(27, 48);
         _sceneOffset = _gameArea.height/2/tanf(GLKMathDegreesToRadians(85/2));
         self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset - 10);
         
-        /*
-        _ball = [[RWTBall alloc] initWithShader:shader];
-        _ball.position = GLKVector3Make(_gameArea.width/2, _gameArea.height / 2, 0);
-        _ball.matColour = GLKVector4Make(1, 1, 1, 1);
-        [self.children addObject:_ball];
-        _world->addRigidBody(_ball.body);
-        _desiredVelocity = _ball.body->getLinearVelocity().length();
-        */
-         
-        
-        //Create paddle and add to scene
+        //Create floor and add to scene
         _floor = [[FloorNode alloc] initWithShader:shader];
         _floor.position = GLKVector3Make(_gameArea.width/2, -5, 0);
         _floor.matColour = GLKVector4Make(1, 1, 1, 1);
         [self.children addObject:_floor];
         _world->addRigidBody(_floor.body);
         
-         
-        //Create paddle and add to scene
+         _tanks = [NSMutableArray arrayWithCapacity:2];
+        //Create tanks and add to scene
         _tanker = [[TankerNode alloc] initWithShader:shader];
         _tanker.rotationY = -M_PI_2;
         _tanker.position = GLKVector3Make(_gameArea.width/2 - 40, _gameArea.height * 0.05, 2);
-        _tanker.matColour = GLKVector4Make(1, 1, 1, 1);
+        _tanker.matColour = GLKVector4Make(.5, 1, .5, 1);
         [self.children addObject:_tanker];
+        [_tanks addObject:_tanker];
         _world->addRigidBody(_tanker.body);
         
         _tanker = [[TankerNode alloc] initWithShader:shader];
         _tanker.rotationY = M_PI_2;
         _tanker.position = GLKVector3Make(_gameArea.width/2 + 40, _gameArea.height * 0.05, 2);
-        _tanker.matColour = GLKVector4Make(1, 1, 1, 1);
+        _tanker.matColour = GLKVector4Make(1, .5, .5, 1);
         [self.children addObject:_tanker];
+        [_tanks addObject:_tanker];
         _world->addRigidBody(_tanker.body);
-        
-        
-        /*
-        //Create paddle and add to scene
-        _paddle = [[RWTPaddle alloc] initWithShader:shader];
-        _paddle.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .05, 0);
-        _paddle.matColour = GLKVector4Make(1, 0, 0, 1);
-        [self.children addObject:_paddle];
-        _world->addRigidBody(_paddle.body);
-        
-        //Add a border to the center of the screen
-        _border = [[RWTBorder alloc] initWithShader:shader];
-        _border.position = GLKVector3Make(_gameArea.width/2, _gameArea.height/2, 0);
-        [self.children addObject:_border];
-        _world->addRigidBody(_border.body);
-        
-        GLKVector4 colours[BRICKS_PER_ROW];
-        for (int i = 0; i < BRICKS_PER_ROW; i++){
-            colours[i] = [self color:(float)(BRICKS_PER_ROW - i) / (float)BRICKS_PER_ROW];
-        }
-        
-        _bricks = [NSMutableArray arrayWithCapacity:72];
-        for (int j = 0; j < BRICKS_PER_COL; j++){
-            for (int i = 0; i < BRICKS_PER_ROW; i++){
-                RWTBrick *_brick = [[RWTBrick alloc] initWithShader:shader];
-                float margin = _gameArea.width * .1;
-                float startY = _gameArea.height * .5;
-                _brick.position = GLKVector3Make(margin + (margin * i), startY + (margin * j), 0);
-                _brick.matColour = colours[i];
-                [self.children addObject:_brick];
-                [_bricks addObject:_brick];
-                _world->addRigidBody(_brick.body);
-            }
-        }
-        */
     }
     return self;
 }
@@ -164,70 +120,51 @@
     CGPoint diff = CGPointMake(touchLocation.x - _prevTouchLocation.x, touchLocation.y - _prevTouchLocation.y);
     _prevTouchLocation = touchLocation;
     
-    /*
-    float  newX = _paddle.position.x + diff.x;
-    newX = MIN(MAX(newX, _paddle.width/2), _gameArea.width - _paddle.width/2);
-    _paddle.position = GLKVector3Make(newX, _paddle.position.y, _paddle.position.z);
-     */
+    
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
 }
 
+- (BOOL)isBallActive {
+    for (int i = 0; i < [self.children count]; i++)
+        if (((PNode *)[self.children objectAtIndex:i]).tag == kBallTag)
+            return YES;
+    return NO;
+}
+
+- (void)destroyBall:(PNode*)ball {
+    [self.children removeObject:ball];
+    _world->removeRigidBody(ball.body);
+}
 
 - (void)launchBallWithVelocity:(float)X velocityY:(float)Y atAngle:(float)angle {
     _ball = [[RWTBall alloc] initWithShader:self.shader];
-    _ball.position = GLKVector3Make(_gameArea.width/2, _gameArea.height / 2, 0);
-    _ball.matColour = GLKVector4Make(1, 1, 1, 1);
+    if (_playerOneTurn) {
+        _ball.position = GLKVector3Make(((PNode *)[_tanks objectAtIndex:0]).position.x, ((PNode *)[_tanks objectAtIndex:0]).position.y + 3, ((PNode *)[_tanks objectAtIndex:0]).position.z);
+        _ball.matColour = GLKVector4Make(.5, 1, .5, 1);
+    } else {
+        _ball.position = GLKVector3Make(((PNode *)[_tanks objectAtIndex:1]).position.x, ((PNode *)[_tanks objectAtIndex:1]).position.y + 3, ((PNode *)[_tanks objectAtIndex:1]).position.z);
+        _ball.matColour = GLKVector4Make(1, .5, .5, 1);
+    }
     [self.children addObject:_ball];
     _world->addRigidBody(_ball.body);
-    NSLog(@"%f and %f", X/4, Y/4);
-    _ball.body->setLinearVelocity(btVector3(X/4, Y/4, 0));
+    _ball.body->setLinearVelocity(btVector3(X/2, Y/2, 0));
+    _playerOneTurn = !_playerOneTurn;
 }
-
-/*
-- (GLKVector4)color:(float)x {
-    float r = 0.0f;
-    float g = 0.0f;
-    float b = 1.0f;
-    if (x >= 0.0f && x < 0.2f) {
-        x = x / 0.2f;
-        r = 0.0f;
-        g = x;
-        b = 1.0f;
-    } else if (x >= 0.2f && x < 0.4f) {
-        x = (x - 0.2f) / 0.2f;
-        r = 0.0f;
-        g = 1.0f;
-        b = 1.0f - x;
-    } else if (x >= 0.4f && x < 0.6f) {
-        x = (x - 0.4f) / 0.2f;
-        r = x;
-        g = 1.0f;
-        b = 0.0f;
-    } else if (x >= 0.6f && x < 0.8f) {
-        x = (x - 0.6f) / 0.2f;
-        r = 1.0f;
-        g = 1.0f - x;
-        b = 0.0f;
-    } else if (x >= 0.8f && x <= 1.0f) {
-        x = (x - 0.8f) / 0.2f;
-        r = 1.0f;
-        g = 0.0f;
-        b = x;
-    }
-    return GLKVector4Make(r, g, b, 1);
-}
-*/
 
 - (void)updateWithDelta:(GLfloat)dt {
     [super updateWithDelta:dt];
     _world->stepSimulation(dt);
-    /*
-    if (_ball.position.y < 0) {
-        [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:NO];
-        return;
+    
+    if (_ball.position.x > _gameArea.width + _sceneOffset + 10 || _ball.position.x < -_gameArea.width - _sceneOffset + 10)
+        [self destroyBall:_ball];
+    
+    if (_playerOneTurn) {
+        glClearColor(.5, 1, .5, 1);
+    } else {
+        glClearColor(1, .5, .5, 1);
     }
     
     int numManifolds = _world->getDispatcher()->getNumManifolds();
@@ -245,38 +182,22 @@
             PNode *pnA = (__bridge PNode*)obA->getUserPointer();
             PNode *pnB = (__bridge PNode*)obB->getUserPointer();
             
-            if (pnA.tag == kBrickTag) {
-                [self destroyBrickAndCheckVictory:pnA];
+            if (pnA.tag == kBallTag) {
+                [self destroyBall:pnA];
+                if (pnB.tag == kTankerTag) {
+                    
+                }
             }
             
-            if (pnB.tag == kBrickTag) {
-                [self destroyBrickAndCheckVictory:pnB];
+            if (pnB.tag == kBallTag) {
+                [self destroyBall:pnB];
+                if (pnA.tag == kTankerTag) {
+                    
+                }
             }
         }
     }
-     
-    
-    btVector3 currentVelocityDirection = _ball.body->getLinearVelocity();
-    btScalar currentVelocity = currentVelocityDirection.length();
-    if (currentVelocity < _desiredVelocity) {
-        currentVelocityDirection *= _desiredVelocity/currentVelocity;
-        _ball.body->setLinearVelocity(currentVelocityDirection);
-    }
-     */
 }
-
-/*
-- (void)destroyBrickAndCheckVictory:(PNode*)brick {
-    [self.children removeObject:brick];
-    [_bricks removeObject:brick];
-    
-    _world->removeRigidBody(brick.body);
-    
-    if (_bricks.count == 0) {
-        [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:YES];
-    }
-}
-*/
 
 - (void)dealloc {
     delete _world;
@@ -287,3 +208,64 @@
 }
 
 @end
+
+
+
+
+/* EXAMPLE CODE
+ 
+ DESTROY OBJECT AND CHANGE SCENE
+ ----------------------------------
+ - (void)destroyBrickAndCheckVictory:(PNode*)brick {
+     [self.children removeObject:brick];
+     [_bricks removeObject:brick];
+ 
+     _world->removeRigidBody(brick.body);
+ 
+     if (_bricks.count == 0) {
+     [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:YES];
+     }
+ }
+ 
+ 
+ MOVING THE PADDLE
+ ----------------------------------
+ float  newX = _paddle.position.x + diff.x;
+ newX = MIN(MAX(newX, _paddle.width/2), _gameArea.width - _paddle.width/2);
+ _paddle.position = GLKVector3Make(newX, _paddle.position.y, _paddle.position.z);
+ 
+ 
+ CREATEING OBJECTS
+ ----------------------------------
+ //Create paddle and add to scene
+ _paddle = [[RWTPaddle alloc] initWithShader:shader];
+ _paddle.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .05, 0);
+ _paddle.matColour = GLKVector4Make(1, 0, 0, 1);
+ [self.children addObject:_paddle];
+ _world->addRigidBody(_paddle.body);
+ 
+ //Add a border to the center of the screen
+ _border = [[RWTBorder alloc] initWithShader:shader];
+ _border.position = GLKVector3Make(_gameArea.width/2, _gameArea.height/2, 0);
+ [self.children addObject:_border];
+ _world->addRigidBody(_border.body);
+ 
+ GLKVector4 colours[BRICKS_PER_ROW];
+ for (int i = 0; i < BRICKS_PER_ROW; i++){
+    colours[i] = [self color:(float)(BRICKS_PER_ROW - i) / (float)BRICKS_PER_ROW];
+ }
+ 
+ _bricks = [NSMutableArray arrayWithCapacity:72];
+ for (int j = 0; j < BRICKS_PER_COL; j++){
+     for (int i = 0; i < BRICKS_PER_ROW; i++){
+         RWTBrick *_brick = [[RWTBrick alloc] initWithShader:shader];
+         float margin = _gameArea.width * .1;
+         float startY = _gameArea.height * .5;
+         _brick.position = GLKVector3Make(margin + (margin * i), startY + (margin * j), 0);
+         _brick.matColour = colours[i];
+         [self.children addObject:_brick];
+         [_bricks addObject:_brick];
+         _world->addRigidBody(_brick.body);
+     }
+ }
+ */

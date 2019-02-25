@@ -85,11 +85,13 @@
 }
 
 - (IBAction)launchBtn:(id)sender {
-    float angle = GLKMathDegreesToRadians([_launchAngleSlider value]);
-    float velocity = [_launchVelocitySlider value];
-    float x = cosf(angle) * velocity;
-    float y = sinf(angle) * velocity;
-    [_scene launchBallWithVelocity:x velocityY:y atAngle:angle];
+    if (![_scene isBallActive]){
+        float angle = GLKMathDegreesToRadians([_launchAngleSlider value]);
+        float velocity = [_launchVelocitySlider value];
+        float x = cosf(angle) * velocity;
+        float y = sinf(angle) * velocity;
+        [_scene launchBallWithVelocity:x velocityY:y atAngle:angle];
+    }
 }
 
 - (IBAction)launchVelocitySliderChanged:(id)sender {

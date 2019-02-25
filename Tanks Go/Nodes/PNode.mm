@@ -24,8 +24,6 @@
                diffuseColour:(GLKVector4)diffuseColour
                    shininess:(float)shininess {
     
-    
-    
     if (self = [super initWithName:name shader:shader vertices:vertices vertexCount:vertexCount textureName:textureName specularColor:specularColour diffuseColor:diffuseColour shininess:shininess]) {
         
         self.tag = tag;
