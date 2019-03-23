@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define kTankerTag  7
 #define kBoxTag     8
 #define kTank1Tag   9
+#define kTank2Tag   10
 
 @interface PNode : Node
 

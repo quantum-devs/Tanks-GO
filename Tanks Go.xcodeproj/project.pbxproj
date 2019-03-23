@@ -21,6 +21,9 @@
 		29EDFAF1224605D10065AC81 /* Tank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EDFAEE224605D10065AC81 /* Tank1.png */; };
 		29EDFAF2224605D10065AC81 /* Tank1.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAF0224605D10065AC81 /* Tank1.m */; };
 		29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAF5224606170065AC81 /* Tank1Node.mm */; };
+		29EDFAFB22460B890065AC81 /* Tank2.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EDFAF822460B880065AC81 /* Tank2.png */; };
+		29EDFAFC22460B890065AC81 /* Tank2.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAFA22460B890065AC81 /* Tank2.m */; };
+		29EDFB0222460BEF0065AC81 /* Tank2Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFB0122460BEF0065AC81 /* Tank2Node.mm */; };
 		9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD97220E5D3E00A7360E /* AppDelegate.m */; };
 		9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD9A220E5D3E00A7360E /* ViewController.m */; };
 		9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9610FD9C220E5D3E00A7360E /* Main.storyboard */; };
@@ -148,6 +151,11 @@
 		29EDFAF0224605D10065AC81 /* Tank1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tank1.m; sourceTree = "<group>"; };
 		29EDFAF4224606170065AC81 /* Tank1Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tank1Node.h; sourceTree = "<group>"; };
 		29EDFAF5224606170065AC81 /* Tank1Node.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tank1Node.mm; sourceTree = "<group>"; };
+		29EDFAF822460B880065AC81 /* Tank2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tank2.png; path = "Tanks Go/Models/Tank2/Tank2.png"; sourceTree = SOURCE_ROOT; };
+		29EDFAF922460B890065AC81 /* Tank2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tank2.h; path = "Tanks Go/Models/Tank2/Tank2.h"; sourceTree = SOURCE_ROOT; };
+		29EDFAFA22460B890065AC81 /* Tank2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tank2.m; path = "Tanks Go/Models/Tank2/Tank2.m"; sourceTree = SOURCE_ROOT; };
+		29EDFB0022460BEF0065AC81 /* Tank2Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tank2Node.h; sourceTree = "<group>"; };
+		29EDFB0122460BEF0065AC81 /* Tank2Node.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tank2Node.mm; sourceTree = "<group>"; };
 		9610FD93220E5D3E00A7360E /* Tanks Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tanks Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9610FD96220E5D3E00A7360E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9610FD97220E5D3E00A7360E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -272,6 +280,8 @@
 				29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */,
 				29EDFAF4224606170065AC81 /* Tank1Node.h */,
 				29EDFAF5224606170065AC81 /* Tank1Node.mm */,
+				29EDFB0022460BEF0065AC81 /* Tank2Node.h */,
+				29EDFB0122460BEF0065AC81 /* Tank2Node.mm */,
 			);
 			path = GameNodes;
 			sourceTree = "<group>";
@@ -285,6 +295,17 @@
 			);
 			name = Tank1;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		29EDFAF722460B450065AC81 /* Tank2 */ = {
+			isa = PBXGroup;
+			children = (
+				29EDFAF922460B890065AC81 /* Tank2.h */,
+				29EDFAFA22460B890065AC81 /* Tank2.m */,
+				29EDFAF822460B880065AC81 /* Tank2.png */,
+			);
+			name = Tank2;
+			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		9610FD8A220E5D3D00A7360E = {
@@ -355,6 +376,7 @@
 		9610FDAE220E5DD200A7360E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29EDFAF722460B450065AC81 /* Tank2 */,
 				29EDFAF3224605D70065AC81 /* Tank1 */,
 				29EDFAE92245E1710065AC81 /* Box.png */,
 				29EDFAE62245E1640065AC81 /* Box.h */,
@@ -713,6 +735,7 @@
 				9610FDA0220E5D3E00A7360E /* Assets.xcassets in Resources */,
 				964849C8221DEAD200266B34 /* brick.mtl in Resources */,
 				96484D142221144C00266B34 /* thumb_image.png in Resources */,
+				29EDFAFB22460B890065AC81 /* Tank2.png in Resources */,
 				964849B6221DEAB900266B34 /* ball.obj in Resources */,
 				29EA13112222738600131DA9 /* camo1.jpg in Resources */,
 				964849D9221DEAEC00266B34 /* youlose.obj in Resources */,
@@ -748,6 +771,8 @@
 				29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */,
 				29EA13022222711C00131DA9 /* Floor.m in Sources */,
 				296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */,
+				29EDFB0222460BEF0065AC81 /* Tank2Node.mm in Sources */,
+				29EDFAFC22460B890065AC81 /* Tank2.m in Sources */,
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
 				964849DC221DEAEC00266B34 /* youlose.m in Sources */,
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
