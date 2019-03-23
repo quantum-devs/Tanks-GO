@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 #define kPanzerTag  5
 #define kFloorTag   6
 #define kTankerTag  7
+#define kBoxTag     8
+#define kTank1Tag   9
 
 @interface PNode : Node
 

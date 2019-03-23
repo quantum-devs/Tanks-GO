@@ -15,6 +15,7 @@
 #import "Director.h"
 #import "FloorNode.h"
 #import "TankerNode.h"
+#import "Tank1Node.h"
 #include "btBulletDynamicsCommon.h"
 
 #define BRICKS_PER_COL 8
@@ -32,6 +33,7 @@
     float _ballVelocityY;
     FloorNode *_floor;
     TankerNode *_tanker;
+    Tank1Node *_box;
     NSMutableArray *_tanks;
     
     //Bullet3 Physics variables
@@ -55,11 +57,18 @@
         //Create the initial camera position
         _gameArea = CGSizeMake(27, 48);
         _sceneOffset = _gameArea.height/2/tanf(GLKMathDegreesToRadians(85/2));
-        self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset - 10);
+        self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset );
         
         //Create floor and add to scene
         _floor = [[FloorNode alloc] initWithShader:shader];
         _floor.position = GLKVector3Make(_gameArea.width/2, -5, 0);
+        _floor.matColour = GLKVector4Make(1, 1, 1, 1);
+        [self.children addObject:_floor];
+        _world->addRigidBody(_floor.body);
+        
+        //Create floor and add to scene
+        _floor = [[FloorNode alloc] initWithShader:shader];
+        _floor.position = GLKVector3Make(_gameArea.width/2, 10, 0);
         _floor.matColour = GLKVector4Make(1, 1, 1, 1);
         [self.children addObject:_floor];
         _world->addRigidBody(_floor.body);
@@ -73,6 +82,14 @@
         [self.children addObject:_tanker];
         [_tanks addObject:_tanker];
         _world->addRigidBody(_tanker.body);
+        
+        _box = [[Tank1Node alloc] initWithShader:shader];
+        _box.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);
+
+        //_box.matColour = GLKVector4Make(.5, 1, .5, 1);
+        [self.children addObject:_box];
+        [_tanks addObject:_box];
+        _world->addRigidBody(_box.body);
         
         _tanker = [[TankerNode alloc] initWithShader:shader];
         _tanker.rotationY = M_PI_2;

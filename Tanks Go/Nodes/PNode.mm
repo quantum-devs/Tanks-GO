@@ -78,7 +78,7 @@
     btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, motionState, _shape, bodyInertia);
     
     bodyCI.m_restitution = 0.0f;
-    bodyCI.m_friction = 1.0f;
+    bodyCI.m_friction = 0.0f;
     
     _body = new btRigidBody(bodyCI);
     

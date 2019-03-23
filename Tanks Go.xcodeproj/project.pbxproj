@@ -15,6 +15,12 @@
 		29EA130B222271B100131DA9 /* camo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA1309222271B100131DA9 /* camo.jpg */; };
 		29EA13112222738600131DA9 /* camo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA13102222738600131DA9 /* camo1.jpg */; };
 		29EA1637222254C1004A5CE5 /* TankerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EA1636222254C1004A5CE5 /* TankerNode.mm */; };
+		29EDFAE82245E1650065AC81 /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAE72245E1640065AC81 /* Box.m */; };
+		29EDFAEA2245E1720065AC81 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EDFAE92245E1710065AC81 /* Box.png */; };
+		29EDFAED2245E1CD0065AC81 /* BoxNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */; };
+		29EDFAF1224605D10065AC81 /* Tank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EDFAEE224605D10065AC81 /* Tank1.png */; };
+		29EDFAF2224605D10065AC81 /* Tank1.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAF0224605D10065AC81 /* Tank1.m */; };
+		29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAF5224606170065AC81 /* Tank1Node.mm */; };
 		9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD97220E5D3E00A7360E /* AppDelegate.m */; };
 		9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD9A220E5D3E00A7360E /* ViewController.m */; };
 		9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9610FD9C220E5D3E00A7360E /* Main.storyboard */; };
@@ -132,6 +138,16 @@
 		29EA13102222738600131DA9 /* camo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = camo1.jpg; path = "Tanks Go/Models/Tanker/camo1.jpg"; sourceTree = SOURCE_ROOT; };
 		29EA1635222254C1004A5CE5 /* TankerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TankerNode.h; sourceTree = "<group>"; };
 		29EA1636222254C1004A5CE5 /* TankerNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TankerNode.mm; sourceTree = "<group>"; };
+		29EDFAE62245E1640065AC81 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		29EDFAE72245E1640065AC81 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
+		29EDFAE92245E1710065AC81 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
+		29EDFAEB2245E1CD0065AC81 /* BoxNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoxNode.h; sourceTree = "<group>"; };
+		29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BoxNode.mm; sourceTree = "<group>"; };
+		29EDFAEE224605D10065AC81 /* Tank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tank1.png; sourceTree = "<group>"; };
+		29EDFAEF224605D10065AC81 /* Tank1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tank1.h; sourceTree = "<group>"; };
+		29EDFAF0224605D10065AC81 /* Tank1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tank1.m; sourceTree = "<group>"; };
+		29EDFAF4224606170065AC81 /* Tank1Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tank1Node.h; sourceTree = "<group>"; };
+		29EDFAF5224606170065AC81 /* Tank1Node.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tank1Node.mm; sourceTree = "<group>"; };
 		9610FD93220E5D3E00A7360E /* Tanks Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tanks Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9610FD96220E5D3E00A7360E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9610FD97220E5D3E00A7360E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -252,8 +268,23 @@
 				296F5FD92220D3F900A02532 /* FloorNode.mm */,
 				29EA1635222254C1004A5CE5 /* TankerNode.h */,
 				29EA1636222254C1004A5CE5 /* TankerNode.mm */,
+				29EDFAEB2245E1CD0065AC81 /* BoxNode.h */,
+				29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */,
+				29EDFAF4224606170065AC81 /* Tank1Node.h */,
+				29EDFAF5224606170065AC81 /* Tank1Node.mm */,
 			);
 			path = GameNodes;
+			sourceTree = "<group>";
+		};
+		29EDFAF3224605D70065AC81 /* Tank1 */ = {
+			isa = PBXGroup;
+			children = (
+				29EDFAEF224605D10065AC81 /* Tank1.h */,
+				29EDFAF0224605D10065AC81 /* Tank1.m */,
+				29EDFAEE224605D10065AC81 /* Tank1.png */,
+			);
+			name = Tank1;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		9610FD8A220E5D3D00A7360E = {
@@ -324,6 +355,10 @@
 		9610FDAE220E5DD200A7360E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29EDFAF3224605D70065AC81 /* Tank1 */,
+				29EDFAE92245E1710065AC81 /* Box.png */,
+				29EDFAE62245E1640065AC81 /* Box.h */,
+				29EDFAE72245E1640065AC81 /* Box.m */,
 				96191CB82222769100D946BB /* Tanker */,
 				296F5FCC2220D35300A02532 /* Floor */,
 				964849A0221DE8DB00266B34 /* RWTModels */,
@@ -665,6 +700,8 @@
 				964849B5221DEAB900266B34 /* ball.mtl in Resources */,
 				964849D1221DEADE00266B34 /* paddle.mtl in Resources */,
 				964849DA221DEAEC00266B34 /* youlose.png in Resources */,
+				29EDFAF1224605D10065AC81 /* Tank1.png in Resources */,
+				29EDFAEA2245E1720065AC81 /* Box.png in Resources */,
 				964849A9221DEA5800266B34 /* youwin.png in Resources */,
 				9610FDCB220F9EEE00A7360E /* SimpleFragment.glsl in Resources */,
 				964849CA221DEAD200266B34 /* brick.obj in Resources */,
@@ -704,9 +741,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9634F1602214EB38008CE6CA /* Cube.m in Sources */,
+				29EDFAE82245E1650065AC81 /* Box.m in Sources */,
 				9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */,
 				9648497B221DE2AF00266B34 /* GameScene.mm in Sources */,
 				964849E3221F6D1000266B34 /* GameOver.m in Sources */,
+				29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */,
 				29EA13022222711C00131DA9 /* Floor.m in Sources */,
 				296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */,
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
@@ -721,6 +760,7 @@
 				9634F169221BC217008CE6CA /* mushroom.m in Sources */,
 				964849B8221DEAB900266B34 /* ball.m in Sources */,
 				964849BE221DEAC600266B34 /* border.m in Sources */,
+				29EDFAED2245E1CD0065AC81 /* BoxNode.mm in Sources */,
 				964849A8221DEA5800266B34 /* youwin.m in Sources */,
 				29EA1637222254C1004A5CE5 /* TankerNode.mm in Sources */,
 				96484995221DE78300266B34 /* RWTPaddle.mm in Sources */,
@@ -731,6 +771,7 @@
 				964849D3221DEADE00266B34 /* paddle.m in Sources */,
 				9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */,
 				96484998221DE78300266B34 /* RWTYouLose.m in Sources */,
+				29EDFAF2224605D10065AC81 /* Tank1.m in Sources */,
 				96484CE9221FED0900266B34 /* PNode.mm in Sources */,
 				9634F173221BDC09008CE6CA /* TestScene.m in Sources */,
 			);
