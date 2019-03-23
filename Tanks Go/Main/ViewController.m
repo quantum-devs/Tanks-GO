@@ -59,7 +59,7 @@
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
+    //glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
@@ -92,6 +92,14 @@
         float y = sinf(angle) * velocity;
         [_scene launchBallWithVelocity:x velocityY:y atAngle:angle];
     }
+}
+
+- (IBAction)moveLeftBtn:(id)sender {
+    [_scene moveTankLeft];
+}
+
+- (IBAction)moveRightBtn:(id)sender {
+    [_scene moveTankRight];
 }
 
 - (IBAction)launchVelocitySliderChanged:(id)sender {

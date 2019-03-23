@@ -13,13 +13,17 @@
     GLuint _modelViewMatrixUniform;
     GLuint _projectionMatrixUniform;
     GLuint _texUniform;
+    
     GLuint _lightColourUniform;
     GLuint _lightAmbientIntensityUniform;
     GLuint _lightDiffuseIntensityUniform;
     GLuint _lightDirectionUniform;
+    
     GLuint _matSpecularIntensityUniform;
     GLuint _shininessUniform;
     GLuint _matColourUniform;
+    GLuint _shadowCoordUniform;
+    GLuint _shadowMapUniform;
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
@@ -36,7 +40,6 @@
   const char * shaderStringUTF8 = [shaderString UTF8String];
   int shaderStringLength = [shaderString length];
   glShaderSource(shaderHandle, 1, &shaderStringUTF8, &shaderStringLength);
-  
   glCompileShader(shaderHandle);
   
   GLint compileSuccess;
@@ -66,7 +69,7 @@
   glBindAttribLocation(_programHandle, VertexAttribPosition, "a_Position");
   glBindAttribLocation(_programHandle, VertexAttribColour, "a_Colour");
   glBindAttribLocation(_programHandle, VertexAttribTexCoord, "a_TexCoord");
-    glBindAttribLocation(_programHandle, VertexAttribNormal, "a_Normal");
+  glBindAttribLocation(_programHandle, VertexAttribNormal, "a_Normal");
   
   glLinkProgram(_programHandle);
     
@@ -81,6 +84,8 @@
   _matSpecularIntensityUniform = glGetUniformLocation(_programHandle, "u_MatSpecularIntensity");
   _shininessUniform = glGetUniformLocation(_programHandle, "u_Shininess");
   _matColourUniform = glGetUniformLocation(_programHandle, "u_MatColour");
+  _shadowCoordUniform = glGetUniformLocation(_programHandle, "u_ShadowCoord");
+  _shadowMapUniform = glGetUniformLocation(_programHandle, "u_ShadowMap");
   
   GLint linkSuccess;
   glGetProgramiv(_programHandle, GL_LINK_STATUS, &linkSuccess);
@@ -101,15 +106,24 @@
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE_2D, self.texture.name);
   glUniform1i(_texUniform, 1);
+    
+  glActiveTexture(GL_TEXTURE1);
+  glBindTexture(GL_TEXTURE_2D, self.texture.name);
+  glUniform1i(_shadowCoordUniform, 1);
   
   glUniform3f(_lightColourUniform, 1, 1, 1);
-  glUniform1f(_lightAmbientIntensityUniform, .1);
-  GLKVector3 lightDirection = GLKVector3Normalize(GLKVector3Make(0, 1, -1));
+  glUniform1f(_lightAmbientIntensityUniform, 1);
+  GLKVector3 lightDirection = GLKVector3Normalize(GLKVector3Make(0, -1, 1));
   glUniform3f(_lightDirectionUniform, lightDirection.x, lightDirection.y, lightDirection.z);
   glUniform1f(_lightDiffuseIntensityUniform, 1.0);
+    
   glUniform1f(_matSpecularIntensityUniform, .7);
   glUniform1f(_shininessUniform, 64.0);
   glUniform4f(_matColourUniform, self.matColour.r, self.matColour.g, self.matColour.b, self.matColour.a);
+  glUniform4f(_shadowMapUniform, 1, 1, 1, 1);
+    
+  _shadowCoordUniform = glGetUniformLocation(_programHandle, "u_ShadowCoord");
+  _shadowMapUniform = glGetUniformLocation(_programHandle, "u_ShadowMap");
 }
 
 - (instancetype)initWithVertexShader:(NSString *)vertexShader fragmentShader:

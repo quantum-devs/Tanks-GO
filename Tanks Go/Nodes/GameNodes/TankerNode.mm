@@ -14,7 +14,7 @@
 - (id)initWithShader:(BaseEffect *)shader {
     
     if ((self = [super initWithName:"Tanker"
-                               mass:1.0f
+                               mass:50.0f
                              convex:YES
                                 tag:kTankerTag
                              shader:shader

@@ -119,8 +119,6 @@
     touchLocation = [self touchLocationToGameArea:touchLocation];
     CGPoint diff = CGPointMake(touchLocation.x - _prevTouchLocation.x, touchLocation.y - _prevTouchLocation.y);
     _prevTouchLocation = touchLocation;
-    
-    
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -134,9 +132,27 @@
     return NO;
 }
 
+- (void)moveTankRight {
+    if (_playerOneTurn) {
+        _tanker.position = GLKVector3Make(self.position.x + 1, self.position.y, self.position.z);
+    } else {
+        _tanker.position = GLKVector3Make(self.position.x + 1, self.position.y, self.position.z);
+    }
+}
+
+- (void)moveTankLeft {
+    if (_playerOneTurn) {
+        _tanker.position = GLKVector3Make(self.position.x - 1, self.position.y, self.position.z);
+    } else {
+        _tanker.position = GLKVector3Make(self.position.x - 1, self.position.y, self.position.z);
+    }
+}
+
 - (void)destroyBall:(PNode*)ball {
     [self.children removeObject:ball];
     _world->removeRigidBody(ball.body);
+    ball.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset - 10);
+    _playerOneTurn = !_playerOneTurn;
 }
 
 - (void)launchBallWithVelocity:(float)X velocityY:(float)Y atAngle:(float)angle {
@@ -151,15 +167,15 @@
     [self.children addObject:_ball];
     _world->addRigidBody(_ball.body);
     _ball.body->setLinearVelocity(btVector3(X/2, Y/2, 0));
-    _playerOneTurn = !_playerOneTurn;
 }
 
 - (void)updateWithDelta:(GLfloat)dt {
     [super updateWithDelta:dt];
     _world->stepSimulation(dt);
     
-    if (_ball.position.x > _gameArea.width + _sceneOffset + 10 || _ball.position.x < -_gameArea.width - _sceneOffset + 10)
+    if (_ball.position.x > _gameArea.width + _sceneOffset + 15 || _ball.position.x < -_gameArea.width - _sceneOffset + 10) {
         [self destroyBall:_ball];
+    }
     
     if (_playerOneTurn) {
         glClearColor(.5, 1, .5, 1);
@@ -172,7 +188,6 @@
         btPersistentManifold *contactManifold = _world->getDispatcher()->getManifoldByIndexInternal(i);
      
         int numContacts = contactManifold->getNumContacts();
-        NSLog(@"%d", numContacts);
         if (numContacts > 0) {
             [[Director sharedInstance] playPopEffect];
             

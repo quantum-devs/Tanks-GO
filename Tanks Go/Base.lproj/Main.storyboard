@@ -89,6 +89,28 @@
                                     <action selector="launchBtn:" destination="vhi-eo-Qlt" eventType="touchUpInside" id="SsD-FU-d9c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujA-h0-skx">
+                                <rect key="frame" x="401" y="70" width="100" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1516960816" green="0.1516960816" blue="0.1516960816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.62120237580000004" green="0.69074111069999999" blue="0.9954882437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="&gt;">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.66528692739999995" blue="0.84496437820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="50" name="MarkerFelt-Wide"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="launchBtn:" destination="vhi-eo-Qlt" eventType="touchUpInside" id="jde-WD-Fy1"/>
+                                    <action selector="moveRightBtn:" destination="vhi-eo-Qlt" eventType="touchUpInside" id="tL9-fb-Xu9"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="000.00" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lP1-XZ-5TJ">
                                 <rect key="frame" x="165" y="10" width="100" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -139,12 +161,32 @@
                                     <action selector="launchAngleSliderChanged:" destination="vhi-eo-Qlt" eventType="valueChanged" id="Fyq-wE-ATM"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8df-np-KRZ">
+                                <rect key="frame" x="165" y="70" width="100" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1516960816" green="0.1516960816" blue="0.1516960816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.62120237580000004" green="0.69074111069999999" blue="0.9954882437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="&lt;">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.66528692739999995" blue="0.84496437820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="50" name="MarkerFelt-Wide"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="moveLeftBtn:" destination="vhi-eo-Qlt" eventType="touchUpInside" id="wou-Y9-KNg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <connections>
                             <outlet property="delegate" destination="vhi-eo-Qlt" id="biC-SF-JPm"/>
                         </connections>
                     </glkView>
-
                     <connections>
                         <outlet property="_launchAngleLabel" destination="nYa-yV-WKG" id="qHR-Wz-K4h"/>
                         <outlet property="_launchAngleSlider" destination="aHO-Bc-4FM" id="KQh-xt-pYm"/>
