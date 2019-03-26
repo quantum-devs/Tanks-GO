@@ -15,6 +15,9 @@
 		29EA130B222271B100131DA9 /* camo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA1309222271B100131DA9 /* camo.jpg */; };
 		29EA13112222738600131DA9 /* camo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA13102222738600131DA9 /* camo1.jpg */; };
 		29EA1637222254C1004A5CE5 /* TankerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EA1636222254C1004A5CE5 /* TankerNode.mm */; };
+		29EBBAE72249BBC300AB3723 /* Angler.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EBBAE52249BBC300AB3723 /* Angler.png */; };
+		29EBBAE82249BBC300AB3723 /* Angler.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBBAE62249BBC300AB3723 /* Angler.m */; };
+		29EBBAEE2249BC9500AB3723 /* AnglerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBBAED2249BC9500AB3723 /* AnglerNode.m */; };
 		29EDFAE82245E1650065AC81 /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAE72245E1640065AC81 /* Box.m */; };
 		29EDFAEA2245E1720065AC81 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EDFAE92245E1710065AC81 /* Box.png */; };
 		29EDFAED2245E1CD0065AC81 /* BoxNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */; };
@@ -141,6 +144,11 @@
 		29EA13102222738600131DA9 /* camo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = camo1.jpg; path = "Tanks Go/Models/Tanker/camo1.jpg"; sourceTree = SOURCE_ROOT; };
 		29EA1635222254C1004A5CE5 /* TankerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TankerNode.h; sourceTree = "<group>"; };
 		29EA1636222254C1004A5CE5 /* TankerNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TankerNode.mm; sourceTree = "<group>"; };
+		29EBBAE42249BBC300AB3723 /* Angler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Angler.h; path = "Tanks Go/Models/Angler/Angler.h"; sourceTree = SOURCE_ROOT; };
+		29EBBAE52249BBC300AB3723 /* Angler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Angler.png; path = "Tanks Go/Models/Angler/Angler.png"; sourceTree = SOURCE_ROOT; };
+		29EBBAE62249BBC300AB3723 /* Angler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Angler.m; path = "Tanks Go/Models/Angler/Angler.m"; sourceTree = SOURCE_ROOT; };
+		29EBBAEC2249BC9500AB3723 /* AnglerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnglerNode.h; sourceTree = "<group>"; };
+		29EBBAED2249BC9500AB3723 /* AnglerNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnglerNode.m; sourceTree = "<group>"; };
 		29EDFAE62245E1640065AC81 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		29EDFAE72245E1640065AC81 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
 		29EDFAE92245E1710065AC81 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
@@ -282,8 +290,21 @@
 				29EDFAF5224606170065AC81 /* Tank1Node.mm */,
 				29EDFB0022460BEF0065AC81 /* Tank2Node.h */,
 				29EDFB0122460BEF0065AC81 /* Tank2Node.mm */,
+				29EBBAEC2249BC9500AB3723 /* AnglerNode.h */,
+				29EBBAED2249BC9500AB3723 /* AnglerNode.m */,
 			);
 			path = GameNodes;
+			sourceTree = "<group>";
+		};
+		29EBBAE32249BBAA00AB3723 /* Angler */ = {
+			isa = PBXGroup;
+			children = (
+				29EBBAE42249BBC300AB3723 /* Angler.h */,
+				29EBBAE62249BBC300AB3723 /* Angler.m */,
+				29EBBAE52249BBC300AB3723 /* Angler.png */,
+			);
+			name = Angler;
+			path = "New Group2";
 			sourceTree = "<group>";
 		};
 		29EDFAF3224605D70065AC81 /* Tank1 */ = {
@@ -376,6 +397,7 @@
 		9610FDAE220E5DD200A7360E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29EBBAE32249BBAA00AB3723 /* Angler */,
 				29EDFAF722460B450065AC81 /* Tank2 */,
 				29EDFAF3224605D70065AC81 /* Tank1 */,
 				29EDFAE92245E1710065AC81 /* Box.png */,
@@ -749,6 +771,7 @@
 				964849C1221DEAC600266B34 /* border.mtl in Resources */,
 				964849D2221DEADE00266B34 /* paddle.png in Resources */,
 				964849A7221DEA5800266B34 /* youwin.obj in Resources */,
+				29EBBAE72249BBC300AB3723 /* Angler.png in Resources */,
 				9634F1652215052C008CE6CA /* dungeon_01.png in Resources */,
 				964849BF221DEAC600266B34 /* border.png in Resources */,
 				964849C0221DEAC600266B34 /* border.obj in Resources */,
@@ -769,6 +792,7 @@
 				9648497B221DE2AF00266B34 /* GameScene.mm in Sources */,
 				964849E3221F6D1000266B34 /* GameOver.m in Sources */,
 				29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */,
+				29EBBAEE2249BC9500AB3723 /* AnglerNode.m in Sources */,
 				29EA13022222711C00131DA9 /* Floor.m in Sources */,
 				296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */,
 				29EDFB0222460BEF0065AC81 /* Tank2Node.mm in Sources */,
@@ -776,6 +800,7 @@
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
 				964849DC221DEAEC00266B34 /* youlose.m in Sources */,
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
+				29EBBAE82249BBC300AB3723 /* Angler.m in Sources */,
 				96484997221DE78300266B34 /* RWTBorder.mm in Sources */,
 				96484994221DE78300266B34 /* RWTYouWin.m in Sources */,
 				296F5FDA2220D3F900A02532 /* FloorNode.mm in Sources */,
