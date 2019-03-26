@@ -17,7 +17,10 @@
 #import "TankerNode.h"
 #import "Tank1Node.h"
 #import "Tank2Node.h"
+#import "AnglerNode.h"
+#import "ParachuteNode.h"
 #include "btBulletDynamicsCommon.h"
+
 
 #define BRICKS_PER_COL 8
 #define BRICKS_PER_ROW 9
@@ -36,6 +39,8 @@
     TankerNode *_tanker;
     Tank1Node *_tank1;
     Tank2Node *_tank2;
+    AnglerNode *_angler;
+    ParachuteNode *_parachute;
     NSMutableArray *_tanks;
     
     //Bullet3 Physics variables
@@ -97,6 +102,17 @@
         [self.children addObject:_tank2];
         [_tanks addObject:_tank2];
         _world->addRigidBody(_tank2.body);
+        
+        _angler = [[AnglerNode alloc] initWithShader:shader];
+        _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);
+        [self.children addObject:_angler];
+        [_tanks addObject:_angler];
+        
+        _parachute = [[ParachuteNode alloc] initWithShader:shader];
+        _parachute.position = GLKVector3Make(_gameArea.width/2 - 10, _gameArea.height * .5, 2);
+        [self.children addObject:_parachute];
+        [_tanks addObject:_parachute];
+        
     }
     return self;
 }
