@@ -18,6 +18,7 @@
 #import "Tank1Node.h"
 #import "Tank2Node.h"
 #import "AnglerNode.h"
+#import "ParachuteNode.h"
 #include "btBulletDynamicsCommon.h"
 
 
@@ -39,6 +40,7 @@
     Tank1Node *_tank1;
     Tank2Node *_tank2;
     AnglerNode *_angler;
+    ParachuteNode *_parachute;
     NSMutableArray *_tanks;
     
     //Bullet3 Physics variables
@@ -105,6 +107,11 @@
         _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);
         [self.children addObject:_angler];
         [_tanks addObject:_angler];
+        
+        _parachute = [[ParachuteNode alloc] initWithShader:shader];
+        _parachute.position = GLKVector3Make(_gameArea.width/2 - 10, _gameArea.height * .5, 2);
+        [self.children addObject:_parachute];
+        [_tanks addObject:_parachute];
         
     }
     return self;

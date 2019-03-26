@@ -1,20 +1,20 @@
 //
-//  AnglerNode.m
+//  ParachuteNode.m
 //  Tanks Go
 //
 //  Created by Renz on 3/25/19.
 //  Copyright © 2019 Jason Sekhon. All rights reserved.
 //
 
-#import "AnglerNode.h"
-#import "Angler.h"
+#import "ParachuteNode.h"
+#import "Parachute.h"
 
-@implementation AnglerNode
+@implementation ParachuteNode
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
-    if ((self = [super initWithName:"Angler" shader:shader vertices:(Vertex*)Angler_Cube_Angler_Vertices vertexCount:sizeof(Angler_Cube_Angler_Vertices) / sizeof(Angler_Cube_Angler_Vertices[0])])){
+    if ((self = [super initWithName:"Parachute" shader:shader vertices:(Vertex*)Parachute_Icosphere_Parachute_Vertices vertexCount:sizeof(Parachute_Icosphere_Parachute_Vertices) / sizeof(Parachute_Icosphere_Parachute_Vertices[0])])){
         
-        [self loadTexture:@"Angler.png"];
+        [self loadTexture:@"Parachute.png"];
         self.scale = 5;
         self.width = 5;
         self.height = 5;
@@ -28,5 +28,6 @@
 - (void)updateWithDelta:(GLfloat)dt{
     self.rotationZ -= M_PI * dt;
 }
+
 
 @end
