@@ -41,8 +41,13 @@
     float _ballVelocityY;
     
     float _power;
+    float _power2;
+    float _angle;
+    
     float _eMin;
     float _eMax;
+    float _eMin2;
+    float _eMax2;
     
     RWTBall *_ball;
     FloorNode *_floor;
@@ -81,8 +86,11 @@
         _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
         _playerTwoMovesLeft = [Director sharedInstance].playerTwoFuel;
         
+        _power2 = 0.5;
         _eMin = 1;
         _eMax = 100;
+        _eMin2 = 1;
+        _eMax2 = 180;
         
         //Create the initial camera position
         _gameArea = CGSizeMake(27, 48);
@@ -123,11 +131,13 @@
         _world->addRigidBody(_parachute2.body);
         
         _angler = [[AnglerNode alloc] initWithShader:shader];
-        _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);;
+        _angler.position = GLKVector3Make(_tank1.position.x, _tank1.height + 1, 0);
         [self.children addObject:_angler];
-        _angler.scale = 5;
+        _angler.scale = 1;
         _angler.width = 2.5;
         _angler.height = 5;
+        _angler.rotationZ = M_PI/2;
+        _angler.matColour = GLKVector4Make(1, 1, 1, _power2);
         _world->addRigidBody(_angler.body);
         
         /*
@@ -182,9 +192,18 @@
 
 - (void)changeAnglerWidth:(float)vel {
     _power = (vel - _eMin) / (_eMax - _eMin) * 5;
+    _power2 = (vel - _eMin) / (_eMax - _eMin);
     NSLog(@"%f", _power);
     if (_power >= 0.1)
         _angler.width = _power;
+    if (_power2 >= 0.1) {
+        _angler.matColour = GLKVector4Make(1, 1, 1, _power2);
+    }
+}
+
+- (void) changeAnglerAngle: (float) angle {
+    _angle = (angle - _eMin2) / (_eMax2 - _eMin2) * M_PI;
+    _angler.rotationZ = _angle;
 }
 
 - (BOOL)isBallActive {
@@ -198,20 +217,24 @@
     if (_playerOneTurn && _playerOneMovesLeft > 0) {
         _tank1.position = GLKVector3Make(_tank1.position.x + 1, _tank1.position.y, _tank1.position.z);
         _playerOneMovesLeft--;
+        _angler.position = GLKVector3Make(_tank1.position.x, _tank1.height + 1, 0);
     }
     if (!_playerOneTurn && _playerTwoMovesLeft > 0) {
         _tank2.position = GLKVector3Make(_tank2.position.x + 1, _tank2.position.y, _tank2.position.z);
         _playerTwoMovesLeft--;
+        _angler.position = GLKVector3Make(_tank2.position.x, _tank2.height + 1, 0);
     }
 }
 
 - (void)moveTankLeft {
     if (_playerOneTurn && _playerOneMovesLeft > 0) {
         _tank1.position = GLKVector3Make(_tank1.position.x - 1, _tank1.position.y, _tank1.position.z);
+        _angler.position = GLKVector3Make(_tank1.position.x, _tank1.height + 1, 0);
         _playerOneMovesLeft--;
     }
     if (!_playerOneTurn && _playerTwoMovesLeft > 0) {
         _tank2.position = GLKVector3Make(_tank2.position.x - 1, _tank2.position.y, _tank2.position.z);
+        _angler.position = GLKVector3Make(_tank2.position.x, _tank2.height + 1, 0);
         _playerTwoMovesLeft--;
     }
 }
@@ -238,6 +261,13 @@
     _world->removeRigidBody(ball.body);
     ball.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset - 10);
     _playerOneTurn = !_playerOneTurn;
+    
+    if (_playerOneTurn) {
+        _angler.position = GLKVector3Make(_tank1.position.x, _tank1.height + 1, 0);
+    } else {
+        _angler.position = GLKVector3Make(_tank2.position.x, _tank1.height + 1, 0);
+    }
+    
     _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
     _playerTwoMovesLeft = [Director sharedInstance].playerTwoFuel;
     
@@ -245,6 +275,7 @@
 
 - (void)launchBallWithVelocity:(float)X velocityY:(float)Y atAngle:(float)angle {
     _ball = [[RWTBall alloc] initWithShader:self.shader];
+    _angler.position = GLKVector3Make(_tank1.position.x, -15, 0);
     if (_playerOneTurn) {
         _ball.position = GLKVector3Make(_tank1.position.x, _tank1.position.y + 3, _tank1.position.z);
         _ball.matColour = GLKVector4Make(1, .1, .1, 1);

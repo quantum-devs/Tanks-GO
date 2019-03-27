@@ -149,6 +149,7 @@
     } else if (fabs(diff.x) > fabs(diff.y)) {
         _launchAngleSlider.value += diff.x;
         //NSLog(@"%f", _launchAngleSlider.value);
+        [_scene changeAnglerAngle:_launchAngleSlider.value];
     }
 }
 
