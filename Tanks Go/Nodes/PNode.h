@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define kTank1Tag   9
 #define kTank2Tag   10
 #define kBackgroundTag   11
+#define k
 
 @interface PNode : Node
 
