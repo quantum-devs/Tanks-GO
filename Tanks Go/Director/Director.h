@@ -24,10 +24,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) float playerOneFuel;
 @property (assign) float playerTwoFuel;
 @property (assign) float round;
+@property (assign) BOOL playingMusic;
 
 - (void)playBackgroundMusic:(NSString *)filename;
 - (AVAudioPlayer *)preloadSoundEffect:(NSString *)filename;
 - (void)playPopEffect;
+- (void)stopBackgroundMusic;
 
 @end
 

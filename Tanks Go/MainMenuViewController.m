@@ -32,7 +32,10 @@
     [Director sharedInstance].playerOneFuel = 5.0f;
     [Director sharedInstance].playerTwoFuel = 5.0f;
     [Director sharedInstance].playerOneHealth = 5.0f;
-    [Director sharedInstance].playerTwoHealth = 0.0f;
+    [Director sharedInstance].playerTwoHealth = 5.0f;
+    [Director sharedInstance].round = 1;
+    [[Director sharedInstance] stopBackgroundMusic];
+    [Director sharedInstance].playingMusic = YES;
     _backgroundImage.layer.zPosition = -99;
     // Do any additional setup after loading the view.
     

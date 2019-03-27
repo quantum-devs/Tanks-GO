@@ -98,17 +98,6 @@
         _tank2.position = GLKVector3Make(_gameArea.width/2 + 40, _floor.height + 1, 3);;
         [self.children addObject:_tank2];
         _world->addRigidBody(_tank2.body);
-        
-        _angler = [[AnglerNode alloc] initWithShader:shader];
-        _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);
-        [self.children addObject:_angler];
-        [_tanks addObject:_angler];
-        
-        _parachute = [[ParachuteNode alloc] initWithShader:shader];
-        _parachute.position = GLKVector3Make(_gameArea.width/2 - 10, _gameArea.height * .5, 2);
-        [self.children addObject:_parachute];
-        [_tanks addObject:_parachute];
-        
     }
     return self;
 }
@@ -174,9 +163,11 @@
 - (void)moveTankLeft {
     if (_playerOneTurn && _playerOneMovesLeft > 0) {
         _tank1.position = GLKVector3Make(_tank1.position.x - 1, _tank1.position.y, _tank1.position.z);
+        _playerOneMovesLeft--;
     }
     if (!_playerOneTurn && _playerTwoMovesLeft > 0) {
         _tank2.position = GLKVector3Make(_tank2.position.x - 1, _tank2.position.y, _tank2.position.z);
+        _playerTwoMovesLeft--;
     }
 }
 
@@ -225,7 +216,7 @@
     if (_playerOneHealth <= 0){
         [self playerTwoWon];
         return 1;
-    } else if (_playerTwoHealth >= 5) {
+    } else if (_playerTwoHealth <= 0) {
         [self playerOneWon];
         return 2;
     }
@@ -283,7 +274,7 @@
                 if (pnB.tag == kTank1Tag) {
                     _playerOneHealth--;
                 } else if (pnB.tag == kTank2Tag) {
-                    _playerTwoHealth++;
+                    _playerTwoHealth--;
                 }
                 break;
             } else if (pnB.tag == kBallTag) {
@@ -291,7 +282,7 @@
                 if (pnA.tag == kTank1Tag) {
                     _playerOneHealth--;
                 } else if (pnA.tag == kTank2Tag) {
-                    _playerTwoHealth++;
+                    _playerTwoHealth--;
                 }
                 break;
             }

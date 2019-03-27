@@ -23,6 +23,7 @@
 - (instancetype)init {
     if ((self = [super init])) {
         _popEffect = [self preloadSoundEffect:@"pop.wav"];
+        _playingMusic = NO;
     }
     return self;
 }
@@ -32,6 +33,10 @@
     _backgroundMusicPlayer.numberOfLoops = -1;
     [_backgroundMusicPlayer play];
 }
+- (void)stopBackgroundMusic {
+    [_backgroundMusicPlayer stop];
+}
+
 - (AVAudioPlayer *)preloadSoundEffect:(NSString *)filename {
     NSURL *URL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
     AVAudioPlayer *retval = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:nil];

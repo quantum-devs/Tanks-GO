@@ -38,13 +38,15 @@
     __weak IBOutlet UIImageView *_angleImg;
     __weak IBOutlet UIButton *_healthImg;
     __weak IBOutlet UIButton *_healthImg2;
+    __weak IBOutlet UILabel *_round;
 }
 
 - (void) setupScene{
     
     [Director sharedInstance].view = self.view;
-    [[Director sharedInstance] playBackgroundMusic:@"seaShanty2.mp3"];
-    
+    if ([Director sharedInstance].playingMusic)
+        [[Director sharedInstance] playBackgroundMusic:@"seaShanty2.mp3"];
+    [Director sharedInstance].playingMusic = NO;
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
                                         fragmentShader:@"SimpleFragment.glsl"];
     _scene = [[GameScene alloc] initWithShader:_shader];
@@ -68,6 +70,8 @@
     
     [_playerOneHealthSlider setThumbImage:[[UIImage alloc] init] forState:UIControlStateNormal];
     [_playerTwoHealthSlider setThumbImage:[[UIImage alloc] init] forState:UIControlStateNormal];
+    
+    [_round setText:[NSString stringWithFormat:@"Round %1.0f", [Director sharedInstance].round]];
     
     [self setStoreEnabled:NO];
     
@@ -95,12 +99,16 @@
 - (void)update {
     [[Director sharedInstance].scene updateWithDelta:self.timeSinceLastUpdate];
     if ([_scene playerOneTurn])
-        [_gasLabel setText:[NSString stringWithFormat:@"%1.0f", [Director sharedInstance].playerOneFuel]];
+        [_gasLabel setText:[NSString stringWithFormat:@"%1.0f", [_scene getPlayerOneMovesLeft]]];
     else
-        [_gasLabel setText:[NSString stringWithFormat:@"%1.0f", [Director sharedInstance].playerTwoFuel]];
+        [_gasLabel setText:[NSString stringWithFormat:@"%1.0f", [_scene getPlayerTwoMovesLeft]]];
     [_gasLabel setTextColor:[UIColor colorWithRed:fabsf(_gasLabel.text.floatValue-5)/5 green:.25 blue:0 alpha:1]];
+    
+    [_playerOneHealthSlider setMaximumValue:[Director sharedInstance].playerOneHealth];
+    [_playerTwoHealthSlider setMaximumValue:[Director sharedInstance].playerTwoHealth];
+    
     [_playerOneHealthSlider setValue:[_scene getPlayerOneHealth]];
-    [_playerTwoHealthSlider setValue:[_scene getPlayerTwoHealth]];
+    [_playerTwoHealthSlider setValue:[Director sharedInstance].playerTwoHealth - [_scene getPlayerTwoHealth]];
     if ([_scene gameStart])
         [self hideUI:FALSE];
     float checkVictory = [_scene checkVictory];
@@ -112,8 +120,12 @@
         [self hideUI:TRUE];
     }
     if ([[Director sharedInstance].scene isKindOfClass:[GameOver class]])
-        if (((GameOver *)[Director sharedInstance].scene).storeEnabled)
-            [self segueToStore];
+        if (((GameOver *)[Director sharedInstance].scene).storeEnabled) {
+            if ([Director sharedInstance].round == 3)
+                [self segueToMainMenu];
+            else
+                [self segueToStore];
+        }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -155,6 +167,7 @@
     [_velocityImg setHidden:hideUI];
     [_moveLeftImg setHidden:hideUI];
     [_moveRightImg setHidden:hideUI];
+    [_round setHidden:hideUI];
 }
 
 - (void)reinitializeUI {
@@ -167,6 +180,10 @@
 
 - (void)segueToStore {
     [self performSegueWithIdentifier:@"storeSegue" sender:self];
+}
+
+- (void)segueToMainMenu {
+    [self performSegueWithIdentifier:@"mainMenuSegue" sender:self];
 }
 
 - (IBAction)launchBtn:(id)sender {
