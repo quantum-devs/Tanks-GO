@@ -7,12 +7,10 @@
 //
 
 #import "GameOver.h"
-#import "RWTYouLose.h"
-#import "RWTYouWin.h"
+#import "Player1WinsNode.h"
+#import "Player2WinsNode.h"
 #import "GameScene.h"
 #import "Director.h"
-#import "ViewController.h"
-#import "StoreViewController.h"
 
 @implementation GameOver {
     GLfloat _timeSinceStart;
@@ -26,11 +24,13 @@
         self.rotationX = GLKMathDegreesToRadians(-45);
         Node *message;
         if (win) {
-            message = [[RWTYouWin alloc] initWithShader:self.shader];
-            message.matColour = GLKVector4Make(0, 1, 0, 1);
-        } else {
-            message = [[RWTYouLose alloc] initWithShader:self.shader];
+            glClearColor(1, .5, .5, 1);
+            message = [[Player1WinsNode alloc] initWithShader:self.shader];
             message.matColour = GLKVector4Make(1, 0, 0, 1);
+        } else {
+            glClearColor(.5, 1, .5, 1);
+            message = [[Player2WinsNode alloc] initWithShader:self.shader];
+            message.matColour = GLKVector4Make(0, 1, 0, 1);
         }
         message.position = GLKVector3Make(13.5, 24, 0);
         [self.children addObject:message];

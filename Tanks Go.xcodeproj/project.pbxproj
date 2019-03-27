@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2926E2942249FB420044B9CE /* Parachute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2926E2922249FB420044B9CE /* Parachute.m */; };
-		2926E2952249FB420044B9CE /* Parachute.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926E2932249FB420044B9CE /* Parachute.png */; };
-		2926E2982249FC990044B9CE /* ParachuteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2926E2972249FC990044B9CE /* ParachuteNode.m */; };
 		296F5FDA2220D3F900A02532 /* FloorNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FD92220D3F900A02532 /* FloorNode.mm */; };
 		296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F5FE222210C6100A02532 /* MainMenuViewController.m */; };
 		29EA13022222711C00131DA9 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EA12FF2222711C00131DA9 /* Floor.m */; };
@@ -18,9 +15,18 @@
 		29EA130B222271B100131DA9 /* camo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA1309222271B100131DA9 /* camo.jpg */; };
 		29EA13112222738600131DA9 /* camo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA13102222738600131DA9 /* camo1.jpg */; };
 		29EA1637222254C1004A5CE5 /* TankerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EA1636222254C1004A5CE5 /* TankerNode.mm */; };
-		29EBBAE72249BBC300AB3723 /* Angler.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EBBAE52249BBC300AB3723 /* Angler.png */; };
-		29EBBAE82249BBC300AB3723 /* Angler.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBBAE62249BBC300AB3723 /* Angler.m */; };
-		29EBBAEE2249BC9500AB3723 /* AnglerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBBAED2249BC9500AB3723 /* AnglerNode.m */; };
+		29EBA1D4224B447100BAAA7C /* AnglerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1D3224B447100BAAA7C /* AnglerNode.mm */; };
+		29EBA1D7224B447D00BAAA7C /* ParachuteNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1D6224B447D00BAAA7C /* ParachuteNode.mm */; };
+		29EBA1E8224B460900BAAA7C /* Angler.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EBA1E2224B460800BAAA7C /* Angler.png */; };
+		29EBA1E9224B460900BAAA7C /* Parachute.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1E5224B460800BAAA7C /* Parachute.m */; };
+		29EBA1EA224B460900BAAA7C /* Angler.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1E6224B460900BAAA7C /* Angler.m */; };
+		29EBA1EB224B460900BAAA7C /* Parachute.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EBA1E7224B460900BAAA7C /* Parachute.png */; };
+		29EBA1F0224B475E00BAAA7C /* Player1WinsNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1EE224B475E00BAAA7C /* Player1WinsNode.mm */; };
+		29EBA1F1224B475E00BAAA7C /* Player2WinsNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1EF224B475E00BAAA7C /* Player2WinsNode.mm */; };
+		29EBA1F8224B47A100BAAA7C /* Player2Wins.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1F3224B47A000BAAA7C /* Player2Wins.m */; };
+		29EBA1F9224B47A100BAAA7C /* Player1Wins.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1F4224B47A000BAAA7C /* Player1Wins.m */; };
+		29EBA1FA224B47A100BAAA7C /* Player1Wins.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EBA1F6224B47A000BAAA7C /* Player1Wins.png */; };
+		29EBA1FB224B47A100BAAA7C /* Player2Wins.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EBA1F7224B47A100BAAA7C /* Player2Wins.png */; };
 		29EDFAE82245E1650065AC81 /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAE72245E1640065AC81 /* Box.m */; };
 		29EDFAEA2245E1720065AC81 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EDFAE92245E1710065AC81 /* Box.png */; };
 		29EDFAED2245E1CD0065AC81 /* BoxNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */; };
@@ -77,7 +83,7 @@
 		964849DB221DEAEC00266B34 /* youlose.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 964849D7221DEAEC00266B34 /* youlose.mtl */; };
 		964849DC221DEAEC00266B34 /* youlose.m in Sources */ = {isa = PBXBuildFile; fileRef = 964849D8221DEAEC00266B34 /* youlose.m */; };
 		964849E0221E335500266B34 /* Director.m in Sources */ = {isa = PBXBuildFile; fileRef = 964849DF221E335500266B34 /* Director.m */; };
-		964849E3221F6D1000266B34 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 964849E2221F6D1000266B34 /* GameOver.m */; };
+		964849E3221F6D1000266B34 /* GameOver.mm in Sources */ = {isa = PBXBuildFile; fileRef = 964849E2221F6D1000266B34 /* GameOver.mm */; };
 		96484CE9221FED0900266B34 /* PNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96484CE8221FED0900266B34 /* PNode.mm */; };
 		96484D052220C56100266B34 /* libBulletCollision_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96484CF82220C52400266B34 /* libBulletCollision_xcode4_x64_debug.a */; };
 		96484D062220C56100266B34 /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96484CF22220C52300266B34 /* libBulletDynamics_xcode4_x64_debug.a */; };
@@ -152,11 +158,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2926E2912249FB360044B9CE /* Parachute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Parachute.h; path = "Tanks Go/Models/Parachute/Parachute.h"; sourceTree = SOURCE_ROOT; };
-		2926E2922249FB420044B9CE /* Parachute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Parachute.m; path = "Tanks Go/Models/Parachute/Parachute.m"; sourceTree = SOURCE_ROOT; };
-		2926E2932249FB420044B9CE /* Parachute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Parachute.png; path = "Tanks Go/Models/Parachute/Parachute.png"; sourceTree = SOURCE_ROOT; };
-		2926E2962249FC990044B9CE /* ParachuteNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParachuteNode.h; sourceTree = "<group>"; };
-		2926E2972249FC990044B9CE /* ParachuteNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParachuteNode.m; sourceTree = "<group>"; };
 		296F5FD82220D3F900A02532 /* FloorNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloorNode.h; sourceTree = "<group>"; };
 		296F5FD92220D3F900A02532 /* FloorNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FloorNode.mm; sourceTree = "<group>"; };
 		296F5FE122210C6100A02532 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
@@ -170,11 +171,26 @@
 		29EA13102222738600131DA9 /* camo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = camo1.jpg; path = "Tanks Go/Models/Tanker/camo1.jpg"; sourceTree = SOURCE_ROOT; };
 		29EA1635222254C1004A5CE5 /* TankerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TankerNode.h; sourceTree = "<group>"; };
 		29EA1636222254C1004A5CE5 /* TankerNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TankerNode.mm; sourceTree = "<group>"; };
-		29EBBAE42249BBC300AB3723 /* Angler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Angler.h; path = "Tanks Go/Models/Angler/Angler.h"; sourceTree = SOURCE_ROOT; };
-		29EBBAE52249BBC300AB3723 /* Angler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Angler.png; path = "Tanks Go/Models/Angler/Angler.png"; sourceTree = SOURCE_ROOT; };
-		29EBBAE62249BBC300AB3723 /* Angler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Angler.m; path = "Tanks Go/Models/Angler/Angler.m"; sourceTree = SOURCE_ROOT; };
-		29EBBAEC2249BC9500AB3723 /* AnglerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnglerNode.h; sourceTree = "<group>"; };
-		29EBBAED2249BC9500AB3723 /* AnglerNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnglerNode.m; sourceTree = "<group>"; };
+		29EBA1D2224B447100BAAA7C /* AnglerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnglerNode.h; sourceTree = "<group>"; };
+		29EBA1D3224B447100BAAA7C /* AnglerNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AnglerNode.mm; sourceTree = "<group>"; };
+		29EBA1D5224B447D00BAAA7C /* ParachuteNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParachuteNode.h; sourceTree = "<group>"; };
+		29EBA1D6224B447D00BAAA7C /* ParachuteNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ParachuteNode.mm; sourceTree = "<group>"; };
+		29EBA1E2224B460800BAAA7C /* Angler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Angler.png; sourceTree = "<group>"; };
+		29EBA1E3224B460800BAAA7C /* Parachute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parachute.h; sourceTree = "<group>"; };
+		29EBA1E4224B460800BAAA7C /* Angler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Angler.h; sourceTree = "<group>"; };
+		29EBA1E5224B460800BAAA7C /* Parachute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parachute.m; sourceTree = "<group>"; };
+		29EBA1E6224B460900BAAA7C /* Angler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Angler.m; sourceTree = "<group>"; };
+		29EBA1E7224B460900BAAA7C /* Parachute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Parachute.png; sourceTree = "<group>"; };
+		29EBA1EC224B475E00BAAA7C /* Player2WinsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player2WinsNode.h; sourceTree = "<group>"; };
+		29EBA1ED224B475E00BAAA7C /* Player1WinsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player1WinsNode.h; sourceTree = "<group>"; };
+		29EBA1EE224B475E00BAAA7C /* Player1WinsNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player1WinsNode.mm; sourceTree = "<group>"; };
+		29EBA1EF224B475E00BAAA7C /* Player2WinsNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player2WinsNode.mm; sourceTree = "<group>"; };
+		29EBA1F2224B47A000BAAA7C /* Player2Wins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player2Wins.h; sourceTree = "<group>"; };
+		29EBA1F3224B47A000BAAA7C /* Player2Wins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player2Wins.m; sourceTree = "<group>"; };
+		29EBA1F4224B47A000BAAA7C /* Player1Wins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player1Wins.m; sourceTree = "<group>"; };
+		29EBA1F5224B47A000BAAA7C /* Player1Wins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player1Wins.h; sourceTree = "<group>"; };
+		29EBA1F6224B47A000BAAA7C /* Player1Wins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player1Wins.png; sourceTree = "<group>"; };
+		29EBA1F7224B47A100BAAA7C /* Player2Wins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player2Wins.png; sourceTree = "<group>"; };
 		29EDFAE62245E1640065AC81 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		29EDFAE72245E1640065AC81 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
 		29EDFAE92245E1710065AC81 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
@@ -267,7 +283,7 @@
 		964849DE221E335500266B34 /* Director.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
 		964849DF221E335500266B34 /* Director.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Director.m; sourceTree = "<group>"; };
 		964849E1221F6D1000266B34 /* GameOver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
-		964849E2221F6D1000266B34 /* GameOver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
+		964849E2221F6D1000266B34 /* GameOver.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameOver.mm; sourceTree = "<group>"; };
 		96484CE7221FED0900266B34 /* PNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNode.h; sourceTree = "<group>"; };
 		96484CE8221FED0900266B34 /* PNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PNode.mm; sourceTree = "<group>"; };
 		96484CED2220C52200266B34 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "bullet3-2.88/build3/xcode4ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
@@ -316,17 +332,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2926E2902249FB170044B9CE /* Parachute */ = {
-			isa = PBXGroup;
-			children = (
-				2926E2912249FB360044B9CE /* Parachute.h */,
-				2926E2922249FB420044B9CE /* Parachute.m */,
-				2926E2932249FB420044B9CE /* Parachute.png */,
-			);
-			name = Parachute;
-			path = "New Group3";
-			sourceTree = "<group>";
-		};
 		296F5FCC2220D35300A02532 /* Floor */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,23 +357,16 @@
 				29EDFB0122460BEF0065AC81 /* Tank2Node.mm */,
 				964F91832247739F00F9B496 /* BackgroundNode.h */,
 				964F91842247739F00F9B496 /* BackgroundNode.mm */,
-				29EBBAEC2249BC9500AB3723 /* AnglerNode.h */,
-				29EBBAED2249BC9500AB3723 /* AnglerNode.m */,
-				2926E2962249FC990044B9CE /* ParachuteNode.h */,
-				2926E2972249FC990044B9CE /* ParachuteNode.m */,
+				29EBA1D2224B447100BAAA7C /* AnglerNode.h */,
+				29EBA1D3224B447100BAAA7C /* AnglerNode.mm */,
+				29EBA1D5224B447D00BAAA7C /* ParachuteNode.h */,
+				29EBA1D6224B447D00BAAA7C /* ParachuteNode.mm */,
+				29EBA1ED224B475E00BAAA7C /* Player1WinsNode.h */,
+				29EBA1EE224B475E00BAAA7C /* Player1WinsNode.mm */,
+				29EBA1EC224B475E00BAAA7C /* Player2WinsNode.h */,
+				29EBA1EF224B475E00BAAA7C /* Player2WinsNode.mm */,
 			);
 			path = GameNodes;
-			sourceTree = "<group>";
-		};
-		29EBBAE32249BBAA00AB3723 /* Angler */ = {
-			isa = PBXGroup;
-			children = (
-				29EBBAE42249BBC300AB3723 /* Angler.h */,
-				29EBBAE62249BBC300AB3723 /* Angler.m */,
-				29EBBAE52249BBC300AB3723 /* Angler.png */,
-			);
-			name = Angler;
-			path = "New Group2";
 			sourceTree = "<group>";
 		};
 		40187BD9E43F4E1C756F318C /* Pods */ = {
@@ -452,10 +450,20 @@
 		9610FDAE220E5DD200A7360E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29EBA1E4224B460800BAAA7C /* Angler.h */,
+				29EBA1E6224B460900BAAA7C /* Angler.m */,
+				29EBA1E2224B460800BAAA7C /* Angler.png */,
+				29EBA1E3224B460800BAAA7C /* Parachute.h */,
+				29EBA1E5224B460800BAAA7C /* Parachute.m */,
+				29EBA1E7224B460900BAAA7C /* Parachute.png */,
+				29EBA1F5224B47A000BAAA7C /* Player1Wins.h */,
+				29EBA1F4224B47A000BAAA7C /* Player1Wins.m */,
+				29EBA1F6224B47A000BAAA7C /* Player1Wins.png */,
+				29EBA1F2224B47A000BAAA7C /* Player2Wins.h */,
+				29EBA1F3224B47A000BAAA7C /* Player2Wins.m */,
+				29EBA1F7224B47A100BAAA7C /* Player2Wins.png */,
 				96E2A8D3224B37DA00D769B3 /* Tank2 */,
 				96E2A8D2224B37D300D769B3 /* Tank1 */,
-				2926E2902249FB170044B9CE /* Parachute */,
-				29EBBAE32249BBAA00AB3723 /* Angler */,
 				29EDFAE92245E1710065AC81 /* Box.png */,
 				29EDFAE62245E1640065AC81 /* Box.h */,
 				29EDFAE72245E1640065AC81 /* Box.m */,
@@ -528,7 +536,7 @@
 				96484979221DE2AF00266B34 /* GameScene.h */,
 				9648497A221DE2AF00266B34 /* GameScene.mm */,
 				964849E1221F6D1000266B34 /* GameOver.h */,
-				964849E2221F6D1000266B34 /* GameOver.m */,
+				964849E2221F6D1000266B34 /* GameOver.mm */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -835,9 +843,11 @@
 			files = (
 				964849B5221DEAB900266B34 /* ball.mtl in Resources */,
 				964849D1221DEADE00266B34 /* paddle.mtl in Resources */,
+				29EBA1FB224B47A100BAAA7C /* Player2Wins.png in Resources */,
+				29EBA1E8224B460900BAAA7C /* Angler.png in Resources */,
 				964849DA221DEAEC00266B34 /* youlose.png in Resources */,
 				29EDFAEA2245E1720065AC81 /* Box.png in Resources */,
-				2926E2952249FB420044B9CE /* Parachute.png in Resources */,
+				29EBA1EB224B460900BAAA7C /* Parachute.png in Resources */,
 				964849A9221DEA5800266B34 /* youwin.png in Resources */,
 				9610FDCB220F9EEE00A7360E /* SimpleFragment.glsl in Resources */,
 				96E2A8DD224B381300D769B3 /* Tank1.png in Resources */,
@@ -846,6 +856,7 @@
 				964849D0221DEADE00266B34 /* paddle.obj in Resources */,
 				964F91672247050100F9B496 /* velocity.png in Resources */,
 				964F91722247491A00F9B496 /* hospital.png in Resources */,
+				29EBA1FA224B47A100BAAA7C /* Player1Wins.png in Resources */,
 				9610FDA3220E5D3E00A7360E /* LaunchScreen.storyboard in Resources */,
 				964849B7221DEAB900266B34 /* ball.png in Resources */,
 				29EA13032222711C00131DA9 /* FloorBlue.png in Resources */,
@@ -877,7 +888,6 @@
 				964849D2221DEADE00266B34 /* paddle.png in Resources */,
 				964849A7221DEA5800266B34 /* youwin.obj in Resources */,
 				964F916C22472E1B00F9B496 /* missile.png in Resources */,
-				29EBBAE72249BBC300AB3723 /* Angler.png in Resources */,
 				9634F1652215052C008CE6CA /* dungeon_01.png in Resources */,
 				964F9165224704FB00F9B496 /* ruler.png in Resources */,
 				964849BF221DEAC600266B34 /* border.png in Resources */,
@@ -918,28 +928,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EBA1F8224B47A100BAAA7C /* Player2Wins.m in Sources */,
 				964F91852247739F00F9B496 /* BackgroundNode.mm in Sources */,
+				29EBA1D7224B447D00BAAA7C /* ParachuteNode.mm in Sources */,
+				29EBA1F1224B475E00BAAA7C /* Player2WinsNode.mm in Sources */,
 				9634F1602214EB38008CE6CA /* Cube.m in Sources */,
 				29EDFAE82245E1650065AC81 /* Box.m in Sources */,
 				9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */,
 				9648497B221DE2AF00266B34 /* GameScene.mm in Sources */,
-				964849E3221F6D1000266B34 /* GameOver.m in Sources */,
+				964849E3221F6D1000266B34 /* GameOver.mm in Sources */,
 				29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */,
-				29EBBAEE2249BC9500AB3723 /* AnglerNode.m in Sources */,
 				29EA13022222711C00131DA9 /* Floor.m in Sources */,
 				296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */,
+				29EBA1F9224B47A100BAAA7C /* Player1Wins.m in Sources */,
 				29EDFB0222460BEF0065AC81 /* Tank2Node.mm in Sources */,
 				963E45D8224AC2ED00C4D024 /* Model.xcdatamodeld in Sources */,
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
 				964849DC221DEAEC00266B34 /* youlose.m in Sources */,
-				2926E2982249FC990044B9CE /* ParachuteNode.m in Sources */,
-				2926E2942249FB420044B9CE /* Parachute.m in Sources */,
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
-				29EBBAE82249BBC300AB3723 /* Angler.m in Sources */,
 				96484997221DE78300266B34 /* RWTBorder.mm in Sources */,
 				96484994221DE78300266B34 /* RWTYouWin.m in Sources */,
 				296F5FDA2220D3F900A02532 /* FloorNode.mm in Sources */,
 				9634F15A2213EB10008CE6CA /* Node.m in Sources */,
+				29EBA1F0224B475E00BAAA7C /* Player1WinsNode.mm in Sources */,
+				29EBA1D4224B447100BAAA7C /* AnglerNode.mm in Sources */,
 				9610FDCE220FA41900A7360E /* BaseEffect.m in Sources */,
 				964849C7221DEAD200266B34 /* brick.m in Sources */,
 				9634F169221BC217008CE6CA /* mushroom.m in Sources */,
@@ -957,6 +969,8 @@
 				96484999221DE78300266B34 /* RWTBall.mm in Sources */,
 				29EA130A222271B100131DA9 /* Tanker.m in Sources */,
 				964849D3221DEADE00266B34 /* paddle.m in Sources */,
+				29EBA1EA224B460900BAAA7C /* Angler.m in Sources */,
+				29EBA1E9224B460900BAAA7C /* Parachute.m in Sources */,
 				9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */,
 				96484998221DE78300266B34 /* RWTYouLose.m in Sources */,
 				96484CE9221FED0900266B34 /* PNode.mm in Sources */,

@@ -20,6 +20,7 @@
 #include "BackgroundNode.h"
 #import "AnglerNode.h"
 #import "ParachuteNode.h"
+#import "Player1WinsNode.h"
 #include "btBulletDynamicsCommon.h"
 
 
@@ -39,6 +40,10 @@
     float _ballVelocityX;
     float _ballVelocityY;
     
+    float _power;
+    float _eMin;
+    float _eMax;
+    
     RWTBall *_ball;
     FloorNode *_floor;
     Tank1Node *_tank1;
@@ -46,7 +51,11 @@
     
     BackgroundNode *_background;
     AnglerNode *_angler;
+    
     ParachuteNode *_parachute;
+    ParachuteNode *_parachute2;
+    
+    Player1WinsNode *_p1;
     NSMutableArray *_tanks;
     
     //Bullet3 Physics variables
@@ -72,6 +81,9 @@
         _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
         _playerTwoMovesLeft = [Director sharedInstance].playerTwoFuel;
         
+        _eMin = 1;
+        _eMax = 100;
+        
         //Create the initial camera position
         _gameArea = CGSizeMake(27, 48);
         _sceneOffset = _gameArea.height/2/tanf(GLKMathDegreesToRadians(85/2));
@@ -90,14 +102,40 @@
         _world->addRigidBody(_floor.body);
         
         _tank1 = [[Tank1Node alloc] initWithShader:shader];
-        _tank1.position = GLKVector3Make(_gameArea.width/2 - 40, _floor.height + 1, 3);
+        _tank1.position = GLKVector3Make(_gameArea.width/2 - 40, _floor.height + 10, 3);
         [self.children addObject:_tank1];
         _world->addRigidBody(_tank1.body);
         
+        _parachute = [[ParachuteNode alloc] initWithShader:shader];
+        _parachute.position = GLKVector3Make(_gameArea.width/2 - 40,  _floor.height + 11, 3);
+        [self.children addObject:_parachute];
+        [_tanks addObject:_parachute];
+        _world->addRigidBody(_parachute.body);
+        
         _tank2 = [[Tank2Node alloc] initWithShader:shader];
-        _tank2.position = GLKVector3Make(_gameArea.width/2 + 40, _floor.height + 1, 3);;
+        _tank2.position = GLKVector3Make(_gameArea.width/2 + 40, _floor.height + 10, 3);;
         [self.children addObject:_tank2];
         _world->addRigidBody(_tank2.body);
+        
+        _parachute2 = [[ParachuteNode alloc] initWithShader:shader];
+        _parachute2.position = GLKVector3Make(_gameArea.width/2 + 40,  _floor.height + 11, 3);
+        [self.children addObject:_parachute2];
+        _world->addRigidBody(_parachute2.body);
+        
+        _angler = [[AnglerNode alloc] initWithShader:shader];
+        _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);;
+        [self.children addObject:_angler];
+        _angler.scale = 5;
+        _angler.width = 2.5;
+        _angler.height = 5;
+        _world->addRigidBody(_angler.body);
+        
+        /*
+        _angler = [[AnglerNode alloc] initWithShader:shader];
+        _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);
+        [self.children addObject:_angler];
+        [_tanks addObject:_angler];
+        */
     }
     return self;
 }
@@ -140,6 +178,13 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
+}
+
+- (void)changeAnglerWidth:(float)vel {
+    _power = (vel - _eMin) / (_eMax - _eMin) * 5;
+    NSLog(@"%f", _power);
+    if (_power >= 0.1)
+        _angler.width = _power;
 }
 
 - (BOOL)isBallActive {
@@ -230,7 +275,7 @@
 
 - (void)playerTwoWon {
     [self reinitializeRound];
-    [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:YES];
+    [Director sharedInstance].scene = [[GameOver alloc] initWithShader:self.shader win:NO];
 }
 
 - (void)reinitializeRound {
@@ -248,6 +293,16 @@
     
     if (_ball.position.x > _gameArea.width + _sceneOffset + 15 || _ball.position.x < -_gameArea.width - _sceneOffset + 10) {
         [self destroyBall:_ball];
+    }
+    
+    if (_parachute.position.y < _floor.height + 1) {
+        [self.children removeObject:_parachute];
+        _world->removeRigidBody(_parachute.body);
+    }
+    
+    if (_parachute2.position.y < _floor.height + 1) {
+        [self.children removeObject:_parachute2];
+        _world->removeRigidBody(_parachute2.body);
     }
     
     if (_playerOneTurn) {

@@ -144,8 +144,11 @@
     _prevTouchLocation = touchLocation;
     if (fabs(diff.y) > fabs(diff.x)){
         _launchVelocitySlider.value += diff.y;
+        //NSLog(@"%f", _launchVelocitySlider.value);
+        [_scene changeAnglerWidth:_launchVelocitySlider.value];
     } else if (fabs(diff.x) > fabs(diff.y)) {
         _launchAngleSlider.value += diff.x;
+        //NSLog(@"%f", _launchAngleSlider.value);
     }
 }
 
