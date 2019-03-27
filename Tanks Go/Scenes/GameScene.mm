@@ -20,6 +20,7 @@
 #include "BackgroundNode.h"
 #import "AnglerNode.h"
 #import "ParachuteNode.h"
+#import "Player1WinsNode.h"
 #include "btBulletDynamicsCommon.h"
 
 
@@ -39,6 +40,10 @@
     float _ballVelocityX;
     float _ballVelocityY;
     
+    float _power;
+    float _eMin;
+    float _eMax;
+    
     RWTBall *_ball;
     FloorNode *_floor;
     Tank1Node *_tank1;
@@ -47,6 +52,7 @@
     BackgroundNode *_background;
     AnglerNode *_angler;
     ParachuteNode *_parachute;
+    Player1WinsNode *_p1;
     NSMutableArray *_tanks;
     
     //Bullet3 Physics variables
@@ -71,6 +77,9 @@
         _playerTwoHealth = [Director sharedInstance].playerTwoHealth;
         _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
         _playerTwoMovesLeft = [Director sharedInstance].playerTwoFuel;
+        
+        _eMin = 1;
+        _eMax = 100;
         
         //Create the initial camera position
         _gameArea = CGSizeMake(27, 48);
@@ -99,6 +108,16 @@
         [self.children addObject:_tank2];
         _world->addRigidBody(_tank2.body);
         
+        
+        _angler = [[AnglerNode alloc] initWithShader:shader];
+        _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);;
+        [self.children addObject:_angler];
+        _angler.scale = 5;
+        _angler.width = 2.5;
+        _angler.height = 5;
+        _world->addRigidBody(_angler.body);
+        
+        /*
         _angler = [[AnglerNode alloc] initWithShader:shader];
         _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);
         [self.children addObject:_angler];
@@ -108,7 +127,7 @@
         _parachute.position = GLKVector3Make(_gameArea.width/2 - 10, _gameArea.height * .5, 2);
         [self.children addObject:_parachute];
         [_tanks addObject:_parachute];
-        
+        */
     }
     return self;
 }
@@ -151,6 +170,13 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
+}
+
+- (void)changeAnglerWidth:(float)vel {
+    _power = (vel - _eMin) / (_eMax - _eMin) * 5;
+    NSLog(@"%f", _power);
+    if (_power >= 0.1)
+        _angler.width = _power;
 }
 
 - (BOOL)isBallActive {

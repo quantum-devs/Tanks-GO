@@ -1,5 +1,5 @@
 //
-//  ParachuteNode.h
+//  Player2WinsNode.h
 //  Tanks Go
 //
 //  Created by Renz on 3/26/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ParachuteNode : PNode
+@interface Player2WinsNode : PNode
 
 - (instancetype)initWithShader:(BaseEffect *)shader;
 
