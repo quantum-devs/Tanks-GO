@@ -1,6 +1,5 @@
 uniform highp mat4 u_ModelViewMatrix;
 uniform highp mat4 u_ProjectionMatrix;
-uniform highp mat4 u_ShadowMatrix;
 
 attribute vec4 a_Position;
 attribute vec4 a_Colour;
@@ -11,10 +10,8 @@ varying lowp vec4 frag_Colour;
 varying lowp vec2 frag_TexCoord;
 varying lowp vec3 frag_Normal;
 varying lowp vec3 frag_Position;
-varying lowp vec4 frag_ShadowCoord;
 
 void main(void) {
-    frag_ShadowCoord = u_ShadowMatrix * vec4(a_Normal, 0.0);
     frag_Colour = a_Colour;
     gl_Position = u_ProjectionMatrix * u_ModelViewMatrix * a_Position;
     frag_TexCoord = a_TexCoord;

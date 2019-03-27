@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Vertex.h"
+#import "AppDelegate.h"
+#import <CoreData/CoreData.h>
 #import <GLKit/GLKit.h>
 
 @class BaseEffect;

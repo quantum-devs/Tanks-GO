@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithShader:(BaseEffect *)shader win:(BOOL)win;
 
+@property (nonatomic, assign) BOOL storeEnabled;
+
 @end
 
 NS_ASSUME_NONNULL_END

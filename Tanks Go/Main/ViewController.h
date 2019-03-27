@@ -12,6 +12,8 @@
 
 @interface ViewController : GLKViewController
 
+@property (nonatomic, assign) BOOL storeEnabled;
+
 
 @end
 

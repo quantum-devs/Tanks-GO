@@ -15,6 +15,11 @@
 		29EA130B222271B100131DA9 /* camo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA1309222271B100131DA9 /* camo.jpg */; };
 		29EA13112222738600131DA9 /* camo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA13102222738600131DA9 /* camo1.jpg */; };
 		29EA1637222254C1004A5CE5 /* TankerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EA1636222254C1004A5CE5 /* TankerNode.mm */; };
+		29EDFAE82245E1650065AC81 /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAE72245E1640065AC81 /* Box.m */; };
+		29EDFAEA2245E1720065AC81 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EDFAE92245E1710065AC81 /* Box.png */; };
+		29EDFAED2245E1CD0065AC81 /* BoxNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */; };
+		29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAF5224606170065AC81 /* Tank1Node.mm */; };
+		29EDFB0222460BEF0065AC81 /* Tank2Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFB0122460BEF0065AC81 /* Tank2Node.mm */; };
 		9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD97220E5D3E00A7360E /* AppDelegate.m */; };
 		9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD9A220E5D3E00A7360E /* ViewController.m */; };
 		9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9610FD9C220E5D3E00A7360E /* Main.storyboard */; };
@@ -31,6 +36,7 @@
 		9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F16B221BC6F3008CE6CA /* MushroomNode.m */; };
 		9634F16E221BC898008CE6CA /* mushroom.png in Resources */ = {isa = PBXBuildFile; fileRef = 9634F16D221BC898008CE6CA /* mushroom.png */; };
 		9634F173221BDC09008CE6CA /* TestScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F172221BDC09008CE6CA /* TestScene.m */; };
+		963E45D8224AC2ED00C4D024 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 963E45D6224AC2EC00C4D024 /* Model.xcdatamodeld */; };
 		9648497B221DE2AF00266B34 /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9648497A221DE2AF00266B34 /* GameScene.mm */; };
 		96484994221DE78300266B34 /* RWTYouWin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96484988221DE78100266B34 /* RWTYouWin.m */; };
 		96484995221DE78300266B34 /* RWTPaddle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96484989221DE78100266B34 /* RWTPaddle.mm */; };
@@ -71,6 +77,27 @@
 		96484D062220C56100266B34 /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96484CF22220C52300266B34 /* libBulletDynamics_xcode4_x64_debug.a */; };
 		96484D072220C56100266B34 /* libLinearMath_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96484CFE2220C52400266B34 /* libLinearMath_xcode4_x64_debug.a */; };
 		96484D142221144C00266B34 /* thumb_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 96484D132221144C00266B34 /* thumb_image.png */; };
+		964F915E2246E70800F9B496 /* Tank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F915B2246E70800F9B496 /* Tank1.png */; };
+		964F915F2246E70800F9B496 /* Tank1.m in Sources */ = {isa = PBXBuildFile; fileRef = 964F915D2246E70800F9B496 /* Tank1.m */; };
+		964F91612246F4C800F9B496 /* fuel.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F91602246F4C800F9B496 /* fuel.png */; };
+		964F91632246FAC100F9B496 /* seaShanty2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 964F91622246FAC100F9B496 /* seaShanty2.mp3 */; };
+		964F9165224704FB00F9B496 /* ruler.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F9164224704FA00F9B496 /* ruler.png */; };
+		964F91672247050100F9B496 /* velocity.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F91662247050100F9B496 /* velocity.png */; };
+		964F916C22472E1B00F9B496 /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F916B22472E1A00F9B496 /* missile.png */; };
+		964F916E22472E3C00F9B496 /* ArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F916D22472E3C00F9B496 /* ArrowRight.png */; };
+		964F917022472FF200F9B496 /* ArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F916F22472FF200F9B496 /* ArrowLeft.png */; };
+		964F91722247491A00F9B496 /* hospital.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F91712247491900F9B496 /* hospital.png */; };
+		964F9174224754A500F9B496 /* hospitalThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F9173224754A500F9B496 /* hospitalThumb.png */; };
+		964F917622475E7100F9B496 /* tanksBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 964F917522475E7000F9B496 /* tanksBG.jpg */; };
+		964F917C2247633A00F9B496 /* Tank2.m in Sources */ = {isa = PBXBuildFile; fileRef = 964F917A2247633A00F9B496 /* Tank2.m */; };
+		964F917D2247633A00F9B496 /* Tank2.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F917B2247633A00F9B496 /* Tank2.png */; };
+		964F91852247739F00F9B496 /* BackgroundNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 964F91842247739F00F9B496 /* BackgroundNode.mm */; };
+		964F918922477CED00F9B496 /* landscape-min.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F918822477CED00F9B496 /* landscape-min.png */; };
+		964F918C2247844E00F9B496 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F918B2247844E00F9B496 /* landscape.png */; };
+		965B95B2224A0ACE008EA926 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965B95B1224A0ACE008EA926 /* StoreViewController.m */; };
+		965B95B4224A9A3A008EA926 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 965B95B3224A9A3A008EA926 /* add.png */; };
+		965B95B6224A9B6E008EA926 /* rounded-add-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 965B95B5224A9B6E008EA926 /* rounded-add-button.png */; };
+		9B8FE2FFE625D31235610CF4 /* libPods-Tanks Go.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9B8362CA0C26EF974C5B3B /* libPods-Tanks Go.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +159,17 @@
 		29EA13102222738600131DA9 /* camo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = camo1.jpg; path = "Tanks Go/Models/Tanker/camo1.jpg"; sourceTree = SOURCE_ROOT; };
 		29EA1635222254C1004A5CE5 /* TankerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TankerNode.h; sourceTree = "<group>"; };
 		29EA1636222254C1004A5CE5 /* TankerNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TankerNode.mm; sourceTree = "<group>"; };
+		29EDFAE62245E1640065AC81 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		29EDFAE72245E1640065AC81 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
+		29EDFAE92245E1710065AC81 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
+		29EDFAEB2245E1CD0065AC81 /* BoxNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoxNode.h; sourceTree = "<group>"; };
+		29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BoxNode.mm; sourceTree = "<group>"; };
+		29EDFAF4224606170065AC81 /* Tank1Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tank1Node.h; sourceTree = "<group>"; };
+		29EDFAF5224606170065AC81 /* Tank1Node.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tank1Node.mm; sourceTree = "<group>"; };
+		29EDFB0022460BEF0065AC81 /* Tank2Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tank2Node.h; sourceTree = "<group>"; };
+		29EDFB0122460BEF0065AC81 /* Tank2Node.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tank2Node.mm; sourceTree = "<group>"; };
+		4C9B8362CA0C26EF974C5B3B /* libPods-Tanks Go.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tanks Go.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		866DC1CD99AFA213F3010269 /* Pods-Tanks Go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tanks Go.debug.xcconfig"; path = "Target Support Files/Pods-Tanks Go/Pods-Tanks Go.debug.xcconfig"; sourceTree = "<group>"; };
 		9610FD93220E5D3E00A7360E /* Tanks Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tanks Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9610FD96220E5D3E00A7360E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9610FD97220E5D3E00A7360E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -163,6 +201,7 @@
 		9634F16D221BC898008CE6CA /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
 		9634F171221BDC09008CE6CA /* TestScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestScene.h; sourceTree = "<group>"; };
 		9634F172221BDC09008CE6CA /* TestScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestScene.m; sourceTree = "<group>"; };
+		963E45D7224AC2EC00C4D024 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		96484979221DE2AF00266B34 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		9648497A221DE2AF00266B34 /* GameScene.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameScene.mm; sourceTree = "<group>"; };
 		96484988221DE78100266B34 /* RWTYouWin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTYouWin.m; sourceTree = "<group>"; };
@@ -219,6 +258,31 @@
 		96484CF32220C52300266B34 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "bullet3-2.88/build3/xcode4ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
 		96484CF92220C52400266B34 /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "bullet3-2.88/build3/xcode4ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
 		96484D132221144C00266B34 /* thumb_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_image.png; sourceTree = "<group>"; };
+		964F915B2246E70800F9B496 /* Tank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tank1.png; sourceTree = "<group>"; };
+		964F915C2246E70800F9B496 /* Tank1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tank1.h; sourceTree = "<group>"; };
+		964F915D2246E70800F9B496 /* Tank1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tank1.m; sourceTree = "<group>"; };
+		964F91602246F4C800F9B496 /* fuel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fuel.png; sourceTree = "<group>"; };
+		964F91622246FAC100F9B496 /* seaShanty2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = seaShanty2.mp3; sourceTree = "<group>"; };
+		964F9164224704FA00F9B496 /* ruler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ruler.png; sourceTree = "<group>"; };
+		964F91662247050100F9B496 /* velocity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velocity.png; sourceTree = "<group>"; };
+		964F916B22472E1A00F9B496 /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missile.png; sourceTree = "<group>"; };
+		964F916D22472E3C00F9B496 /* ArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowRight.png; sourceTree = "<group>"; };
+		964F916F22472FF200F9B496 /* ArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowLeft.png; sourceTree = "<group>"; };
+		964F91712247491900F9B496 /* hospital.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital.png; sourceTree = "<group>"; };
+		964F9173224754A500F9B496 /* hospitalThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospitalThumb.png; sourceTree = "<group>"; };
+		964F917522475E7000F9B496 /* tanksBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tanksBG.jpg; sourceTree = "<group>"; };
+		964F91792247633A00F9B496 /* Tank2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tank2.h; sourceTree = "<group>"; };
+		964F917A2247633A00F9B496 /* Tank2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tank2.m; sourceTree = "<group>"; };
+		964F917B2247633A00F9B496 /* Tank2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tank2.png; sourceTree = "<group>"; };
+		964F91832247739F00F9B496 /* BackgroundNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundNode.h; sourceTree = "<group>"; };
+		964F91842247739F00F9B496 /* BackgroundNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BackgroundNode.mm; sourceTree = "<group>"; };
+		964F918822477CED00F9B496 /* landscape-min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscape-min.png"; sourceTree = "<group>"; };
+		964F918B2247844E00F9B496 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
+		965B95B0224A0ACE008EA926 /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		965B95B1224A0ACE008EA926 /* StoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		965B95B3224A9A3A008EA926 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		965B95B5224A9B6E008EA926 /* rounded-add-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rounded-add-button.png"; sourceTree = "<group>"; };
+		C153184DEC9B13F3B1B5AF2D /* Pods-Tanks Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tanks Go.release.xcconfig"; path = "Target Support Files/Pods-Tanks Go/Pods-Tanks Go.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +293,7 @@
 				96484D052220C56100266B34 /* libBulletCollision_xcode4_x64_debug.a in Frameworks */,
 				96484D062220C56100266B34 /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */,
 				96484D072220C56100266B34 /* libLinearMath_xcode4_x64_debug.a in Frameworks */,
+				9B8FE2FFE625D31235610CF4 /* libPods-Tanks Go.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +317,25 @@
 				296F5FD92220D3F900A02532 /* FloorNode.mm */,
 				29EA1635222254C1004A5CE5 /* TankerNode.h */,
 				29EA1636222254C1004A5CE5 /* TankerNode.mm */,
+				29EDFAEB2245E1CD0065AC81 /* BoxNode.h */,
+				29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */,
+				29EDFAF4224606170065AC81 /* Tank1Node.h */,
+				29EDFAF5224606170065AC81 /* Tank1Node.mm */,
+				29EDFB0022460BEF0065AC81 /* Tank2Node.h */,
+				29EDFB0122460BEF0065AC81 /* Tank2Node.mm */,
+				964F91832247739F00F9B496 /* BackgroundNode.h */,
+				964F91842247739F00F9B496 /* BackgroundNode.mm */,
 			);
 			path = GameNodes;
+			sourceTree = "<group>";
+		};
+		40187BD9E43F4E1C756F318C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				866DC1CD99AFA213F3010269 /* Pods-Tanks Go.debug.xcconfig */,
+				C153184DEC9B13F3B1B5AF2D /* Pods-Tanks Go.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		9610FD8A220E5D3D00A7360E = {
@@ -265,6 +347,7 @@
 				9610FD95220E5D3E00A7360E /* Tanks Go */,
 				9610FD94220E5D3E00A7360E /* Products */,
 				9610FDBD220F92F600A7360E /* Frameworks */,
+				40187BD9E43F4E1C756F318C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,6 +377,7 @@
 				9610FDA5220E5D3E00A7360E /* main.m */,
 				296F5FE122210C6100A02532 /* MainMenuViewController.h */,
 				296F5FE222210C6100A02532 /* MainMenuViewController.m */,
+				963E45D6224AC2EC00C4D024 /* Model.xcdatamodeld */,
 			);
 			path = "Tanks Go";
 			sourceTree = "<group>";
@@ -317,6 +401,8 @@
 				9610FD97220E5D3E00A7360E /* AppDelegate.m */,
 				9610FD99220E5D3E00A7360E /* ViewController.h */,
 				9610FD9A220E5D3E00A7360E /* ViewController.m */,
+				965B95B0224A0ACE008EA926 /* StoreViewController.h */,
+				965B95B1224A0ACE008EA926 /* StoreViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -324,6 +410,11 @@
 		9610FDAE220E5DD200A7360E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				964F91782247625200F9B496 /* Tank2 */,
+				964F915A2246E6EB00F9B496 /* Tank1 */,
+				29EDFAE92245E1710065AC81 /* Box.png */,
+				29EDFAE62245E1640065AC81 /* Box.h */,
+				29EDFAE72245E1640065AC81 /* Box.m */,
 				96191CB82222769100D946BB /* Tanker */,
 				296F5FCC2220D35300A02532 /* Floor */,
 				964849A0221DE8DB00266B34 /* RWTModels */,
@@ -351,6 +442,7 @@
 				9610FDC2220F932B00A7360E /* CoreGraphics.framework */,
 				9610FDC0220F931600A7360E /* GLKit.framework */,
 				9610FDBE220F92F600A7360E /* OpenGLES.framework */,
+				4C9B8362CA0C26EF974C5B3B /* libPods-Tanks Go.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -423,6 +515,7 @@
 		9648499B221DE87F00266B34 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				964F91622246FAC100F9B496 /* seaShanty2.mp3 */,
 				9648499C221DE88A00266B34 /* bulletstorm_bg_v1.mp3 */,
 				9648499D221DE88B00266B34 /* pop.wav */,
 			);
@@ -558,9 +651,42 @@
 		96484D0B2221078400266B34 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				965B95B5224A9B6E008EA926 /* rounded-add-button.png */,
+				965B95B3224A9A3A008EA926 /* add.png */,
+				964F918822477CED00F9B496 /* landscape-min.png */,
+				964F9173224754A500F9B496 /* hospitalThumb.png */,
+				964F918B2247844E00F9B496 /* landscape.png */,
+				964F917522475E7000F9B496 /* tanksBG.jpg */,
+				964F91712247491900F9B496 /* hospital.png */,
+				964F916D22472E3C00F9B496 /* ArrowRight.png */,
+				964F916F22472FF200F9B496 /* ArrowLeft.png */,
+				964F916B22472E1A00F9B496 /* missile.png */,
+				964F91662247050100F9B496 /* velocity.png */,
+				964F9164224704FA00F9B496 /* ruler.png */,
+				964F91602246F4C800F9B496 /* fuel.png */,
 				96484D132221144C00266B34 /* thumb_image.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		964F915A2246E6EB00F9B496 /* Tank1 */ = {
+			isa = PBXGroup;
+			children = (
+				964F915C2246E70800F9B496 /* Tank1.h */,
+				964F915D2246E70800F9B496 /* Tank1.m */,
+				964F915B2246E70800F9B496 /* Tank1.png */,
+			);
+			path = Tank1;
+			sourceTree = "<group>";
+		};
+		964F91782247625200F9B496 /* Tank2 */ = {
+			isa = PBXGroup;
+			children = (
+				964F91792247633A00F9B496 /* Tank2.h */,
+				964F917A2247633A00F9B496 /* Tank2.m */,
+				964F917B2247633A00F9B496 /* Tank2.png */,
+			);
+			path = Tank2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,6 +696,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9610FDA9220E5D3E00A7360E /* Build configuration list for PBXNativeTarget "Tanks Go" */;
 			buildPhases = (
+				F8A74223492FCC7FD623F5EC /* [CP] Check Pods Manifest.lock */,
 				9610FD8F220E5D3E00A7360E /* Sources */,
 				9610FD90220E5D3E00A7360E /* Frameworks */,
 				9610FD91220E5D3E00A7360E /* Resources */,
@@ -665,22 +792,37 @@
 				964849B5221DEAB900266B34 /* ball.mtl in Resources */,
 				964849D1221DEADE00266B34 /* paddle.mtl in Resources */,
 				964849DA221DEAEC00266B34 /* youlose.png in Resources */,
+				29EDFAEA2245E1720065AC81 /* Box.png in Resources */,
 				964849A9221DEA5800266B34 /* youwin.png in Resources */,
 				9610FDCB220F9EEE00A7360E /* SimpleFragment.glsl in Resources */,
+				964F918922477CED00F9B496 /* landscape-min.png in Resources */,
 				964849CA221DEAD200266B34 /* brick.obj in Resources */,
 				964849D0221DEADE00266B34 /* paddle.obj in Resources */,
+				964F91672247050100F9B496 /* velocity.png in Resources */,
+				964F91722247491A00F9B496 /* hospital.png in Resources */,
 				9610FDA3220E5D3E00A7360E /* LaunchScreen.storyboard in Resources */,
 				964849B7221DEAB900266B34 /* ball.png in Resources */,
 				29EA13032222711C00131DA9 /* FloorBlue.png in Resources */,
 				9634F16E221BC898008CE6CA /* mushroom.png in Resources */,
+				964F917022472FF200F9B496 /* ArrowLeft.png in Resources */,
 				9610FDA0220E5D3E00A7360E /* Assets.xcassets in Resources */,
 				964849C8221DEAD200266B34 /* brick.mtl in Resources */,
+				965B95B4224A9A3A008EA926 /* add.png in Resources */,
+				964F91632246FAC100F9B496 /* seaShanty2.mp3 in Resources */,
+				964F9174224754A500F9B496 /* hospitalThumb.png in Resources */,
 				96484D142221144C00266B34 /* thumb_image.png in Resources */,
+				964F91612246F4C800F9B496 /* fuel.png in Resources */,
 				964849B6221DEAB900266B34 /* ball.obj in Resources */,
 				29EA13112222738600131DA9 /* camo1.jpg in Resources */,
+				965B95B6224A9B6E008EA926 /* rounded-add-button.png in Resources */,
+				964F917622475E7100F9B496 /* tanksBG.jpg in Resources */,
+				964F917D2247633A00F9B496 /* Tank2.png in Resources */,
 				964849D9221DEAEC00266B34 /* youlose.obj in Resources */,
+				964F915E2246E70800F9B496 /* Tank1.png in Resources */,
 				964849DB221DEAEC00266B34 /* youlose.mtl in Resources */,
+				964F918C2247844E00F9B496 /* landscape.png in Resources */,
 				9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */,
+				964F916E22472E3C00F9B496 /* ArrowRight.png in Resources */,
 				964849AA221DEA5800266B34 /* youwin.mtl in Resources */,
 				9610FDCA220F9EEE00A7360E /* SimpleVertex.glsl in Resources */,
 				9648499F221DE88B00266B34 /* pop.wav in Resources */,
@@ -689,7 +831,9 @@
 				964849C1221DEAC600266B34 /* border.mtl in Resources */,
 				964849D2221DEADE00266B34 /* paddle.png in Resources */,
 				964849A7221DEA5800266B34 /* youwin.obj in Resources */,
+				964F916C22472E1B00F9B496 /* missile.png in Resources */,
 				9634F1652215052C008CE6CA /* dungeon_01.png in Resources */,
+				964F9165224704FB00F9B496 /* ruler.png in Resources */,
 				964849BF221DEAC600266B34 /* border.png in Resources */,
 				964849C0221DEAC600266B34 /* border.obj in Resources */,
 				29EA130B222271B100131DA9 /* camo.jpg in Resources */,
@@ -698,17 +842,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F8A74223492FCC7FD623F5EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tanks Go-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9610FD8F220E5D3E00A7360E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964F91852247739F00F9B496 /* BackgroundNode.mm in Sources */,
 				9634F1602214EB38008CE6CA /* Cube.m in Sources */,
+				29EDFAE82245E1650065AC81 /* Box.m in Sources */,
 				9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */,
 				9648497B221DE2AF00266B34 /* GameScene.mm in Sources */,
 				964849E3221F6D1000266B34 /* GameOver.m in Sources */,
+				29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */,
 				29EA13022222711C00131DA9 /* Floor.m in Sources */,
 				296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */,
+				29EDFB0222460BEF0065AC81 /* Tank2Node.mm in Sources */,
+				964F915F2246E70800F9B496 /* Tank1.m in Sources */,
+				963E45D8224AC2ED00C4D024 /* Model.xcdatamodeld in Sources */,
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
 				964849DC221DEAEC00266B34 /* youlose.m in Sources */,
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
@@ -721,13 +896,16 @@
 				9634F169221BC217008CE6CA /* mushroom.m in Sources */,
 				964849B8221DEAB900266B34 /* ball.m in Sources */,
 				964849BE221DEAC600266B34 /* border.m in Sources */,
+				29EDFAED2245E1CD0065AC81 /* BoxNode.mm in Sources */,
 				964849A8221DEA5800266B34 /* youwin.m in Sources */,
 				29EA1637222254C1004A5CE5 /* TankerNode.mm in Sources */,
 				96484995221DE78300266B34 /* RWTPaddle.mm in Sources */,
 				96484996221DE78300266B34 /* RWTBrick.mm in Sources */,
+				965B95B2224A0ACE008EA926 /* StoreViewController.m in Sources */,
 				964849E0221E335500266B34 /* Director.m in Sources */,
 				96484999221DE78300266B34 /* RWTBall.mm in Sources */,
 				29EA130A222271B100131DA9 /* Tanker.m in Sources */,
+				964F917C2247633A00F9B496 /* Tank2.m in Sources */,
 				964849D3221DEADE00266B34 /* paddle.m in Sources */,
 				9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */,
 				96484998221DE78300266B34 /* RWTYouLose.m in Sources */,
@@ -826,7 +1004,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -877,7 +1055,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -886,16 +1064,20 @@
 		};
 		9610FDAA220E5D3E00A7360E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 866DC1CD99AFA213F3010269 /* Pods-Tanks Go.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2SBKB36F6;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "Tanks Go/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/bullet3-2.88/src";
 			};
@@ -903,16 +1085,20 @@
 		};
 		9610FDAB220E5D3E00A7360E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C153184DEC9B13F3B1B5AF2D /* Pods-Tanks Go.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2SBKB36F6;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "Tanks Go/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/bullet3-2.88/src";
 			};
@@ -940,6 +1126,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		963E45D6224AC2EC00C4D024 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				963E45D7224AC2EC00C4D024 /* Model.xcdatamodel */,
+			);
+			currentVersion = 963E45D7224AC2EC00C4D024 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9610FD8B220E5D3D00A7360E /* Project object */;
 }

@@ -22,8 +22,6 @@
     GLuint _matSpecularIntensityUniform;
     GLuint _shininessUniform;
     GLuint _matColourUniform;
-    GLuint _shadowCoordUniform;
-    GLuint _shadowMapUniform;
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
@@ -84,8 +82,6 @@
   _matSpecularIntensityUniform = glGetUniformLocation(_programHandle, "u_MatSpecularIntensity");
   _shininessUniform = glGetUniformLocation(_programHandle, "u_Shininess");
   _matColourUniform = glGetUniformLocation(_programHandle, "u_MatColour");
-  _shadowCoordUniform = glGetUniformLocation(_programHandle, "u_ShadowCoord");
-  _shadowMapUniform = glGetUniformLocation(_programHandle, "u_ShadowMap");
   
   GLint linkSuccess;
   glGetProgramiv(_programHandle, GL_LINK_STATUS, &linkSuccess);
@@ -109,7 +105,6 @@
     
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE_2D, self.texture.name);
-  glUniform1i(_shadowCoordUniform, 1);
   
   glUniform3f(_lightColourUniform, 1, 1, 1);
   glUniform1f(_lightAmbientIntensityUniform, 1);
@@ -120,10 +115,6 @@
   glUniform1f(_matSpecularIntensityUniform, .7);
   glUniform1f(_shininessUniform, 64.0);
   glUniform4f(_matColourUniform, self.matColour.r, self.matColour.g, self.matColour.b, self.matColour.a);
-  glUniform4f(_shadowMapUniform, 1, 1, 1, 1);
-    
-  _shadowCoordUniform = glGetUniformLocation(_programHandle, "u_ShadowCoord");
-  _shadowMapUniform = glGetUniformLocation(_programHandle, "u_ShadowMap");
 }
 
 - (instancetype)initWithVertexShader:(NSString *)vertexShader fragmentShader:

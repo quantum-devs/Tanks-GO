@@ -11,6 +11,8 @@
 #import "RWTYouWin.h"
 #import "GameScene.h"
 #import "Director.h"
+#import "ViewController.h"
+#import "StoreViewController.h"
 
 @implementation GameOver {
     GLfloat _timeSinceStart;
@@ -39,9 +41,9 @@
 - (void)updateWithDelta:(GLfloat)dt {
     [super updateWithDelta:dt];
     _timeSinceStart += dt;
+    _storeEnabled = NO;
     if (_timeSinceStart > 5) {
-        //Switch back to game scene
-        [Director sharedInstance].scene = [[GameScene alloc] initWithShader:self.shader];
+        _storeEnabled = YES;
     }
 }
 

@@ -19,6 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstance;
 @property (nonatomic, strong) UIView *view;
 @property (nonatomic, strong) Node *scene;
+@property (assign) float playerOneHealth;
+@property (assign) float playerTwoHealth;
+@property (assign) float playerOneFuel;
+@property (assign) float playerTwoFuel;
+@property (assign) float round;
+
 - (void)playBackgroundMusic:(NSString *)filename;
 - (AVAudioPlayer *)preloadSoundEffect:(NSString *)filename;
 - (void)playPopEffect;

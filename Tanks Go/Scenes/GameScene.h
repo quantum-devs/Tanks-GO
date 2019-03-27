@@ -17,6 +17,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isBallActive;
 - (void)moveTankLeft;
 - (void)moveTankRight;
+- (float)getPlayerOneMovesLeft;
+- (float)getPlayerTwoMovesLeft;
+- (float)getPlayerOneHealth;
+- (float)getPlayerTwoHealth;
+- (float)checkVictory;
+- (CGPoint) touchLocationToGameArea:(CGPoint)touchLocation;
+
+@property (nonatomic, assign) BOOL gameStart;
+@property (nonatomic, assign) BOOL playerOneTurn;
+@property (strong) NSMutableArray *fuel;
+@property (strong) NSMutableArray *health;
+@property (strong, nonatomic) NSPersistentContainer *container;
 
 @end
 
