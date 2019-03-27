@@ -2,17 +2,17 @@
 //  AnglerNode.h
 //  Tanks Go
 //
-//  Created by Renz on 3/25/19.
+//  Created by Renz on 3/26/19.
 //  Copyright © 2019 Jason Sekhon. All rights reserved.
 //
 
-#import "Node.h"
+#import "PNode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AnglerNode : Node
+@interface AnglerNode : PNode
 
-- (instancetype) initWithShader:(BaseEffect *)shader;
+- (instancetype)initWithShader:(BaseEffect *)shader;
 
 @end
 
