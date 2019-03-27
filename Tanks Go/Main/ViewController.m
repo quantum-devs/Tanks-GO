@@ -109,6 +109,10 @@
     
     [_playerOneHealthSlider setValue:[_scene getPlayerOneHealth]];
     [_playerTwoHealthSlider setValue:[Director sharedInstance].playerTwoHealth - [_scene getPlayerTwoHealth]];
+    
+    [_scene changeAnglerWidth:_launchVelocitySlider.value];
+    [_scene changeAnglerAngle:_launchAngleSlider.value];
+    
     if ([_scene gameStart])
         [self hideUI:FALSE];
     float checkVictory = [_scene checkVictory];
@@ -145,11 +149,9 @@
     if (fabs(diff.y) > fabs(diff.x)){
         _launchVelocitySlider.value += diff.y;
         //NSLog(@"%f", _launchVelocitySlider.value);
-        [_scene changeAnglerWidth:_launchVelocitySlider.value];
     } else if (fabs(diff.x) > fabs(diff.y)) {
         _launchAngleSlider.value += diff.x;
         //NSLog(@"%f", _launchAngleSlider.value);
-        [_scene changeAnglerAngle:_launchAngleSlider.value];
     }
 }
 

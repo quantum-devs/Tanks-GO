@@ -131,21 +131,6 @@
         _world->addRigidBody(_parachute2.body);
         
         _angler = [[AnglerNode alloc] initWithShader:shader];
-        _angler.position = GLKVector3Make(_tank1.position.x, _tank1.height + 1, 0);
-        [self.children addObject:_angler];
-        _angler.scale = 1;
-        _angler.width = 2.5;
-        _angler.height = 5;
-        _angler.rotationZ = M_PI/2;
-        _angler.matColour = GLKVector4Make(1, 1, 1, _power2);
-        _world->addRigidBody(_angler.body);
-        
-        /*
-        _angler = [[AnglerNode alloc] initWithShader:shader];
-        _angler.position = GLKVector3Make(_gameArea.width/2, _gameArea.height * .5, 2);
-        [self.children addObject:_angler];
-        [_tanks addObject:_angler];
-        */
     }
     return self;
 }
@@ -217,24 +202,24 @@
     if (_playerOneTurn && _playerOneMovesLeft > 0) {
         _tank1.position = GLKVector3Make(_tank1.position.x + 1, _tank1.position.y, _tank1.position.z);
         _playerOneMovesLeft--;
-        _angler.position = GLKVector3Make(_tank1.position.x, _tank1.height + 1, 0);
+        _angler.position = GLKVector3Make(_tank1.position.x - 3, _tank1.height, 0);
     }
     if (!_playerOneTurn && _playerTwoMovesLeft > 0) {
         _tank2.position = GLKVector3Make(_tank2.position.x + 1, _tank2.position.y, _tank2.position.z);
         _playerTwoMovesLeft--;
-        _angler.position = GLKVector3Make(_tank2.position.x, _tank2.height + 1, 0);
+        _angler.position = GLKVector3Make(_tank2.position.x + 3, _tank2.height, 0);
     }
 }
 
 - (void)moveTankLeft {
     if (_playerOneTurn && _playerOneMovesLeft > 0) {
         _tank1.position = GLKVector3Make(_tank1.position.x - 1, _tank1.position.y, _tank1.position.z);
-        _angler.position = GLKVector3Make(_tank1.position.x, _tank1.height + 1, 0);
+        _angler.position = GLKVector3Make(_tank1.position.x - 3, _tank1.height, 0);
         _playerOneMovesLeft--;
     }
     if (!_playerOneTurn && _playerTwoMovesLeft > 0) {
         _tank2.position = GLKVector3Make(_tank2.position.x - 1, _tank2.position.y, _tank2.position.z);
-        _angler.position = GLKVector3Make(_tank2.position.x, _tank2.height + 1, 0);
+        _angler.position = GLKVector3Make(_tank2.position.x + 3, _tank2.height, 0);
         _playerTwoMovesLeft--;
     }
 }
@@ -263,9 +248,9 @@
     _playerOneTurn = !_playerOneTurn;
     
     if (_playerOneTurn) {
-        _angler.position = GLKVector3Make(_tank1.position.x, _tank1.height + 1, 0);
+        _angler.position = GLKVector3Make(_tank1.position.x - 3, _tank1.height, 0);
     } else {
-        _angler.position = GLKVector3Make(_tank2.position.x, _tank1.height + 1, 0);
+        _angler.position = GLKVector3Make(_tank2.position.x + 3, _tank1.height, 0);
     }
     
     _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
@@ -327,11 +312,21 @@
     }
     
     if (_parachute.position.y < _floor.height + 1) {
+        _parachute.position = GLKVector3Make(_gameArea.width/2 - 40,  _floor.height + 11, 3);
         [self.children removeObject:_parachute];
         _world->removeRigidBody(_parachute.body);
+        _angler.position = GLKVector3Make(_tank1.position.x - 1, _tank1.height + 1, 0);
+        [self.children addObject:_angler];
+        _angler.scale = 1;
+        _angler.width = 2.5;
+        _angler.height = 5;
+        _angler.rotationZ = M_PI/2;
+        _angler.matColour = GLKVector4Make(1, 1, 1, _power2);
+        _world->addRigidBody(_angler.body);
     }
     
     if (_parachute2.position.y < _floor.height + 1) {
+        _parachute2.position = GLKVector3Make(_gameArea.width/2 + 40,  _floor.height + 11, 3);
         [self.children removeObject:_parachute2];
         _world->removeRigidBody(_parachute2.body);
     }

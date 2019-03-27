@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)launchBallWithVelocity:(float)X velocityY:(float)Y atAngle:(float)angle;
 - (BOOL)isBallActive;
 - (void)changeAnglerWidth: (float)vel;
-- (void) changeAnglerAngle: (float) angle;
+- (void)changeAnglerAngle: (float) angle;
 - (void)moveTankLeft;
 - (void)moveTankRight;
 - (float)getPlayerOneMovesLeft;
