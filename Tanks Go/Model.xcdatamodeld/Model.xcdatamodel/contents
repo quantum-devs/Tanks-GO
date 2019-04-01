@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G22010" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Fuel" representedClassName="Fuel" syncable="YES" codeGenerationType="class">
         <attribute name="fuel" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="player" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -7,6 +7,10 @@
     <entity name="Health" representedClassName="Health" syncable="YES" codeGenerationType="class">
         <attribute name="health" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="player" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Highscore" representedClassName="Highscore" syncable="YES" codeGenerationType="class">
+        <attribute name="highscore" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Score" representedClassName="Score" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,5 +21,6 @@
         <element name="Fuel" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Health" positionX="-54" positionY="-9" width="128" height="75"/>
         <element name="Score" positionX="-36" positionY="9" width="128" height="90"/>
+        <element name="Highscore" positionX="-666" positionY="96" width="128" height="73"/>
     </elements>
 </model>
