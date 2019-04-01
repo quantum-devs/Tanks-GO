@@ -38,7 +38,7 @@
 }
 
 - (void)createNameLabelsArray {
-    NSMutableArray *nameLabels = [NSMutableArray init];
+    NSMutableArray *nameLabels = [NSMutableArray array];
     [nameLabels addObject:_name1];
     [nameLabels addObject:_name2];
     [nameLabels addObject:_name3];
@@ -51,7 +51,7 @@
 };
 
 - (void)createScoreLabelsArray {
-    NSMutableArray *scoreLabels = [NSMutableArray init];
+    NSMutableArray *scoreLabels = [NSMutableArray array];
     [scoreLabels addObject:_score1];
     [scoreLabels addObject:_score2];
     [scoreLabels addObject:_score3];
@@ -59,7 +59,7 @@
     [scoreLabels addObject:_score5];
     _scores = [NSArray arrayWithArray:scoreLabels];
     for (int i = 0; i < _scores.count; ++i) {
-        ((UILabel *)_scores[i]).text = [NSString stringWithFormat:@"%f", 1000.0 - i * 100.0];
+        ((UILabel *)_scores[i]).text = [NSString stringWithFormat:@"%d", 1000 - i * 100];
     }
 };
 
