@@ -418,6 +418,8 @@
 				9610FDA1220E5D3E00A7360E /* LaunchScreen.storyboard */,
 				9610FDA4220E5D3E00A7360E /* Info.plist */,
 				9610FDA5220E5D3E00A7360E /* main.m */,
+				3FF0D229225276F400AB94AE /* HighscoreViewController.h */,
+				3FF0D22A225276F400AB94AE /* HighscoreViewController.m */,
 				296F5FE122210C6100A02532 /* MainMenuViewController.h */,
 				296F5FE222210C6100A02532 /* MainMenuViewController.m */,
 				963E45D6224AC2EC00C4D024 /* Model.xcdatamodeld */,
@@ -433,8 +435,6 @@
 				9610FDCD220FA41800A7360E /* BaseEffect.m */,
 				9610FDC9220F9EEE00A7360E /* SimpleFragment.glsl */,
 				9610FDC8220F9EED00A7360E /* SimpleVertex.glsl */,
-				3FF0D229225276F400AB94AE /* HighscoreViewController.h */,
-				3FF0D22A225276F400AB94AE /* HighscoreViewController.m */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";

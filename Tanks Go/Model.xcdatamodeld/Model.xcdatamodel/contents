@@ -9,7 +9,7 @@
         <attribute name="player" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Highscore" representedClassName="Highscore" syncable="YES" codeGenerationType="class">
-        <attribute name="highscore" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="highscore" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Score" representedClassName="Score" syncable="YES" codeGenerationType="class">
@@ -20,7 +20,7 @@
     <elements>
         <element name="Fuel" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Health" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Highscore" positionX="-666" positionY="96" width="128" height="75"/>
         <element name="Score" positionX="-36" positionY="9" width="128" height="90"/>
-        <element name="Highscore" positionX="-666" positionY="96" width="128" height="73"/>
     </elements>
 </model>
