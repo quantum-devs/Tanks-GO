@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *score3;
 @property (weak, nonatomic) IBOutlet UILabel *score4;
 @property (weak, nonatomic) IBOutlet UILabel *score5;
-@property (nonatomic) int newHighscore;
+@property (nonatomic) int gameHighscore;
 
 @property (strong, nonnull) NSArray* nameLabels;
 @property (strong, nonnull) NSArray* scoreLabels;
@@ -38,24 +38,20 @@
     // Do any additional setup after loading the view.
     
     _context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).persistentContainer.viewContext;
-    _newHighscore = 0;
+    _gameHighscore = 0;
+    //[self deleteAllHighscores];
     [self createNameLabelsArray];
     [self createScoreLabelsArray];
-    [self populateHighscoreDictionary];
-    /*
-    for (int i = 0; i < _highscores.count; ++i) {
-        
-    }
-     */
+    [self populateHighscoreArrays];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-   //[self presentNewHighscoreAlert];
+   [self presentNewHighscoreAlert];
 
 }
 
 - (void)presentNewHighscoreAlert {
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: [NSString stringWithFormat:@"%@ %d!!!",@"New Highscore", _newHighscore]                                                                              message: @"Enter a name"                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: [NSString stringWithFormat:@"%@ %d!!!",@"New Highscore", _gameHighscore]                                                                              message: @"Enter a name"                                                                       preferredStyle:UIAlertControllerStyleAlert];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = @"name";
         textField.textColor = [UIColor blueColor];
@@ -69,23 +65,19 @@
         NSString *name = nameTextField.text;
         //self->_highscores = textfields[0];
         NSLog(@"%@",name);
-        [self insertHighscoreWithScore:[NSNumber numberWithInt:self->_newHighscore] name:name];
+        [self insertHighscoreWithScore:[NSNumber numberWithInt:self->_gameHighscore] name:name];
     }]];
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
-//- (void)
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)populateHighscoreDictionary {
-    //_scores = [[NSArray init] alloc];
-    //_scores = [NSArray arrayWithObjects: @"0",@"0",@"0",@"0",@"0", nil];
-    //NSLog(@"%@,%@,%@,%@,%@", sc[0], sc[1], sc[2], sc[3], sc[4]);
-    //_names =  [NSArray arrayWithObjects: @"Lazy Person 1",@"Lazy Person 2",@"Lazy Person 3",@"Lazy Person 4",@"Lazy Person 5", nil];
+- (void)populateHighscoreArrays {
+    NSLog(@"%@", @"populateHighscoreArrays Enter");
+    
     NSMutableArray * scores = [NSMutableArray array];
     NSMutableArray * names = [NSMutableArray array];
     
@@ -97,91 +89,98 @@
     NSError *error = nil;
     NSArray *results = [_context executeFetchRequest:request error:nil];
     NSUInteger count = [_context countForFetchRequest:request error:nil];
-    //NSLog (@"%@", results);
-    /*
-    for (int i = 0; i < results.count; ++i) {
-        NSLog(@"%@",results[i]);
-    }
-     */
     
-    for (HighscoreMO *hs in results) {
-        NSNumber * hsNum = [NSNumber numberWithInteger:hs.highscore];
-        [scores addObject: hsNum];
-        [names addObject:hs.name];
-        NSLog(@"%ld %@",hs.highscore, hs.name);
-    }
-    
-    /*
-    if (results.count > 5) {
-        for (int i = 5; i < results.count; ++i) {
-            //NSNumber * hsNum = hs.highscore;
-            //[scores addObject: (HighscoreMO *)(results[i]).highscore];
-            //[names addObject: (HighscoreMO *)(results[i]).name];
-            //NSLog(@"%@ %@",((HighscoreMO *)results[i]).highscore, ((HighscoreMO *)results[i]).name);
-        }
-    }
-     */
     if (!results) {
         NSLog(@"Error fetching Highscore objects: %@\n%@ %lu", [error localizedDescription], [error userInfo], (unsigned long)count);
         //abort();
+    } else {
+        for (HighscoreMO *hs in results) {
+            NSNumber * hsNum = [NSNumber numberWithInteger:hs.highscore];
+            [scores addObject: hsNum];
+            [names addObject:hs.name];
+            //NSLog(@"%ld %@",(long)hs.highscore, hs.name);
+        }
+    
+    
+        if (results.count > 5) {
+            for (int i = 5; i < results.count; ++i) {
+                NSNumber * hsNum = [NSNumber numberWithInteger:((HighscoreMO *)results[i]).highscore];
+                [self deleteHighscoreWithScore:hsNum name:((HighscoreMO *)results[i]).name];
+                //NSLog(@"%ld %@",(long)((HighscoreMO *)results[i]).highscore, ((HighscoreMO *)results[i]).name);
+            }
+        }
+        _scores = scores;
+        _names = names;
+        NSLog(@"%lu %lu", (unsigned long)_scores.count, (unsigned long)_names.count);
     }
-    _scores = scores;
-    _names = names;
-    NSLog(@"%d %d", _scores.count, _names.count);
-    //_highscores = [NSDictionary dictionaryWithObjects:na forKeys:sc count:5];
-    //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"intValue" ascending:NO];
-    //sortDescriptor = [sortDescriptor reversedSortDescriptor];
-    //NSArray * sortedKeys = [[_highscores allKeys] sortedArrayUsingDescriptors: @[sortDescriptor]];
-    //NSLog(@"%@,%@,%@,%@,%@", sortedKeys[0], sortedKeys[1], sortedKeys[2], sortedKeys[3], sortedKeys[4]);
+    [self updateScoreAndNameLabels];
+    NSLog(@"%@", @"populateHighscoreArrays Exit");
+    
+}
 
-/*
-    NSArray * sortedKeys = [[_highscores allKeys] sortedArrayUsingComparator: ^(id obj1, id obj2) {
-        // Switching the order of the operands reverses the sort direction
-        return -[obj2 compare:obj1];
-    }];
-    */
-    /*NSArray * sortedKeys = [[_highscores allKeys] sortedArrayUsingSelector:@selector(descending:id2:)];*/
+- (void)updateScoreAndNameLabels {
+    NSLog(@"%@", @"updateScoreAndNameLabels Enter");
     int j = 1;
     for (int i = 0; i < _nameLabels.count; ++i) {
-        NSLog(@"%@ %@", _scores[i], _names[i]);
-        if (_scores.count > i) {
+        if (_scores != nil && i < _scores.count ) {
+            //NSLog(@"%@ %@", _scores[i], _names[i]);
             ((UILabel *)_scoreLabels[i]).text = [NSString stringWithFormat:@"%@", _scores[i]];
             ((UILabel *)_nameLabels[i]).text = [NSString stringWithFormat:@"%@", _names[i]];
         } else {
-            //((UILabel *)_scoreLabels[i]).text = [NSString stringWithFormat:@"%d", 0];
-            //((UILabel *)_nameLabels[i]).text = [NSString stringWithFormat:@"%@ %d", @"Lazy Person", j];
+            ((UILabel *)_scoreLabels[i]).text = [NSString stringWithFormat:@"%d", 0];
+            ((UILabel *)_nameLabels[i]).text = [NSString stringWithFormat:@"%@ %d", @"Lazy Person", j];
             ++j;
         }
-        //((UILabel *)_nameLabels[i]).text = @"Lazy Person";
-        //[_highscores add]
     }
-    
+    NSLog(@"%@", @"updateScoreAndNameLabels Exit");
 }
 
 - (void)insertHighscoreWithScore:(NSNumber*) score name:(NSString*) name {
+    NSLog(@"%@", @"Inserting highscore Enter");
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Highscore" inManagedObjectContext:_context];
     
-    // Initialize Record
-    //NSManagedObject *record = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
-
-    //NSManagedObject *highscoreObj = [NSEntityDescription insertNewObjectForEntityForName:@"Highscore" inManagedObjectContext:_context];
     NSManagedObject *highscoreObj = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:_context];
-
+    
     [highscoreObj setValue:score forKey:@"highscore"];
     [highscoreObj setValue:name forKey:@"name"];
     [_context save:nil];
-    NSLog(@"%@", @"Inserting highscore");
-    /*
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Highscore"];
     
-    request.returnsObjectsAsFaults = false;
-    NSError *error = nil;
-    NSArray *results = [_context executeFetchRequest:request error:nil];
-    NSUInteger count = [_context countForFetchRequest:request error:nil];
-    NSLog (@"%@", results);
-     */
+    [self populateHighscoreArrays];
+    
+    NSLog(@"%@", @"Inserting highscore Exit");
 }
+
+
+- (void)deleteHighscoreWithScore:(NSNumber*) score name:(NSString*) name {
+    NSLog(@"%@", @"Deleting highscore Enter");
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Highscore" inManagedObjectContext:_context];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"highscore == %@ AND name == %@", score, name];
+    NSArray *fetchedObjects = [_context executeFetchRequest:fetchRequest error:nil];
+    for (HighscoreMO *currentObject in fetchedObjects) {
+        [_context deleteObject:currentObject];
+    }
+    [_context save:nil];
+    
+    NSLog(@"%@", @"Deleting highscore Exit");
+}
+
+- (void)deleteAllHighscores {
+    NSLog(@"%@", @"deleteAllHighscores Enter");
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Highscore" inManagedObjectContext:_context];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [_context executeFetchRequest:fetchRequest error:nil];
+    for (HighscoreMO *currentObject in fetchedObjects) {
+        [_context deleteObject:currentObject];
+    }
+    [_context save:nil];
+    
+    NSLog(@"%@", @"deleteAllHighscores Exit");
+}
+
 
 - (BOOL)descending:(id)obj1 id2:(id)obj2 {
     return [obj2 compare:obj1];
@@ -195,9 +194,6 @@
     [nameLabels addObject:_name4];
     [nameLabels addObject:_name5];
     _nameLabels = [NSArray arrayWithArray: nameLabels];
-    for (int i = 0; i < _nameLabels.count; ++i) {
-       // ((UILabel *)_nameLabels[i]).text = @"Lazy Person";
-    }
 };
 
 - (void)createScoreLabelsArray {
@@ -208,9 +204,6 @@
     [scoreLabels addObject:_score4];
     [scoreLabels addObject:_score5];
     _scoreLabels = [NSArray arrayWithArray:scoreLabels];
-    for (int i = 0; i < _scoreLabels.count; ++i) {
-        //((UILabel *)_scoreLabels[i]).text = [NSString stringWithFormat:@"%d", 1000 - i * 100];
-    }
 };
 
 /*
