@@ -10,5 +10,5 @@
 #import <CoreData/CoreData.h>
 
 @interface HighscoreViewController : UIViewController
-
+- (void)setGameHighscore:(int)gameHighscore;
 @end

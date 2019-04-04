@@ -208,7 +208,7 @@
                         <outlet property="_velocityImg" destination="HVy-br-3by" id="EfN-Gd-NO5"/>
                         <segue destination="Bwd-hD-SbL" kind="show" identifier="storeSegue" id="311-OF-i8L"/>
                         <segue destination="T5j-40-ZJm" kind="show" identifier="mainMenuSegue" id="3RR-QQ-kIm"/>
-                        <segue destination="91B-aF-C4b" kind="show" id="ywW-rK-62w"/>
+                        <segue destination="91B-aF-C4b" kind="show" identifier="highscoreSegue" id="ywW-rK-62w"/>
                     </connections>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNx-z0-j3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -571,7 +571,7 @@
         <image name="velocity.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KWO-WB-iAn"/>
-        <segue reference="K5P-tY-tCj"/>
+        <segue reference="3RR-QQ-kIm"/>
+        <segue reference="Q4J-v1-GH1"/>
     </inferredMetricsTieBreakers>
 </document>

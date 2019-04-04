@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HighscoreViewController.h"
 #import "Vertex.h"
 #import "BaseEffect.h"
 #import "GameScene.h"
@@ -18,6 +19,7 @@
 @interface ViewController ()
 
 @end
+static int score;
 
 @implementation ViewController {
     BaseEffect *_shader;
@@ -53,6 +55,7 @@
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
     
     [Director sharedInstance].scene = _scene;
+    score = 0;
 }
 
 - (void)viewDidLoad {
@@ -125,10 +128,12 @@
     }
     if ([[Director sharedInstance].scene isKindOfClass:[GameOver class]])
         if (((GameOver *)[Director sharedInstance].scene).storeEnabled) {
-            if ([Director sharedInstance].round == 3)
-                [self segueToMainMenu];
-            else
+            if ([Director sharedInstance].round == 1) {
+                //[self segueToMainMenu];
+                [self segueToHighscore];
+            } else {
                 [self segueToStore];
+            }
         }
 }
 
@@ -190,6 +195,28 @@
 
 - (void)segueToMainMenu {
     [self performSegueWithIdentifier:@"mainMenuSegue" sender:self];
+}
+
+- (void)segueToHighscore {
+    [self performSegueWithIdentifier:@"highscoreSegue" sender:self];
+}
+
+
+// This will get called too before the view appears
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"highscoreSegue"]) {
+        // Get destination view
+        HighscoreViewController *vc = [segue destinationViewController];
+        
+        // Get button tag number (or do whatever you need to do here, based on your object
+        //NSInteger tagIndex = [(UIButton *)sender tag];
+        
+        // Pass the information to your destination view
+        
+        score = 100;
+        [vc setGameHighscore:score];
+    }
 }
 
 - (IBAction)launchBtn:(id)sender {

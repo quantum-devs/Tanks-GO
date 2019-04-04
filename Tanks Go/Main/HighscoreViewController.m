@@ -38,7 +38,7 @@
     // Do any additional setup after loading the view.
     
     _context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).persistentContainer.viewContext;
-    _gameHighscore = 0;
+    //_gameHighscore = 0;
     //[self deleteAllHighscores];
     [self createNameLabelsArray];
     [self createScoreLabelsArray];
@@ -73,6 +73,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setGameHighscore:(int)gameHighscore {
+    NSLog(@"%@", @"setGameHighscore Enter");
+    _gameHighscore = gameHighscore;
+    NSLog(@"%@", @"setGameHighscore Exit");
+
 }
 
 - (void)populateHighscoreArrays {
