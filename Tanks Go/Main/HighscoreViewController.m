@@ -49,6 +49,10 @@
    [self presentNewHighscoreAlert];
 
 }
+- (IBAction)returnToMainMenu:(id)sender {
+    [self performSegueWithIdentifier:@"highscoreToMainMenuSegue" sender:self];
+
+}
 
 - (void)presentNewHighscoreAlert {
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle: [NSString stringWithFormat:@"%@ %d!!!",@"New Highscore", _gameHighscore]                                                                              message: @"Enter a name"                                                                       preferredStyle:UIAlertControllerStyleAlert];
@@ -143,7 +147,7 @@
 }
 
 - (void)insertHighscoreWithScore:(NSNumber*) score name:(NSString*) name {
-    NSLog(@"%@", @"Inserting highscore Enter");
+    NSLog(@"%@", @"insertHighscoreWithScore Enter");
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Highscore" inManagedObjectContext:_context];
     
@@ -155,7 +159,7 @@
     
     [self populateHighscoreArrays];
     
-    NSLog(@"%@", @"Inserting highscore Exit");
+    NSLog(@"%@", @"insertHighscoreWithScore Exit");
 }
 
 

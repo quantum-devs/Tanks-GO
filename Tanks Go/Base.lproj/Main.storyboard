@@ -375,6 +375,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="returnToMainMenu:" destination="91B-aF-C4b" eventType="touchUpInside" id="9NY-aT-Djx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jd-0v-STZ">
                                 <rect key="frame" x="28" y="8" width="108" height="36"/>
@@ -551,7 +554,7 @@
                         <outlet property="score3" destination="tp6-rs-zPd" id="c0o-MF-gE4"/>
                         <outlet property="score4" destination="fUD-Vg-IO1" id="xfD-so-TAr"/>
                         <outlet property="score5" destination="Gmv-Tu-Lep" id="Ad2-d6-ooc"/>
-                        <segue destination="T5j-40-ZJm" kind="show" id="K5P-tY-tCj"/>
+                        <segue destination="T5j-40-ZJm" kind="show" identifier="highscoreToMainMenuSegue" id="K5P-tY-tCj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1b-RP-85V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -571,7 +574,7 @@
         <image name="velocity.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3RR-QQ-kIm"/>
+        <segue reference="K5P-tY-tCj"/>
         <segue reference="Q4J-v1-GH1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -128,7 +128,7 @@ static int score;
     }
     if ([[Director sharedInstance].scene isKindOfClass:[GameOver class]])
         if (((GameOver *)[Director sharedInstance].scene).storeEnabled) {
-            if ([Director sharedInstance].round == 1) {
+            if ([Director sharedInstance].round == 3) {
                 //[self segueToMainMenu];
                 [self segueToHighscore];
             } else {
