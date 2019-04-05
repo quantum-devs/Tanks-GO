@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL gameStart;
 @property (nonatomic, assign) BOOL playerOneTurn;
+@property (nonatomic, assign) BOOL ballExists;
 @property (strong) NSMutableArray *fuel;
 @property (strong) NSMutableArray *health;
 @property (strong, nonatomic) NSPersistentContainer *container;

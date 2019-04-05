@@ -37,6 +37,7 @@
     _playerTwoHealth.text = [NSString stringWithFormat:@"%1.0f", [Director sharedInstance].playerTwoHealth];
     
     [Director sharedInstance].round++;
+    [[Director sharedInstance] playBackgroundMusic:@"artistry.mp3"];
     
     GLKView *view = (GLKView *)self.view;
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
@@ -56,6 +57,7 @@
 
 - (IBAction)playerOneFuelBtn:(id)sender {
     if (!playerOneBought){
+        [[Director sharedInstance] playPurchase1Effect];
         [Director sharedInstance].playerOneFuel++;
         _playerOneFuel.text = [NSString stringWithFormat:@"%1.0f", [Director sharedInstance].playerOneFuel];
         [self hidePlayerOneUI:YES];
@@ -64,6 +66,7 @@
 
 - (IBAction)playerOneHealthBtn:(id)sender {
     if (!playerOneBought){
+        [[Director sharedInstance] playPurchase1Effect];
         [Director sharedInstance].playerOneHealth++;
         _playerOneHealth.text = [NSString stringWithFormat:@"%1.0f", [Director sharedInstance].playerOneHealth];
         [self hidePlayerOneUI:YES];
@@ -72,6 +75,7 @@
 
 - (IBAction)playerTwoFuelBtn:(id)sender {
     if (!playerTwoBought){
+        [[Director sharedInstance] playPurchase2Effect];
         [Director sharedInstance].playerTwoFuel++;
         _playerTwoFuel.text = [NSString stringWithFormat:@"%1.0f", [Director sharedInstance].playerTwoFuel];
         [self hidePlayerTwoUI:YES];
@@ -80,6 +84,7 @@
 
 - (IBAction)playerTwoHealthBtn:(id)sender {
     if (!playerTwoBought){
+        [[Director sharedInstance] playPurchase2Effect];
         [Director sharedInstance].playerTwoHealth++;
         _playerTwoHealth.text = [NSString stringWithFormat:@"%1.0f", [Director sharedInstance].playerTwoHealth];
         [self hidePlayerTwoUI:YES];

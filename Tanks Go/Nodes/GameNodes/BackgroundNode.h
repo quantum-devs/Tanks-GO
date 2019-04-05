@@ -6,11 +6,11 @@
 //  Copyright © 2019 Jason Sekhon. All rights reserved.
 //
 
-#import "PNode.h"
+#import "Node.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BackgroundNode : PNode
+@interface BackgroundNode : Node
 
 - (instancetype)initWithShader:(BaseEffect *)shader;
 

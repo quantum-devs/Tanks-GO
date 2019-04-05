@@ -14,6 +14,23 @@
 
 @class BaseEffect;
 
+#define kBallTag    1
+#define kBrickTag   2
+#define kPaddleTag  3
+#define kBorderTag  4
+#define kPanzerTag  5
+#define kFloorTag   6
+#define kTankerTag  7
+#define kBoxTag     8
+#define kTank1Tag   9
+#define kTank2Tag   10
+#define kBackgroundTag   11
+#define kAnglerTag  12
+#define kParachuteTag   13
+#define kPlayer1WinsTag 14
+#define kPlayer2WinsTag 15
+#define kTrailParticle 16
+
 @interface Node : NSObject
 
 @property (nonatomic, strong) BaseEffect *shader;
@@ -31,9 +48,10 @@
 @property (assign) float height;
 
 @property (nonatomic, strong) NSMutableArray *children;
+@property (nonatomic, assign) NSInteger tag;
 
-- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount;
-- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess;
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount tag:(unsigned int)tag;
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess tag:(int)tag;
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix;
 - (void)updateWithDelta:(GLfloat)dt;
 - (void)loadTexture:(NSString *)fileName;

@@ -21,8 +21,8 @@
 		29EBA1E9224B460900BAAA7C /* Parachute.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1E5224B460800BAAA7C /* Parachute.m */; };
 		29EBA1EA224B460900BAAA7C /* Angler.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1E6224B460900BAAA7C /* Angler.m */; };
 		29EBA1EB224B460900BAAA7C /* Parachute.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EBA1E7224B460900BAAA7C /* Parachute.png */; };
-		29EBA1F0224B475E00BAAA7C /* Player1WinsNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1EE224B475E00BAAA7C /* Player1WinsNode.mm */; };
-		29EBA1F1224B475E00BAAA7C /* Player2WinsNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1EF224B475E00BAAA7C /* Player2WinsNode.mm */; };
+		29EBA1F0224B475E00BAAA7C /* Player1WinsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1EE224B475E00BAAA7C /* Player1WinsNode.m */; };
+		29EBA1F1224B475E00BAAA7C /* Player2WinsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1EF224B475E00BAAA7C /* Player2WinsNode.m */; };
 		29EBA1F8224B47A100BAAA7C /* Player2Wins.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1F3224B47A000BAAA7C /* Player2Wins.m */; };
 		29EBA1F9224B47A100BAAA7C /* Player1Wins.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA1F4224B47A000BAAA7C /* Player1Wins.m */; };
 		29EBA1FA224B47A100BAAA7C /* Player1Wins.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EBA1F6224B47A000BAAA7C /* Player1Wins.png */; };
@@ -46,9 +46,7 @@
 		9634F1602214EB38008CE6CA /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F15F2214EB38008CE6CA /* Cube.m */; };
 		9634F1652215052C008CE6CA /* dungeon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 9634F1642215052C008CE6CA /* dungeon_01.png */; };
 		9634F169221BC217008CE6CA /* mushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F168221BC217008CE6CA /* mushroom.m */; };
-		9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F16B221BC6F3008CE6CA /* MushroomNode.m */; };
 		9634F16E221BC898008CE6CA /* mushroom.png in Resources */ = {isa = PBXBuildFile; fileRef = 9634F16D221BC898008CE6CA /* mushroom.png */; };
-		9634F173221BDC09008CE6CA /* TestScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F172221BDC09008CE6CA /* TestScene.m */; };
 		963E45D8224AC2ED00C4D024 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 963E45D6224AC2EC00C4D024 /* Model.xcdatamodeld */; };
 		9648497B221DE2AF00266B34 /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9648497A221DE2AF00266B34 /* GameScene.mm */; };
 		96484994221DE78300266B34 /* RWTYouWin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96484988221DE78100266B34 /* RWTYouWin.m */; };
@@ -100,7 +98,7 @@
 		964F91722247491A00F9B496 /* hospital.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F91712247491900F9B496 /* hospital.png */; };
 		964F9174224754A500F9B496 /* hospitalThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F9173224754A500F9B496 /* hospitalThumb.png */; };
 		964F917622475E7100F9B496 /* tanksBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 964F917522475E7000F9B496 /* tanksBG.jpg */; };
-		964F91852247739F00F9B496 /* BackgroundNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 964F91842247739F00F9B496 /* BackgroundNode.mm */; };
+		964F91852247739F00F9B496 /* BackgroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 964F91842247739F00F9B496 /* BackgroundNode.m */; };
 		964F918922477CED00F9B496 /* landscape-min.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F918822477CED00F9B496 /* landscape-min.png */; };
 		964F918C2247844E00F9B496 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 964F918B2247844E00F9B496 /* landscape.png */; };
 		965B95B2224A0ACE008EA926 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965B95B1224A0ACE008EA926 /* StoreViewController.m */; };
@@ -110,6 +108,15 @@
 		96E2A8D8224B380800D769B3 /* Tank2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2A8D6224B380800D769B3 /* Tank2.png */; };
 		96E2A8DC224B381300D769B3 /* Tank1.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E2A8D9224B381200D769B3 /* Tank1.m */; };
 		96E2A8DD224B381300D769B3 /* Tank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2A8DA224B381300D769B3 /* Tank1.png */; };
+		96E6F7F52251E9CC00C14AD6 /* grass.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 96E6F7F42251E9CC00C14AD6 /* grass.jpeg */; };
+		96E6F7F72251EE7C00C14AD6 /* floorTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E6F7F62251EE7C00C14AD6 /* floorTexture.png */; };
+		96E6F7FA2251F0BA00C14AD6 /* TrailParticleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E6F7F92251F0BA00C14AD6 /* TrailParticleNode.m */; };
+		96EF2B97225534F700B72442 /* shine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EF2B96225534F700B72442 /* shine.mp3 */; };
+		96EF2B992255360100B72442 /* artistry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EF2B982255360100B72442 /* artistry.mp3 */; };
+		96EF2B9B225536BC00B72442 /* classic_hurt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EF2B9A225536BB00B72442 /* classic_hurt.mp3 */; };
+		96EF2B9D22553C1700B72442 /* Explosion+1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EF2B9C22553C1700B72442 /* Explosion+1.mp3 */; };
+		96EF2B9F22553C9F00B72442 /* Explosion+7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EF2B9E22553C9F00B72442 /* Explosion+7.mp3 */; };
+		96EF2BA122559A6300B72442 /* purchase.wav in Resources */ = {isa = PBXBuildFile; fileRef = 96EF2BA022559A6300B72442 /* purchase.wav */; };
 		9B8FE2FFE625D31235610CF4 /* libPods-Tanks Go.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9B8362CA0C26EF974C5B3B /* libPods-Tanks Go.a */; };
 		DDBF39C222554CEE00DAD77F /* HighscoreMO.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBF39C122554CEE00DAD77F /* HighscoreMO.m */; };
 /* End PBXBuildFile section */
@@ -185,8 +192,8 @@
 		29EBA1E7224B460900BAAA7C /* Parachute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Parachute.png; sourceTree = "<group>"; };
 		29EBA1EC224B475E00BAAA7C /* Player2WinsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player2WinsNode.h; sourceTree = "<group>"; };
 		29EBA1ED224B475E00BAAA7C /* Player1WinsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player1WinsNode.h; sourceTree = "<group>"; };
-		29EBA1EE224B475E00BAAA7C /* Player1WinsNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player1WinsNode.mm; sourceTree = "<group>"; };
-		29EBA1EF224B475E00BAAA7C /* Player2WinsNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player2WinsNode.mm; sourceTree = "<group>"; };
+		29EBA1EE224B475E00BAAA7C /* Player1WinsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player1WinsNode.m; sourceTree = "<group>"; };
+		29EBA1EF224B475E00BAAA7C /* Player2WinsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player2WinsNode.m; sourceTree = "<group>"; };
 		29EBA1F2224B47A000BAAA7C /* Player2Wins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player2Wins.h; sourceTree = "<group>"; };
 		29EBA1F3224B47A000BAAA7C /* Player2Wins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player2Wins.m; sourceTree = "<group>"; };
 		29EBA1F4224B47A000BAAA7C /* Player1Wins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player1Wins.m; sourceTree = "<group>"; };
@@ -232,11 +239,7 @@
 		9634F1642215052C008CE6CA /* dungeon_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dungeon_01.png; sourceTree = "<group>"; };
 		9634F167221BC216008CE6CA /* mushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mushroom.h; sourceTree = "<group>"; };
 		9634F168221BC217008CE6CA /* mushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mushroom.m; sourceTree = "<group>"; };
-		9634F16A221BC6F3008CE6CA /* MushroomNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MushroomNode.h; sourceTree = "<group>"; };
-		9634F16B221BC6F3008CE6CA /* MushroomNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MushroomNode.m; sourceTree = "<group>"; };
 		9634F16D221BC898008CE6CA /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
-		9634F171221BDC09008CE6CA /* TestScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestScene.h; sourceTree = "<group>"; };
-		9634F172221BDC09008CE6CA /* TestScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestScene.m; sourceTree = "<group>"; };
 		963E45D7224AC2EC00C4D024 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		96484979221DE2AF00266B34 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		9648497A221DE2AF00266B34 /* GameScene.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameScene.mm; sourceTree = "<group>"; };
@@ -305,7 +308,7 @@
 		964F9173224754A500F9B496 /* hospitalThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospitalThumb.png; sourceTree = "<group>"; };
 		964F917522475E7000F9B496 /* tanksBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tanksBG.jpg; sourceTree = "<group>"; };
 		964F91832247739F00F9B496 /* BackgroundNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundNode.h; sourceTree = "<group>"; };
-		964F91842247739F00F9B496 /* BackgroundNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BackgroundNode.mm; sourceTree = "<group>"; };
+		964F91842247739F00F9B496 /* BackgroundNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundNode.m; sourceTree = "<group>"; };
 		964F918822477CED00F9B496 /* landscape-min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscape-min.png"; sourceTree = "<group>"; };
 		964F918B2247844E00F9B496 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
 		965B95B0224A0ACE008EA926 /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
@@ -318,6 +321,16 @@
 		96E2A8D9224B381200D769B3 /* Tank1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tank1.m; sourceTree = "<group>"; };
 		96E2A8DA224B381300D769B3 /* Tank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tank1.png; sourceTree = "<group>"; };
 		96E2A8DB224B381300D769B3 /* Tank1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tank1.h; sourceTree = "<group>"; };
+		96E6F7F42251E9CC00C14AD6 /* grass.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grass.jpeg; sourceTree = "<group>"; };
+		96E6F7F62251EE7C00C14AD6 /* floorTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floorTexture.png; sourceTree = "<group>"; };
+		96E6F7F82251F0BA00C14AD6 /* TrailParticleNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailParticleNode.h; sourceTree = "<group>"; };
+		96E6F7F92251F0BA00C14AD6 /* TrailParticleNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailParticleNode.m; sourceTree = "<group>"; };
+		96EF2B96225534F700B72442 /* shine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shine.mp3; sourceTree = "<group>"; };
+		96EF2B982255360100B72442 /* artistry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = artistry.mp3; sourceTree = "<group>"; };
+		96EF2B9A225536BB00B72442 /* classic_hurt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = classic_hurt.mp3; sourceTree = "<group>"; };
+		96EF2B9C22553C1700B72442 /* Explosion+1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Explosion+1.mp3"; sourceTree = "<group>"; };
+		96EF2B9E22553C9F00B72442 /* Explosion+7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Explosion+7.mp3"; sourceTree = "<group>"; };
+		96EF2BA022559A6300B72442 /* purchase.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = purchase.wav; sourceTree = "<group>"; };
 		C153184DEC9B13F3B1B5AF2D /* Pods-Tanks Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tanks Go.release.xcconfig"; path = "Target Support Files/Pods-Tanks Go/Pods-Tanks Go.release.xcconfig"; sourceTree = "<group>"; };
 		DDBF39C022554CEE00DAD77F /* HighscoreMO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HighscoreMO.h; sourceTree = "<group>"; };
 		DDBF39C122554CEE00DAD77F /* HighscoreMO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HighscoreMO.m; sourceTree = "<group>"; };
@@ -362,15 +375,17 @@
 				29EDFB0022460BEF0065AC81 /* Tank2Node.h */,
 				29EDFB0122460BEF0065AC81 /* Tank2Node.mm */,
 				964F91832247739F00F9B496 /* BackgroundNode.h */,
-				964F91842247739F00F9B496 /* BackgroundNode.mm */,
+				964F91842247739F00F9B496 /* BackgroundNode.m */,
 				29EBA1D2224B447100BAAA7C /* AnglerNode.h */,
 				29EBA1D3224B447100BAAA7C /* AnglerNode.mm */,
 				29EBA1D5224B447D00BAAA7C /* ParachuteNode.h */,
 				29EBA1D6224B447D00BAAA7C /* ParachuteNode.mm */,
 				29EBA1ED224B475E00BAAA7C /* Player1WinsNode.h */,
-				29EBA1EE224B475E00BAAA7C /* Player1WinsNode.mm */,
+				29EBA1EE224B475E00BAAA7C /* Player1WinsNode.m */,
 				29EBA1EC224B475E00BAAA7C /* Player2WinsNode.h */,
-				29EBA1EF224B475E00BAAA7C /* Player2WinsNode.mm */,
+				29EBA1EF224B475E00BAAA7C /* Player2WinsNode.m */,
+				96E6F7F82251F0BA00C14AD6 /* TrailParticleNode.h */,
+				96E6F7F92251F0BA00C14AD6 /* TrailParticleNode.m */,
 			);
 			path = GameNodes;
 			sourceTree = "<group>";
@@ -541,8 +556,6 @@
 		96484978221DE23C00266B34 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9634F171221BDC09008CE6CA /* TestScene.h */,
-				9634F172221BDC09008CE6CA /* TestScene.m */,
 				96484979221DE2AF00266B34 /* GameScene.h */,
 				9648497A221DE2AF00266B34 /* GameScene.mm */,
 				964849E1221F6D1000266B34 /* GameOver.h */,
@@ -566,8 +579,6 @@
 				96484990221DE78200266B34 /* RWTYouLose.m */,
 				96484991221DE78300266B34 /* RWTYouWin.h */,
 				96484988221DE78100266B34 /* RWTYouWin.m */,
-				9634F16A221BC6F3008CE6CA /* MushroomNode.h */,
-				9634F16B221BC6F3008CE6CA /* MushroomNode.m */,
 				9634F15E2214EB37008CE6CA /* Cube.h */,
 				9634F15F2214EB38008CE6CA /* Cube.m */,
 			);
@@ -577,6 +588,12 @@
 		9648499B221DE87F00266B34 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				96EF2B9A225536BB00B72442 /* classic_hurt.mp3 */,
+				96EF2BA022559A6300B72442 /* purchase.wav */,
+				96EF2B9E22553C9F00B72442 /* Explosion+7.mp3 */,
+				96EF2B9C22553C1700B72442 /* Explosion+1.mp3 */,
+				96EF2B96225534F700B72442 /* shine.mp3 */,
+				96EF2B982255360100B72442 /* artistry.mp3 */,
 				964F91622246FAC100F9B496 /* seaShanty2.mp3 */,
 				9648499C221DE88A00266B34 /* bulletstorm_bg_v1.mp3 */,
 				9648499D221DE88B00266B34 /* pop.wav */,
@@ -713,6 +730,8 @@
 		96484D0B2221078400266B34 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				96E6F7F62251EE7C00C14AD6 /* floorTexture.png */,
+				96E6F7F42251E9CC00C14AD6 /* grass.jpeg */,
 				965B95B5224A9B6E008EA926 /* rounded-add-button.png */,
 				965B95B3224A9A3A008EA926 /* add.png */,
 				964F918822477CED00F9B496 /* landscape-min.png */,
@@ -868,8 +887,11 @@
 				964F91722247491A00F9B496 /* hospital.png in Resources */,
 				29EBA1FA224B47A100BAAA7C /* Player1Wins.png in Resources */,
 				9610FDA3220E5D3E00A7360E /* LaunchScreen.storyboard in Resources */,
+				96EF2B97225534F700B72442 /* shine.mp3 in Resources */,
+				96EF2BA122559A6300B72442 /* purchase.wav in Resources */,
 				964849B7221DEAB900266B34 /* ball.png in Resources */,
 				29EA13032222711C00131DA9 /* FloorBlue.png in Resources */,
+				96E6F7F52251E9CC00C14AD6 /* grass.jpeg in Resources */,
 				9634F16E221BC898008CE6CA /* mushroom.png in Resources */,
 				964F917022472FF200F9B496 /* ArrowLeft.png in Resources */,
 				9610FDA0220E5D3E00A7360E /* Assets.xcassets in Resources */,
@@ -879,12 +901,14 @@
 				964F9174224754A500F9B496 /* hospitalThumb.png in Resources */,
 				96484D142221144C00266B34 /* thumb_image.png in Resources */,
 				964F91612246F4C800F9B496 /* fuel.png in Resources */,
+				96EF2B9D22553C1700B72442 /* Explosion+1.mp3 in Resources */,
 				964849B6221DEAB900266B34 /* ball.obj in Resources */,
 				29EA13112222738600131DA9 /* camo1.jpg in Resources */,
 				965B95B6224A9B6E008EA926 /* rounded-add-button.png in Resources */,
 				964F917622475E7100F9B496 /* tanksBG.jpg in Resources */,
 				964849D9221DEAEC00266B34 /* youlose.obj in Resources */,
 				964849DB221DEAEC00266B34 /* youlose.mtl in Resources */,
+				96EF2B992255360100B72442 /* artistry.mp3 in Resources */,
 				964F918C2247844E00F9B496 /* landscape.png in Resources */,
 				96E2A8D8224B380800D769B3 /* Tank2.png in Resources */,
 				9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */,
@@ -901,7 +925,10 @@
 				9634F1652215052C008CE6CA /* dungeon_01.png in Resources */,
 				964F9165224704FB00F9B496 /* ruler.png in Resources */,
 				964849BF221DEAC600266B34 /* border.png in Resources */,
+				96EF2B9B225536BC00B72442 /* classic_hurt.mp3 in Resources */,
 				964849C0221DEAC600266B34 /* border.obj in Resources */,
+				96E6F7F72251EE7C00C14AD6 /* floorTexture.png in Resources */,
+				96EF2B9F22553C9F00B72442 /* Explosion+7.mp3 in Resources */,
 				29EA130B222271B100131DA9 /* camo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -935,9 +962,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				29EBA1F8224B47A100BAAA7C /* Player2Wins.m in Sources */,
-				964F91852247739F00F9B496 /* BackgroundNode.mm in Sources */,
+				964F91852247739F00F9B496 /* BackgroundNode.m in Sources */,
 				29EBA1D7224B447D00BAAA7C /* ParachuteNode.mm in Sources */,
-				29EBA1F1224B475E00BAAA7C /* Player2WinsNode.mm in Sources */,
+				29EBA1F1224B475E00BAAA7C /* Player2WinsNode.m in Sources */,
 				9634F1602214EB38008CE6CA /* Cube.m in Sources */,
 				29EDFAE82245E1650065AC81 /* Box.m in Sources */,
 				9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */,
@@ -956,9 +983,10 @@
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
 				96484997221DE78300266B34 /* RWTBorder.mm in Sources */,
 				96484994221DE78300266B34 /* RWTYouWin.m in Sources */,
+				96E6F7FA2251F0BA00C14AD6 /* TrailParticleNode.m in Sources */,
 				296F5FDA2220D3F900A02532 /* FloorNode.mm in Sources */,
 				9634F15A2213EB10008CE6CA /* Node.m in Sources */,
-				29EBA1F0224B475E00BAAA7C /* Player1WinsNode.mm in Sources */,
+				29EBA1F0224B475E00BAAA7C /* Player1WinsNode.m in Sources */,
 				29EBA1D4224B447100BAAA7C /* AnglerNode.mm in Sources */,
 				9610FDCE220FA41900A7360E /* BaseEffect.m in Sources */,
 				964849C7221DEAD200266B34 /* brick.m in Sources */,
@@ -979,10 +1007,8 @@
 				964849D3221DEADE00266B34 /* paddle.m in Sources */,
 				29EBA1EA224B460900BAAA7C /* Angler.m in Sources */,
 				29EBA1E9224B460900BAAA7C /* Parachute.m in Sources */,
-				9634F16C221BC6F3008CE6CA /* MushroomNode.m in Sources */,
 				96484998221DE78300266B34 /* RWTYouLose.m in Sources */,
 				96484CE9221FED0900266B34 /* PNode.mm in Sources */,
-				9634F173221BDC09008CE6CA /* TestScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

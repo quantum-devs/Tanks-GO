@@ -19,12 +19,13 @@
     BaseEffect *_shader;
 }
 
-- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount {
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount tag:(unsigned int)tag {
     if ((self = [super init])) {
         
         _name  = name;
         _vertexCount = vertexCount;
         _shader = shader;
+        _tag = tag;
         self.position = GLKVector3Make(0, 0, 0);
         self.rotationX = 0;
         self.rotationY = 0;
@@ -69,8 +70,8 @@
     return self;
 }
 
-- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess {
-    if ((self = [self initWithName:name shader:shader vertices:vertices vertexCount:vertexCount])) {
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess tag:(unsigned int)tag {
+    if ((self = [self initWithName:name shader:shader vertices:vertices vertexCount:vertexCount tag:tag])) {
         [self loadTexture:textureName];
         self.specularColor = specularColor;
         self.diffuseColor = diffuseColor;

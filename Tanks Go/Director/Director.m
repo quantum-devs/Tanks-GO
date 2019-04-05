@@ -11,6 +11,12 @@
 @implementation Director {
     AVAudioPlayer *_backgroundMusicPlayer;
     AVAudioPlayer *_popEffect;
+    AVAudioPlayer *_launchEffect;
+    AVAudioPlayer *_collisionEffect;
+    AVAudioPlayer *_hurtEffect;
+    AVAudioPlayer *_purchase1Effect;
+    AVAudioPlayer *_purchase2Effect;
+
 }
 
 + (instancetype)sharedInstance {
@@ -23,6 +29,11 @@
 - (instancetype)init {
     if ((self = [super init])) {
         _popEffect = [self preloadSoundEffect:@"pop.wav"];
+        _launchEffect = [self preloadSoundEffect:@"Explosion+1.mp3"];
+        _collisionEffect = [self preloadSoundEffect:@"Explosion+7.mp3"];
+        _hurtEffect = [self preloadSoundEffect:@"classic_hurt.mp3"];
+        _purchase1Effect = [self preloadSoundEffect:@"purchase.wav"];
+        _purchase2Effect = [self preloadSoundEffect:@"purchase.wav"];
         _playingMusic = NO;
     }
     return self;
@@ -43,8 +54,29 @@
     [retval prepareToPlay];
     return retval;
 }
+
 - (void)playPopEffect {
     [_popEffect play];
+}
+
+- (void)playLaunchEffect {
+    [_launchEffect play];
+}
+
+- (void)playCollisionEffect {
+    [_collisionEffect play];
+}
+
+- (void)playHurtEffect {
+    [_hurtEffect play];
+}
+
+- (void)playPurchase1Effect {
+    [_purchase1Effect play];
+}
+
+- (void)playPurchase2Effect {
+    [_purchase2Effect play];
 }
 
 @end

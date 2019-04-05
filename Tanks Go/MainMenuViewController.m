@@ -34,8 +34,8 @@
     [Director sharedInstance].playerOneHealth = 5.0f;
     [Director sharedInstance].playerTwoHealth = 5.0f;
     [Director sharedInstance].round = 1;
-    [[Director sharedInstance] stopBackgroundMusic];
     [Director sharedInstance].playingMusic = YES;
+    [[Director sharedInstance] playBackgroundMusic:@"shine.mp3"];
     _backgroundImage.layer.zPosition = -99;
     // Do any additional setup after loading the view.
     

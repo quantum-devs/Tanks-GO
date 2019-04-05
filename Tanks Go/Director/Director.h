@@ -29,6 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)playBackgroundMusic:(NSString *)filename;
 - (AVAudioPlayer *)preloadSoundEffect:(NSString *)filename;
 - (void)playPopEffect;
+- (void)playLaunchEffect;
+- (void)playCollisionEffect;
+- (void)playHurtEffect;
+- (void)playPurchase1Effect;
+- (void)playPurchase2Effect;
 - (void)stopBackgroundMusic;
 
 @end

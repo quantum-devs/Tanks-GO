@@ -40,15 +40,15 @@
     __weak IBOutlet UIButton *_healthImg;
     __weak IBOutlet UIButton *_healthImg2;
     __weak IBOutlet UILabel *_round;
+    __weak IBOutlet UILabel *_p1ScoreLabel;
+    __weak IBOutlet UILabel *_p2ScoreLabel;
 }
 
 const int GAME_ROUNDS = 3;
 
 - (void) setupScene{
     [Director sharedInstance].view = self.view;
-    if ([Director sharedInstance].playingMusic)
-        [[Director sharedInstance] playBackgroundMusic:@"seaShanty2.mp3"];
-    [Director sharedInstance].playingMusic = NO;
+    [[Director sharedInstance] playBackgroundMusic:@"seaShanty2.mp3"];
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
                                         fragmentShader:@"SimpleFragment.glsl"];
     _scene = [[GameScene alloc] initWithShader:_shader];
@@ -111,6 +111,12 @@ const int GAME_ROUNDS = 3;
     
     [_playerOneHealthSlider setValue:[_scene getPlayerOneHealth]];
     [_playerTwoHealthSlider setValue:[Director sharedInstance].playerTwoHealth - [_scene getPlayerTwoHealth]];
+    
+    NSArray * currentScores = [_scene getScores];
+    NSString * p1ScoreText = ((NSNumber *)currentScores[0]).stringValue;
+    NSString * p2ScoreText = ((NSNumber *)currentScores[1]).stringValue;
+    [_p1ScoreLabel setText: p1ScoreText];
+    [_p2ScoreLabel setText: p2ScoreText];
     
     [_scene changeAnglerWidth:_launchVelocitySlider.value];
     [_scene changeAnglerAngle:_launchAngleSlider.value];
@@ -178,6 +184,8 @@ const int GAME_ROUNDS = 3;
     [_moveLeftImg setHidden:hideUI];
     [_moveRightImg setHidden:hideUI];
     [_round setHidden:hideUI];
+    [_p1ScoreLabel setHidden:hideUI];
+    [_p2ScoreLabel setHidden:hideUI];
 }
 
 - (void)reinitializeUI {
@@ -229,7 +237,6 @@ const int GAME_ROUNDS = 3;
 
 - (IBAction)launchBtn:(id)sender {
     if (![_scene isBallActive]){
-        [[Director sharedInstance] playPopEffect];
         float angle = GLKMathDegreesToRadians([_launchAngleSlider value]);
         float velocity = [_launchVelocitySlider value];
         float x = cosf(angle) * velocity;

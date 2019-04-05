@@ -19,7 +19,7 @@
                              shader:shader
                            vertices:(Vertex *)Floor_Cube_001_Floor_Vertices
                         vertexCount:sizeof(Floor_Cube_001_Floor_Vertices)/sizeof(Floor_Cube_001_Floor_Vertices[0])
-                        textureName:@"FloorBlue.png"
+                        textureName:@"floorTexture.png"
                      specularColour:Floor_Cube_001_Floor_specular
                       diffuseColour:Floor_Cube_001_Floor_diffuse
                           shininess:Floor_Cube_001_Floor_shininess])) {

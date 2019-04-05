@@ -17,12 +17,12 @@
 #import "TankerNode.h"
 #import "Tank1Node.h"
 #import "Tank2Node.h"
-#include "BackgroundNode.h"
+#import "BackgroundNode.h"
 #import "AnglerNode.h"
 #import "ParachuteNode.h"
 #import "Player1WinsNode.h"
+#import "TrailParticleNode.h"
 #include "btBulletDynamicsCommon.h"
-
 
 #define BRICKS_PER_COL 8
 #define BRICKS_PER_ROW 9
@@ -60,8 +60,9 @@
     ParachuteNode *_parachute;
     ParachuteNode *_parachute2;
     
+    TrailParticleNode *_trailParticle;
+    
     Player1WinsNode *_p1;
-    NSMutableArray *_tanks;
     
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
@@ -69,7 +70,6 @@
     btCollisionDispatcher *_dispatcher;
     btSequentialImpulseConstraintSolver *_solver;
     btDiscreteDynamicsWorld *_world;
-    
     btScalar _desiredVelocity;
     int timer;
     //int launchTime;
@@ -84,12 +84,13 @@ static int player2Score = 0;
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
     
-    if ((self = [super  initWithName:"GameScene" shader:shader vertices:nil vertexCount:0])) {
+    if ((self = [super  initWithName:"GameScene" shader:shader vertices:nil vertexCount:0 tag:0])) {
         
         [self initPhysics];
         
         _gameStart = YES;
         _playerOneTurn = YES;
+        _ballExists = NO;
         _playerOneHealth = [Director sharedInstance].playerOneHealth;
         _playerTwoHealth = [Director sharedInstance].playerTwoHealth;
         _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
@@ -107,9 +108,9 @@ static int player2Score = 0;
         self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset -10 );
         
         //Background
-        //_background = [[BackgroundNode alloc] initWithShader:shader];
-        //_background.position = GLKVector3Make(_gameArea.width/2, _gameArea.height/2, -5);
-        //[self.children addObject:_background];
+        _background = [[BackgroundNode alloc] initWithShader:shader];
+        _background.position = GLKVector3Make(_gameArea.width/2, _gameArea.height/2, -5);
+        [self.children addObject:_background];
         
         //Create floor and add to scene
         _floor = [[FloorNode alloc] initWithShader:shader];
@@ -126,7 +127,6 @@ static int player2Score = 0;
         _parachute = [[ParachuteNode alloc] initWithShader:shader];
         _parachute.position = GLKVector3Make(_gameArea.width/2 - 40,  _floor.height + 11, 3);
         [self.children addObject:_parachute];
-        [_tanks addObject:_parachute];
         _world->addRigidBody(_parachute.body);
         
         _tank2 = [[Tank2Node alloc] initWithShader:shader];
@@ -208,10 +208,7 @@ static int player2Score = 0;
 }
 
 - (BOOL)isBallActive {
-    for (int i = 0; i < [self.children count]; i++)
-        if (((PNode *)[self.children objectAtIndex:i]).tag == kBallTag)
-            return YES;
-    return NO;
+    return _ballExists;
 }
 
 - (void)moveTankRight {
@@ -258,17 +255,23 @@ static int player2Score = 0;
 
 - (void)destroyBall:(PNode*)ball {
     [self.children removeObject:ball];
-    [[Director sharedInstance] playPopEffect];
+    _ballExists = NO;
+    [[Director sharedInstance] playCollisionEffect];
     _world->removeRigidBody(ball.body);
     ball.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset - 10);
     _playerOneTurn = !_playerOneTurn;
+    
+    for (int i = 0; i < [self.children count]; i++)
+        if (((PNode *)[self.children objectAtIndex:i]).tag == kTrailParticle){
+            [self.children removeObject:((PNode *)[self.children objectAtIndex:i])];
+            //NSLog(@"%d", i);
+        }
     
     if (_playerOneTurn) {
         _angler.position = GLKVector3Make(_tank1.position.x - 3, _tank1.height, 0);
     } else {
         _angler.position = GLKVector3Make(_tank2.position.x + 3, _tank1.height, 0);
     }
-    
     _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
     _playerTwoMovesLeft = [Director sharedInstance].playerTwoFuel;
     isPlayer1Hit = false;
@@ -282,12 +285,14 @@ static int player2Score = 0;
 
 - (void)launchBallWithVelocity:(float)X velocityY:(float)Y atAngle:(float)angle {
     _ball = [[RWTBall alloc] initWithShader:self.shader];
+    [[Director sharedInstance] playLaunchEffect];
+    _ballExists = YES;
     _angler.position = GLKVector3Make(_tank1.position.x, -15, 0);
     if (_playerOneTurn) {
         _ball.position = GLKVector3Make(_tank1.position.x, _tank1.position.y + 3, _tank1.position.z);
         _ball.matColour = GLKVector4Make(1, .1, .1, 1);
     } else {
-        _ball.position = GLKVector3Make(_tank2.position.x, _tank2.position.y + 3, _tank2.position.z);
+        _ball.position = GLKVector3Make(_tank2.position.x, _tank2.position.y + 3, _tank2.position.z - 1);
         _ball.matColour = GLKVector4Make(.1, 1, .1, 1);
     }
     [self.children addObject:_ball];
@@ -336,6 +341,17 @@ static int player2Score = 0;
         [self destroyBall:_ball];
     }
     
+    if (_ballExists){
+        _trailParticle = [[TrailParticleNode alloc] initWithShader:self.shader];
+        for (int i = 0; i < [self.children count]; i++)
+            if (((PNode *)[self.children objectAtIndex:i]).tag == kTrailParticle){
+                [self.children removeObject:((PNode *)[self.children objectAtIndex:i])];
+                //NSLog(@"%d", i);
+            }
+        _trailParticle.position = GLKVector3Make(_ball.position.x, _ball.position.y, _ball.position.z - 1);
+        [self.children addObject:_trailParticle];
+    }
+    
     if (_parachute.position.y < _floor.height + 1) {
         _parachute.position = GLKVector3Make(_gameArea.width/2 - 40,  _floor.height + 11, 3);
         [self.children removeObject:_parachute];
@@ -381,9 +397,11 @@ static int player2Score = 0;
                 if (pnB.tag == kTank1Tag) {
                     [self triggerPlayer1HitCount];
                     _playerOneHealth--;
+                    [[Director sharedInstance] playHurtEffect];
                 } else if (pnB.tag == kTank2Tag) {
                     [self triggerPlayer2HitCount];
                     _playerTwoHealth--;
+                    [[Director sharedInstance] playHurtEffect];
                 }
                 [self destroyBall:pnA];
                 break;
@@ -391,9 +409,11 @@ static int player2Score = 0;
                 if (pnA.tag == kTank1Tag) {
                     [self triggerPlayer1HitCount];
                     _playerOneHealth--;
+                    [[Director sharedInstance] playHurtEffect];
                 } else if (pnA.tag == kTank2Tag) {
                     [self triggerPlayer2HitCount];
                     _playerTwoHealth--;
+                    [[Director sharedInstance] playHurtEffect];
                 }
                 [self destroyBall:pnB];
                 break;
@@ -420,7 +440,7 @@ static int player2Score = 0;
 - (void)triggerPlayer1HitCount {
     if (!isPlayer1Hit) {
         NSLog(@"Player 1 Hit Timer: %d", timer);
-        int score = 20000 * (1 / (double)(timer  - lastShot));
+        int score = 10000 * (4 / (double)(timer  - lastShot));
         if (score > 100) {
             player2Score += score;
         } else {
@@ -434,7 +454,7 @@ static int player2Score = 0;
 - (void)triggerPlayer2HitCount {
     if (!isPlayer2Hit) {
         NSLog(@"Player 2 Hit Timer: %d", timer);
-        int score = 20000 * (1 / (double)(timer  - lastShot));
+        int score = 10000 * (4 / (double)(timer  - lastShot));
         if (score > 100) {
             player1Score += score;
         } else {

@@ -24,7 +24,7 @@
                diffuseColour:(GLKVector4)diffuseColour
                    shininess:(float)shininess {
     
-    if (self = [super initWithName:name shader:shader vertices:vertices vertexCount:vertexCount textureName:textureName specularColor:specularColour diffuseColor:diffuseColour shininess:shininess]) {
+    if (self = [super initWithName:name shader:shader vertices:vertices vertexCount:vertexCount textureName:textureName specularColor:specularColour diffuseColor:diffuseColour shininess:shininess tag:tag]) {
         
         self.tag = tag;
         
@@ -38,8 +38,12 @@
 - (void)createShapeWithVertices:(Vertex *)vertices count:(unsigned int)vertexCount isConvex:(BOOL)convex {
     if (convex) {
         _shape = new btConvexHullShape();
-        for (int i = 0; i < vertexCount; i++){
+        int num = 1;
+        if (vertexCount > 100)
+            num = 10;
+        for (int i = 0; i < vertexCount; i += num){
             Vertex v = vertices[i];
+            NSLog(@"%d", i);
             btVector3 btv = btVector3(v.Position[0], v.Position[1], v.Position[2]);
             ((btConvexHullShape*)_shape)->addPoint(btv);
         }
@@ -49,7 +53,7 @@
             Vertex v1 = vertices[i];
             Vertex v2 = vertices[i+1];
             Vertex v3 = vertices[i+2];
-            
+            NSLog(@"test");
             btVector3 bv1 = btVector3(v1.Position[0], v1.Position[1], v1.Position[2]);
             btVector3 bv2 = btVector3(v2.Position[0], v2.Position[1], v2.Position[2]);
             btVector3 bv3 = btVector3(v3.Position[0], v3.Position[1], v3.Position[2]);
@@ -70,10 +74,10 @@
     
     btScalar bodyMass = mass;
     btVector3 bodyInertia;
-    if (mass != 0)
+    //if (mass != 0)
         _shape->calculateLocalInertia(bodyMass, bodyInertia);
-    else
-        bodyInertia = btVector3(0, 0, 0);
+    //else
+      //  bodyInertia = btVector3(0, 0, 0);
     
     btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, motionState, _shape, bodyInertia);
     
