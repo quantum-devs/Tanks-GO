@@ -63,7 +63,7 @@
     }
      */
     
-    if (_scores.count < 5 || _gameHighscore > ((NSNumber *)_scores.lastObject).intValue)
+    if (_gameHighscore > 0 && (_scores.count < 5 || _gameHighscore > ((NSNumber *)_scores.lastObject).intValue))
         [self presentNewHighscoreAlert];
     
 
