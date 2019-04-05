@@ -68,7 +68,7 @@ const Vertex vertices[] = {
 @implementation Cube
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
-    if ((self = [super initWithName:"cube" shader:shader vertices:(Vertex *)vertices vertexCount:sizeof(vertices)/sizeof(vertices[0])])) {
+    if ((self = [super initWithName:"cube" shader:shader vertices:(Vertex *)vertices vertexCount:sizeof(vertices)/sizeof(vertices[0]) tag:0])) {
         [self loadTexture:@"dungeon_01.png"];
     }
     return self;

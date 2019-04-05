@@ -44,9 +44,7 @@
 - (void) setupScene{
     
     [Director sharedInstance].view = self.view;
-    if ([Director sharedInstance].playingMusic)
-        [[Director sharedInstance] playBackgroundMusic:@"seaShanty2.mp3"];
-    [Director sharedInstance].playingMusic = NO;
+    [[Director sharedInstance] playBackgroundMusic:@"seaShanty2.mp3"];
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
                                         fragmentShader:@"SimpleFragment.glsl"];
     _scene = [[GameScene alloc] initWithShader:_shader];
@@ -194,7 +192,6 @@
 
 - (IBAction)launchBtn:(id)sender {
     if (![_scene isBallActive]){
-        [[Director sharedInstance] playPopEffect];
         float angle = GLKMathDegreesToRadians([_launchAngleSlider value]);
         float velocity = [_launchVelocitySlider value];
         float x = cosf(angle) * velocity;

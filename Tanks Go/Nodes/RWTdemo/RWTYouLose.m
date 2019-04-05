@@ -12,7 +12,7 @@
 @implementation RWTYouLose
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
-  if ((self = [super initWithName:"YouLose" shader:shader vertices:(Vertex *)youlose_Mesh_001_youlose_Vertices vertexCount:sizeof(youlose_Mesh_001_youlose_Vertices)/sizeof(youlose_Mesh_001_youlose_Vertices[0])])) {
+    if ((self = [super initWithName:"YouLose" shader:shader vertices:(Vertex *)youlose_Mesh_001_youlose_Vertices vertexCount:sizeof(youlose_Mesh_001_youlose_Vertices)/sizeof(youlose_Mesh_001_youlose_Vertices[0]) tag:0])) {
     [self loadTexture:@"youlose.png"];
     self.rotationX = M_PI * 1/8;
     self.scale = 4.0;

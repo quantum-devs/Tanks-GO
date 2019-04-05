@@ -17,7 +17,7 @@
 }
 
 -(instancetype)initWithShader:(BaseEffect *)shader win:(BOOL)win {
-    if ((self = [super initWithName:"GameOver" shader:shader vertices:nil vertexCount:0])) {
+    if ((self = [super initWithName:"GameOver" shader:shader vertices:nil vertexCount:0 tag:0])) {
         CGSize _gameArea = CGSizeMake(27, 48);
         float _sceneOffset = _gameArea.height/2/tanf(GLKMathDegreesToRadians(85/2));
         self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset);

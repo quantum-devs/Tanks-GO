@@ -102,9 +102,6 @@
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE_2D, self.texture.name);
   glUniform1i(_texUniform, 1);
-    
-  glActiveTexture(GL_TEXTURE1);
-  glBindTexture(GL_TEXTURE_2D, self.texture.name);
   
   glUniform3f(_lightColourUniform, 1, 1, 1);
   glUniform1f(_lightAmbientIntensityUniform, 1);
