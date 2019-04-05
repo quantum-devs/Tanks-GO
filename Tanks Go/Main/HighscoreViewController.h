@@ -11,4 +11,5 @@
 
 @interface HighscoreViewController : UIViewController
 - (void)setGameHighscore:(int)gameHighscore;
+- (void)setGameScores:(NSArray *)gameScores;
 @end

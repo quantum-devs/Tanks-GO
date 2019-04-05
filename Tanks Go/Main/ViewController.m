@@ -19,7 +19,6 @@
 @interface ViewController ()
 
 @end
-static int score;
 
 @implementation ViewController {
     BaseEffect *_shader;
@@ -43,8 +42,9 @@ static int score;
     __weak IBOutlet UILabel *_round;
 }
 
+const int GAME_ROUNDS = 3;
+
 - (void) setupScene{
-    
     [Director sharedInstance].view = self.view;
     if ([Director sharedInstance].playingMusic)
         [[Director sharedInstance] playBackgroundMusic:@"seaShanty2.mp3"];
@@ -55,7 +55,6 @@ static int score;
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
     
     [Director sharedInstance].scene = _scene;
-    score = 0;
 }
 
 - (void)viewDidLoad {
@@ -128,7 +127,7 @@ static int score;
     }
     if ([[Director sharedInstance].scene isKindOfClass:[GameOver class]])
         if (((GameOver *)[Director sharedInstance].scene).storeEnabled) {
-            if ([Director sharedInstance].round == 3) {
+            if ([Director sharedInstance].round == GAME_ROUNDS) {
                 //[self segueToMainMenu];
                 [self segueToHighscore];
             } else {
@@ -213,9 +212,18 @@ static int score;
         //NSInteger tagIndex = [(UIButton *)sender tag];
         
         // Pass the information to your destination view
+        NSArray * scores = [_scene getScores];
+        int highscore = 0;
+        if (((NSNumber *)scores[0]).intValue > ((NSNumber *)scores[1]).intValue) {
+            highscore = ((NSNumber *)scores[0]).intValue;
+        } else {
+            highscore = ((NSNumber *)scores[1]).intValue;
+        }
+        [vc setGameHighscore: highscore];
+        [_scene resetScores];
+        //[vc setGameHighscore: ((NSNumber *)scores[1]).intValue];
         
-        score = 100;
-        [vc setGameHighscore:score];
+        //[vc setGameScores:[_scene getScores]];
     }
 }
 

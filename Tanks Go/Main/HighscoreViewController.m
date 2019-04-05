@@ -26,12 +26,21 @@
 @property (strong, nonnull) NSArray* scoreLabels;
 @property (strong, nonnull) NSArray* names;
 @property (strong, nonnull) NSArray* scores;
+@property (strong, nonnull) NSArray* gameScores;
 @property (strong, nonnull) NSDictionary* highscores;
 @property (strong, nonatomic) NSString* highScoreName;
 @property (strong, readonly) NSManagedObjectContext* context;
 @end
 
 @implementation HighscoreViewController
+
+-(id)init {
+    if (self = [super init])  {
+        self.gameHighscore = -1;
+        self.gameScores = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +55,17 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-   [self presentNewHighscoreAlert];
+    /*
+     // Doesn't work because _gameScores is a pointer to an NSArray in GameScene which is destoyed/reset when it gets here
+    for (int i = 0; i < _gameScores.count; ++i) {
+        if (_scores.count < 5 || ((NSNumber *)_gameScores[i]).intValue > ((NSNumber *)_scores.lastObject).intValue)
+            [self presentNewHighscoreAlert];
+    }
+     */
+    
+    if (_scores.count < 5 || _gameHighscore > ((NSNumber *)_scores.lastObject).intValue)
+        [self presentNewHighscoreAlert];
+    
 
 }
 - (IBAction)returnToMainMenu:(id)sender {
@@ -84,6 +103,13 @@
     _gameHighscore = gameHighscore;
     NSLog(@"%@", @"setGameHighscore Exit");
 
+}
+
+- (void)setGameScores:(NSArray *)gameScores {
+    NSLog(@"%@", @"setGameScores Enter");
+    _gameScores = gameScores;
+    NSLog(@"%@", @"setGameScores Exit");
+    
 }
 
 - (void)populateHighscoreArrays {
