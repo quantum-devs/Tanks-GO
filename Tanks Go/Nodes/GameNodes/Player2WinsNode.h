@@ -6,11 +6,11 @@
 //  Copyright © 2019 Jason Sekhon. All rights reserved.
 //
 
-#import "PNode.h"
+#import "Node.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Player2WinsNode : PNode
+@interface Player2WinsNode : Node
 
 - (instancetype)initWithShader:(BaseEffect *)shader;
 

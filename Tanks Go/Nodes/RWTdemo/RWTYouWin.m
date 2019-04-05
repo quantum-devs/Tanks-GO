@@ -12,7 +12,7 @@
 @implementation RWTYouWin
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
-  if ((self = [super initWithName:"YouWin" shader:shader vertices:(Vertex *)Text_Mesh_youwin_Vertices vertexCount:sizeof(Text_Mesh_youwin_Vertices)/sizeof(Text_Mesh_youwin_Vertices[0])])) {
+  if ((self = [super initWithName:"YouWin" shader:shader vertices:(Vertex *)Text_Mesh_youwin_Vertices vertexCount:sizeof(Text_Mesh_youwin_Vertices)/sizeof(Text_Mesh_youwin_Vertices[0]) tag:0])) {
     [self loadTexture:@"youwin.png"];
     self.rotationX = M_PI * 1/8;
     self.scale = 4.0;
