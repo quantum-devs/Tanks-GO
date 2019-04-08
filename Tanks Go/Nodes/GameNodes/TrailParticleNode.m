@@ -27,8 +27,6 @@ const Vertex vertices2[] = {
     if ((self = [super initWithName:"particleTrail" shader:shader vertices:(Vertex *)vertices2 vertexCount:sizeof(vertices2)/sizeof(vertices2[0]) tag:kTrailParticle])) {
         self.width = .2;
         self.height = .2;
-        self.specularColor = GLKVector4Make(1, 1, 1, 1);
-        self.diffuseColor = GLKVector4Make(1, 1, 1, 1);
     }
     return self;
 }
@@ -36,7 +34,7 @@ const Vertex vertices2[] = {
 - (void)updateWithDelta:(GLfloat)aDelta {
     
     time += aDelta;
-    if (time < 3)
+    if (time <= 3)
         self.matColour = GLKVector4Make(1, 1, 1, 3-time);
     
     // Increase the amount of rotation

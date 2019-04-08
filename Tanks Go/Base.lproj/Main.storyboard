@@ -344,8 +344,8 @@
                         <outlet property="_angleImg" destination="qaa-EW-BpW" id="HFx-6t-lPN"/>
                         <outlet property="_gasLabel" destination="o5B-Za-vF3" id="JP4-YX-tDf"/>
                         <outlet property="_gasolineImg" destination="nG3-ma-7n8" id="ZnU-FZ-RzX"/>
-                        <outlet property="_healthImg" destination="OmI-3r-uxv" id="0AK-uo-WaX"/>
-                        <outlet property="_healthImg2" destination="lZR-It-uHy" id="3oX-RE-vrj"/>
+                        <outlet property="_healthImage1" destination="OmI-3r-uxv" id="ad7-cO-c4z"/>
+                        <outlet property="_healthImage2" destination="lZR-It-uHy" id="zaZ-1E-3Jf"/>
                         <outlet property="_launchAngleSlider" destination="aHO-Bc-4FM" id="IB9-wK-waM"/>
                         <outlet property="_launchBtn" destination="rtj-23-hxt" id="U24-2U-xp8"/>
                         <outlet property="_launchVelocitySlider" destination="JSn-4U-5Y6" id="BMT-yd-eHz"/>
