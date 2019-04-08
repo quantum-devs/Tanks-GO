@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HighscoreViewController.h"
 #import "Vertex.h"
 #import "BaseEffect.h"
 #import "GameScene.h"
@@ -39,10 +40,13 @@
     __weak IBOutlet UIButton *_healthImg;
     __weak IBOutlet UIButton *_healthImg2;
     __weak IBOutlet UILabel *_round;
+    __weak IBOutlet UILabel *_p1ScoreLabel;
+    __weak IBOutlet UILabel *_p2ScoreLabel;
 }
 
+const int GAME_ROUNDS = 3;
+
 - (void) setupScene{
-    
     [Director sharedInstance].view = self.view;
     [[Director sharedInstance] playBackgroundMusic:@"seaShanty2.mp3"];
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
@@ -108,6 +112,12 @@
     [_playerOneHealthSlider setValue:[_scene getPlayerOneHealth]];
     [_playerTwoHealthSlider setValue:[Director sharedInstance].playerTwoHealth - [_scene getPlayerTwoHealth]];
     
+    NSArray * currentScores = [_scene getScores];
+    NSString * p1ScoreText = ((NSNumber *)currentScores[0]).stringValue;
+    NSString * p2ScoreText = ((NSNumber *)currentScores[1]).stringValue;
+    [_p1ScoreLabel setText: p1ScoreText];
+    [_p2ScoreLabel setText: p2ScoreText];
+    
     [_scene changeAnglerWidth:_launchVelocitySlider.value];
     [_scene changeAnglerAngle:_launchAngleSlider.value];
     
@@ -123,10 +133,12 @@
     }
     if ([[Director sharedInstance].scene isKindOfClass:[GameOver class]])
         if (((GameOver *)[Director sharedInstance].scene).storeEnabled) {
-            if ([Director sharedInstance].round == 3)
-                [self segueToMainMenu];
-            else
+            if ([Director sharedInstance].round == GAME_ROUNDS) {
+                //[self segueToMainMenu];
+                [self segueToHighscore];
+            } else {
                 [self segueToStore];
+            }
         }
 }
 
@@ -172,6 +184,8 @@
     [_moveLeftImg setHidden:hideUI];
     [_moveRightImg setHidden:hideUI];
     [_round setHidden:hideUI];
+    [_p1ScoreLabel setHidden:hideUI];
+    [_p2ScoreLabel setHidden:hideUI];
 }
 
 - (void)reinitializeUI {
@@ -188,6 +202,37 @@
 
 - (void)segueToMainMenu {
     [self performSegueWithIdentifier:@"mainMenuSegue" sender:self];
+}
+
+- (void)segueToHighscore {
+    [self performSegueWithIdentifier:@"highscoreSegue" sender:self];
+}
+
+
+// This will get called too before the view appears
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"highscoreSegue"]) {
+        // Get destination view
+        HighscoreViewController *vc = [segue destinationViewController];
+        
+        // Get button tag number (or do whatever you need to do here, based on your object
+        //NSInteger tagIndex = [(UIButton *)sender tag];
+        
+        // Pass the information to your destination view
+        NSArray * scores = [_scene getScores];
+        int highscore = 0;
+        if (((NSNumber *)scores[0]).intValue > ((NSNumber *)scores[1]).intValue) {
+            highscore = ((NSNumber *)scores[0]).intValue;
+        } else {
+            highscore = ((NSNumber *)scores[1]).intValue;
+        }
+        [vc setGameHighscore: highscore];
+        [_scene resetScores];
+        //[vc setGameHighscore: ((NSNumber *)scores[1]).intValue];
+        
+        //[vc setGameScores:[_scene getScores]];
+    }
 }
 
 - (IBAction)launchBtn:(id)sender {

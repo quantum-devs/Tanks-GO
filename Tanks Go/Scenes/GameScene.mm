@@ -70,10 +70,17 @@
     btCollisionDispatcher *_dispatcher;
     btSequentialImpulseConstraintSolver *_solver;
     btDiscreteDynamicsWorld *_world;
-    
     btScalar _desiredVelocity;
-    
+    int timer;
+    //int launchTime;
+    int lastShot;
+    bool isParachuteGone;
+    bool isPlayer1Hit;
+    bool isPlayer2Hit;
 }
+
+static int player1Score = 0;
+static int player2Score = 0;
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
     
@@ -133,6 +140,13 @@
         _world->addRigidBody(_parachute2.body);
         
         _angler = [[AnglerNode alloc] initWithShader:shader];
+        
+        timer = 0;
+        //launchTime = 0;
+        lastShot = 0;
+        isParachuteGone = false;
+        isPlayer1Hit = false;
+        isPlayer2Hit = false;
     }
     return self;
 }
@@ -180,6 +194,7 @@
 - (void)changeAnglerWidth:(float)vel {
     _power = (vel - _eMin) / (_eMax - _eMin) * 5;
     _power2 = (vel - _eMin) / (_eMax - _eMin);
+    //NSLog(@"changeAnglerWidth _power %f", _power);
     if (_power >= 0.1)
         _angler.width = _power;
     if (_power2 >= 0.1) {
@@ -249,7 +264,7 @@
     for (int i = 0; i < [self.children count]; i++)
         if (((PNode *)[self.children objectAtIndex:i]).tag == kTrailParticle){
             [self.children removeObject:((PNode *)[self.children objectAtIndex:i])];
-            NSLog(@"%d", i);
+            //NSLog(@"%d", i);
         }
     
     if (_playerOneTurn) {
@@ -259,6 +274,12 @@
     }
     _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
     _playerTwoMovesLeft = [Director sharedInstance].playerTwoFuel;
+    isPlayer1Hit = false;
+    isPlayer2Hit = false;
+    
+    NSLog(@"Last Shot Timer: %d", lastShot);
+    lastShot = timer;
+    NSLog(@"Destroy Ball Timer: %d", timer);
     
 }
 
@@ -277,6 +298,8 @@
     [self.children addObject:_ball];
     _world->addRigidBody(_ball.body);
     _ball.body->setLinearVelocity(btVector3(X/2, Y/2, 0));
+    //launchTime = timer;
+    //NSLog(@"Launch Timer: %d", launchTime);
 }
 
 - (float)checkVictory {
@@ -307,6 +330,7 @@
     _playerTwoHealth = [Director sharedInstance].playerTwoHealth;
     _playerOneMovesLeft = [Director sharedInstance].playerOneFuel;
     _playerTwoMovesLeft = [Director sharedInstance].playerTwoFuel;
+    NSLog(@"Reinitialize Round Timer: %d", timer);
 }
 
 - (void)updateWithDelta:(GLfloat)dt {
@@ -322,7 +346,7 @@
         for (int i = 0; i < [self.children count]; i++)
             if (((PNode *)[self.children objectAtIndex:i]).tag == kTrailParticle){
                 [self.children removeObject:((PNode *)[self.children objectAtIndex:i])];
-                NSLog(@"%d", i);
+                //NSLog(@"%d", i);
             }
         _trailParticle.position = GLKVector3Make(_ball.position.x, _ball.position.y, _ball.position.z - 1);
         [self.children addObject:_trailParticle];
@@ -340,12 +364,14 @@
         _angler.rotationZ = M_PI/2;
         _angler.matColour = GLKVector4Make(1, 1, 1, _power2);
         _world->addRigidBody(_angler.body);
+        [self triggerParachuteGoneCount];
     }
     
     if (_parachute2.position.y < _floor.height + 1) {
         _parachute2.position = GLKVector3Make(_gameArea.width/2 + 40,  _floor.height + 11, 3);
         [self.children removeObject:_parachute2];
         _world->removeRigidBody(_parachute2.body);
+        [self triggerParachuteGoneCount];
     }
     
     if (_playerOneTurn) {
@@ -368,28 +394,79 @@
             PNode *pnB = (__bridge PNode*)obB->getUserPointer();
             
             if (pnA.tag == kBallTag) {
-                [self destroyBall:pnA];
                 if (pnB.tag == kTank1Tag) {
+                    [self triggerPlayer1HitCount];
                     _playerOneHealth--;
                     [[Director sharedInstance] playHurtEffect];
                 } else if (pnB.tag == kTank2Tag) {
+                    [self triggerPlayer2HitCount];
                     _playerTwoHealth--;
                     [[Director sharedInstance] playHurtEffect];
                 }
+                [self destroyBall:pnA];
                 break;
             } else if (pnB.tag == kBallTag) {
-                [self destroyBall:pnB];
                 if (pnA.tag == kTank1Tag) {
+                    [self triggerPlayer1HitCount];
                     _playerOneHealth--;
                     [[Director sharedInstance] playHurtEffect];
                 } else if (pnA.tag == kTank2Tag) {
+                    [self triggerPlayer2HitCount];
                     _playerTwoHealth--;
                     [[Director sharedInstance] playHurtEffect];
                 }
+                [self destroyBall:pnB];
                 break;
             }
         }
     }
+    timer += 1;
+}
+
+- (void)resetScores {
+    player1Score = 0;
+    player2Score = 0;
+}
+
+- (void)triggerParachuteGoneCount {
+    if (!isParachuteGone) {
+        NSLog(@"Parachute Gone Timer: %d", timer);
+        timer -= timer;
+        NSLog(@"Parachute Gone Timer: %d", timer);
+        isParachuteGone = true;
+    }
+}
+
+- (void)triggerPlayer1HitCount {
+    if (!isPlayer1Hit) {
+        NSLog(@"Player 1 Hit Timer: %d", timer);
+        int score = 10000 * (4 / (double)(timer  - lastShot));
+        if (score > 100) {
+            player2Score += score;
+        } else {
+            player2Score += 100;
+        }
+        NSLog(@"Scores -> P1: %d P2: %d", player1Score, player2Score);
+        isPlayer1Hit = true;
+    }
+}
+
+- (void)triggerPlayer2HitCount {
+    if (!isPlayer2Hit) {
+        NSLog(@"Player 2 Hit Timer: %d", timer);
+        int score = 10000 * (4 / (double)(timer  - lastShot));
+        if (score > 100) {
+            player1Score += score;
+        } else {
+            player1Score += 100;
+        }
+        NSLog(@"Scores -> P1: %d P2: %d", player1Score, player2Score);
+        isPlayer2Hit = true;
+    }
+}
+
+- (NSArray *)getScores {
+    return [NSArray arrayWithObjects: [NSNumber numberWithInt:player1Score], [NSNumber numberWithInt:player2Score], nil];
 }
 
 - (void)dealloc {
