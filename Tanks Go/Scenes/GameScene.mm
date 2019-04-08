@@ -246,12 +246,6 @@
     ball.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset - 10);
     _playerOneTurn = !_playerOneTurn;
     
-    for (int i = 0; i < [self.children count]; i++)
-        if (((PNode *)[self.children objectAtIndex:i]).tag == kTrailParticle){
-            [self.children removeObject:((PNode *)[self.children objectAtIndex:i])];
-            NSLog(@"%d", i);
-        }
-    
     if (_playerOneTurn) {
         _angler.position = GLKVector3Make(_tank1.position.x - 3, _tank1.height, 0);
     } else {
@@ -319,20 +313,20 @@
     
     if (_ballExists){
         _trailParticle = [[TrailParticleNode alloc] initWithShader:self.shader];
+        _trailParticle.position = GLKVector3Make(_ball.position.x, _ball.position.y, _ball.position.z - 1);
+        [self.children addObject:_trailParticle];
+    } else {
         for (int i = 0; i < [self.children count]; i++)
             if (((PNode *)[self.children objectAtIndex:i]).tag == kTrailParticle){
                 [self.children removeObject:((PNode *)[self.children objectAtIndex:i])];
-                NSLog(@"%d", i);
             }
-        _trailParticle.position = GLKVector3Make(_ball.position.x, _ball.position.y, _ball.position.z - 1);
-        [self.children addObject:_trailParticle];
     }
     
     if (_parachute.position.y < _floor.height + 1) {
         _parachute.position = GLKVector3Make(_gameArea.width/2 - 40,  _floor.height + 11, 3);
         [self.children removeObject:_parachute];
         _world->removeRigidBody(_parachute.body);
-        _angler.position = GLKVector3Make(_tank1.position.x - 1, _tank1.height + 1, 0);
+        _angler.position = GLKVector3Make(_tank1.position.x - 3, _tank1.height + 1, 0);
         [self.children addObject:_angler];
         _angler.scale = 1;
         _angler.width = 2.5;

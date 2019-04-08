@@ -36,8 +36,8 @@
     __weak IBOutlet UIButton *_moveLeftImg;
     __weak IBOutlet UIImageView *_velocityImg;
     __weak IBOutlet UIImageView *_angleImg;
-    __weak IBOutlet UIButton *_healthImg;
-    __weak IBOutlet UIButton *_healthImg2;
+    __weak IBOutlet UIButton *_healthImage1;
+    __weak IBOutlet UIButton *_healthImage2;
     __weak IBOutlet UILabel *_round;
 }
 
@@ -166,8 +166,8 @@
     [_launchBtn setHidden:hideUI];
     [_gasolineImg setHidden:hideUI];
     [_angleImg setHidden:hideUI];
-    [_healthImg setHidden:hideUI];
-    [_healthImg2 setHidden:hideUI];
+    [_healthImage1 setHidden:hideUI];
+    [_healthImage2 setHidden:hideUI];
     [_velocityImg setHidden:hideUI];
     [_moveLeftImg setHidden:hideUI];
     [_moveRightImg setHidden:hideUI];
