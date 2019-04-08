@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (float)getPlayerTwoMovesLeft;
 - (float)getPlayerOneHealth;
 - (float)getPlayerTwoHealth;
+- (NSArray *)getScores;
+- (void)resetScores;
 - (float)checkVictory;
 - (CGPoint) touchLocationToGameArea:(CGPoint)touchLocation;
 

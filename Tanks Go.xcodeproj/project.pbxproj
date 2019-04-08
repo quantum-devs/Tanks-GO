@@ -32,6 +32,7 @@
 		29EDFAED2245E1CD0065AC81 /* BoxNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAEC2245E1CD0065AC81 /* BoxNode.mm */; };
 		29EDFAF6224606170065AC81 /* Tank1Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFAF5224606170065AC81 /* Tank1Node.mm */; };
 		29EDFB0222460BEF0065AC81 /* Tank2Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EDFB0122460BEF0065AC81 /* Tank2Node.mm */; };
+		3FF0D22B225276F400AB94AE /* HighscoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0D22A225276F400AB94AE /* HighscoreViewController.m */; };
 		9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD97220E5D3E00A7360E /* AppDelegate.m */; };
 		9610FD9B220E5D3E00A7360E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9610FD9A220E5D3E00A7360E /* ViewController.m */; };
 		9610FD9E220E5D3E00A7360E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9610FD9C220E5D3E00A7360E /* Main.storyboard */; };
@@ -117,6 +118,7 @@
 		96EF2B9F22553C9F00B72442 /* Explosion+7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EF2B9E22553C9F00B72442 /* Explosion+7.mp3 */; };
 		96EF2BA122559A6300B72442 /* purchase.wav in Resources */ = {isa = PBXBuildFile; fileRef = 96EF2BA022559A6300B72442 /* purchase.wav */; };
 		9B8FE2FFE625D31235610CF4 /* libPods-Tanks Go.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9B8362CA0C26EF974C5B3B /* libPods-Tanks Go.a */; };
+		DDBF39C222554CEE00DAD77F /* HighscoreMO.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBF39C122554CEE00DAD77F /* HighscoreMO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +209,8 @@
 		29EDFAF5224606170065AC81 /* Tank1Node.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tank1Node.mm; sourceTree = "<group>"; };
 		29EDFB0022460BEF0065AC81 /* Tank2Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tank2Node.h; sourceTree = "<group>"; };
 		29EDFB0122460BEF0065AC81 /* Tank2Node.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tank2Node.mm; sourceTree = "<group>"; };
+		3FF0D229225276F400AB94AE /* HighscoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighscoreViewController.h; path = "Tanks Go/Main/HighscoreViewController.h"; sourceTree = SOURCE_ROOT; };
+		3FF0D22A225276F400AB94AE /* HighscoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighscoreViewController.m; path = "Tanks Go/Main/HighscoreViewController.m"; sourceTree = SOURCE_ROOT; };
 		4C9B8362CA0C26EF974C5B3B /* libPods-Tanks Go.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tanks Go.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		866DC1CD99AFA213F3010269 /* Pods-Tanks Go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tanks Go.debug.xcconfig"; path = "Target Support Files/Pods-Tanks Go/Pods-Tanks Go.debug.xcconfig"; sourceTree = "<group>"; };
 		9610FD93220E5D3E00A7360E /* Tanks Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tanks Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,6 +332,8 @@
 		96EF2B9E22553C9F00B72442 /* Explosion+7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Explosion+7.mp3"; sourceTree = "<group>"; };
 		96EF2BA022559A6300B72442 /* purchase.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = purchase.wav; sourceTree = "<group>"; };
 		C153184DEC9B13F3B1B5AF2D /* Pods-Tanks Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tanks Go.release.xcconfig"; path = "Target Support Files/Pods-Tanks Go/Pods-Tanks Go.release.xcconfig"; sourceTree = "<group>"; };
+		DDBF39C022554CEE00DAD77F /* HighscoreMO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HighscoreMO.h; sourceTree = "<group>"; };
+		DDBF39C122554CEE00DAD77F /* HighscoreMO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HighscoreMO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,9 +436,13 @@
 				9610FDA1220E5D3E00A7360E /* LaunchScreen.storyboard */,
 				9610FDA4220E5D3E00A7360E /* Info.plist */,
 				9610FDA5220E5D3E00A7360E /* main.m */,
+				3FF0D229225276F400AB94AE /* HighscoreViewController.h */,
+				3FF0D22A225276F400AB94AE /* HighscoreViewController.m */,
 				296F5FE122210C6100A02532 /* MainMenuViewController.h */,
 				296F5FE222210C6100A02532 /* MainMenuViewController.m */,
 				963E45D6224AC2EC00C4D024 /* Model.xcdatamodeld */,
+				DDBF39C022554CEE00DAD77F /* HighscoreMO.h */,
+				DDBF39C122554CEE00DAD77F /* HighscoreMO.m */,
 			);
 			path = "Tanks Go";
 			sourceTree = "<group>";
@@ -931,15 +941,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Tanks Go-checkManifestLockResult.txt",
 			);
@@ -969,7 +975,9 @@
 				296F5FE322210C6100A02532 /* MainMenuViewController.m in Sources */,
 				29EBA1F9224B47A100BAAA7C /* Player1Wins.m in Sources */,
 				29EDFB0222460BEF0065AC81 /* Tank2Node.mm in Sources */,
+				DDBF39C222554CEE00DAD77F /* HighscoreMO.m in Sources */,
 				963E45D8224AC2ED00C4D024 /* Model.xcdatamodeld in Sources */,
+				3FF0D22B225276F400AB94AE /* HighscoreViewController.m in Sources */,
 				9610FDA6220E5D3E00A7360E /* main.m in Sources */,
 				964849DC221DEAEC00266B34 /* youlose.m in Sources */,
 				9610FD98220E5D3E00A7360E /* AppDelegate.m in Sources */,
@@ -1163,7 +1171,7 @@
 				DEVELOPMENT_TEAM = A2SBKB36F6;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "Tanks Go/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1184,7 +1192,7 @@
 				DEVELOPMENT_TEAM = A2SBKB36F6;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "Tanks Go/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jason.Sekhon.Tanks-Go1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
