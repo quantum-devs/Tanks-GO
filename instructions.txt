@@ -1,0 +1,2 @@
+- download the project
+- run using the xcworkspace, because the project uses a cocoapods library for ui sliders
